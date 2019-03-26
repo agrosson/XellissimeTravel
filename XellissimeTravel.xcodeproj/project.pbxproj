@@ -14,6 +14,7 @@
 		C1E8221D224A6A8000CE07F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E8221B224A6A8000CE07F4 /* LaunchScreen.storyboard */; };
 		C1E82228224A6A8000CE07F4 /* XellissimeTravelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E82227224A6A8000CE07F4 /* XellissimeTravelTests.swift */; };
 		C1E82235224A72B000CE07F4 /* APITest.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1E82234224A72B000CE07F4 /* APITest.plist */; };
+		C1E82237224A79E900CE07F4 /* InitialScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E82236224A79E900CE07F4 /* InitialScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		C1E82227224A6A8000CE07F4 /* XellissimeTravelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XellissimeTravelTests.swift; sourceTree = "<group>"; };
 		C1E82229224A6A8000CE07F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1E82234224A72B000CE07F4 /* APITest.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APITest.plist; sourceTree = "<group>"; };
+		C1E82236224A79E900CE07F4 /* InitialScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,11 +81,11 @@
 		C1E82211224A6A7D00CE07F4 /* XellissimeTravel */ = {
 			isa = PBXGroup;
 			children = (
-				C1E82212224A6A7D00CE07F4 /* AppDelegate.swift */,
-				C1E82214224A6A7D00CE07F4 /* ViewController.swift */,
-				C1E82216224A6A7D00CE07F4 /* Main.storyboard */,
-				C1E82219224A6A8000CE07F4 /* Assets.xcassets */,
-				C1E8221B224A6A8000CE07F4 /* LaunchScreen.storyboard */,
+				C1E8223C224A7A8600CE07F4 /* Supporting files */,
+				C1E8223B224A7A6200CE07F4 /* Storyboard */,
+				C1E8223A224A7A4A00CE07F4 /* View */,
+				C1E82239224A7A2B00CE07F4 /* Model */,
+				C1E82238224A79FB00CE07F4 /* Controller */,
 				C1E8221E224A6A8000CE07F4 /* Info.plist */,
 				C1E82234224A72B000CE07F4 /* APITest.plist */,
 			);
@@ -97,6 +99,47 @@
 				C1E82229224A6A8000CE07F4 /* Info.plist */,
 			);
 			path = XellissimeTravelTests;
+			sourceTree = "<group>";
+		};
+		C1E82238224A79FB00CE07F4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C1E82214224A6A7D00CE07F4 /* ViewController.swift */,
+				C1E82236224A79E900CE07F4 /* InitialScreenViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C1E82239224A7A2B00CE07F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C1E8223A224A7A4A00CE07F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C1E8221B224A6A8000CE07F4 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C1E8223B224A7A6200CE07F4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C1E82216224A6A7D00CE07F4 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		C1E8223C224A7A8600CE07F4 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				C1E82212224A6A7D00CE07F4 /* AppDelegate.swift */,
+				C1E82219224A6A8000CE07F4 /* Assets.xcassets */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1E82215224A6A7D00CE07F4 /* ViewController.swift in Sources */,
+				C1E82237224A79E900CE07F4 /* InitialScreenViewController.swift in Sources */,
 				C1E82213224A6A7D00CE07F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
