@@ -13,6 +13,7 @@
 		C1E8221A224A6A8000CE07F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1E82219224A6A8000CE07F4 /* Assets.xcassets */; };
 		C1E8221D224A6A8000CE07F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E8221B224A6A8000CE07F4 /* LaunchScreen.storyboard */; };
 		C1E82228224A6A8000CE07F4 /* XellissimeTravelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E82227224A6A8000CE07F4 /* XellissimeTravelTests.swift */; };
+		C1E82235224A72B000CE07F4 /* APITest.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1E82234224A72B000CE07F4 /* APITest.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		C1E82223224A6A8000CE07F4 /* XellissimeTravelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XellissimeTravelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1E82227224A6A8000CE07F4 /* XellissimeTravelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XellissimeTravelTests.swift; sourceTree = "<group>"; };
 		C1E82229224A6A8000CE07F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1E82234224A72B000CE07F4 /* APITest.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APITest.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				C1E82219224A6A8000CE07F4 /* Assets.xcassets */,
 				C1E8221B224A6A8000CE07F4 /* LaunchScreen.storyboard */,
 				C1E8221E224A6A8000CE07F4 /* Info.plist */,
+				C1E82234224A72B000CE07F4 /* APITest.plist */,
 			);
 			path = XellissimeTravel;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1E8221D224A6A8000CE07F4 /* LaunchScreen.storyboard in Resources */,
+				C1E82235224A72B000CE07F4 /* APITest.plist in Resources */,
 				C1E8221A224A6A8000CE07F4 /* Assets.xcassets in Resources */,
 				C1E82218224A6A7D00CE07F4 /* Main.storyboard in Resources */,
 			);
