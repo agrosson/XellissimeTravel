@@ -15,6 +15,7 @@
 		C1E82228224A6A8000CE07F4 /* XellissimeTravelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E82227224A6A8000CE07F4 /* XellissimeTravelTests.swift */; };
 		C1E82235224A72B000CE07F4 /* APITest.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1E82234224A72B000CE07F4 /* APITest.plist */; };
 		C1E82237224A79E900CE07F4 /* InitialScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E82236224A79E900CE07F4 /* InitialScreenViewController.swift */; };
+		C1E8223F224A84CA00CE07F4 /* Change.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E8223D224A84CA00CE07F4 /* Change.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		C1E82229224A6A8000CE07F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1E82234224A72B000CE07F4 /* APITest.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APITest.plist; sourceTree = "<group>"; };
 		C1E82236224A79E900CE07F4 /* InitialScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreenViewController.swift; sourceTree = "<group>"; };
+		C1E8223E224A84CA00CE07F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = XellissimeTravel/Storyboard/Base.lproj/Change.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		C1E8223B224A7A6200CE07F4 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				C1E8223D224A84CA00CE07F4 /* Change.storyboard */,
 				C1E82216224A6A7D00CE07F4 /* Main.storyboard */,
 			);
 			path = Storyboard;
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1E8221D224A6A8000CE07F4 /* LaunchScreen.storyboard in Resources */,
+				C1E8223F224A84CA00CE07F4 /* Change.storyboard in Resources */,
 				C1E82235224A72B000CE07F4 /* APITest.plist in Resources */,
 				C1E8221A224A6A8000CE07F4 /* Assets.xcassets in Resources */,
 				C1E82218224A6A7D00CE07F4 /* Main.storyboard in Resources */,
@@ -283,6 +287,14 @@
 				C1E8221C224A6A8000CE07F4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C1E8223D224A84CA00CE07F4 /* Change.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1E8223E224A84CA00CE07F4 /* Base */,
+			);
+			name = Change.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

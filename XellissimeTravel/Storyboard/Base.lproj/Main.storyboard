@@ -50,13 +50,27 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
+                    <connections>
+                        <segue destination="DzT-4n-Qpk" kind="relationship" relationship="viewControllers" id="GuR-UB-iZM"/>
+                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TUt-lf-0Ct" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="683" y="43"/>
         </scene>
+        <!--Change-->
+        <scene sceneID="Hu6-nU-SeC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Change" id="DzT-4n-Qpk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Change" image="dollarblue" id="3tM-j7-7c8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gVQ-6i-zNp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1582" y="74"/>
+        </scene>
     </scenes>
     <resources>
         <image name="MountainGif" width="3570" height="4462"/>
+        <image name="dollarblue" width="30" height="30"/>
     </resources>
 </document>
