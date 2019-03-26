@@ -10,12 +10,55 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--change-->
+        <!--Initial Screen View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="InitialScreenViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjg-eo-Sua">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <state key="normal" image="MountainGif"/>
+                                <connections>
+                                    <action selector="goToNextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2ac-sa-89k"/>
+                                    <segue destination="Baa-Kz-IiL" kind="show" id="Mjq-FS-4Io"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qjg-eo-Sua" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Kf5-Ky-sYu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qjg-eo-Sua" secondAttribute="trailing" id="MJa-0c-s28"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qjg-eo-Sua" secondAttribute="bottom" id="Vmt-27-zBd"/>
+                            <constraint firstItem="qjg-eo-Sua" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yPi-gH-v01"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-394" y="42"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="meK-0c-P3D">
+            <objects>
+                <tabBarController id="Baa-Kz-IiL" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qUU-u6-EVk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TUt-lf-0Ct" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="683" y="43"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="y7G-Fi-557">
             <objects>
                 <navigationController id="9Nw-0t-v0i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="change" image="dollarblue" id="gsX-2k-nee"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="wSN-sH-dIH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -52,7 +95,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGn-UA-ky0">
-                                <rect key="frame" x="20" y="721" width="374" height="72"/>
+                                <rect key="frame" x="20" y="770" width="374" height="72"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
                                 <state key="normal" title="GO">
                                     <color key="titleColor" red="0.039215686270000001" green="0.37647058820000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -65,10 +108,12 @@
                         <color key="backgroundColor" red="0.49623023040511227" green="0.69865077730000003" blue="0.61791028286676275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="4Xr-Vz-9MQ" firstAttribute="trailing" secondItem="T1d-cb-Q6w" secondAttribute="trailing" constant="20" id="44Y-s1-w0h"/>
+                            <constraint firstItem="T1d-cb-Q6w" firstAttribute="centerX" secondItem="BZs-Lb-FJl" secondAttribute="centerX" id="92u-OG-6Du"/>
                             <constraint firstItem="T1d-cb-Q6w" firstAttribute="leading" secondItem="4Xr-Vz-9MQ" secondAttribute="leading" constant="20" id="AfA-hy-jBN"/>
                             <constraint firstItem="NGn-UA-ky0" firstAttribute="leading" secondItem="4Xr-Vz-9MQ" secondAttribute="leading" constant="20" id="HuC-i5-Dmi"/>
                             <constraint firstItem="4Xr-Vz-9MQ" firstAttribute="bottom" secondItem="NGn-UA-ky0" secondAttribute="bottom" constant="20" id="Iik-ky-YbI"/>
                             <constraint firstItem="T1d-cb-Q6w" firstAttribute="centerY" secondItem="BZs-Lb-FJl" secondAttribute="centerY" id="YlJ-jH-qyM"/>
+                            <constraint firstItem="NGn-UA-ky0" firstAttribute="centerX" secondItem="BZs-Lb-FJl" secondAttribute="centerX" id="aGe-8v-dXJ"/>
                             <constraint firstItem="4Xr-Vz-9MQ" firstAttribute="trailing" secondItem="NGn-UA-ky0" secondAttribute="trailing" constant="20" id="yc2-t6-85e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Xr-Vz-9MQ"/>
@@ -97,6 +142,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dollarblue" width="30" height="30"/>
+        <image name="MountainGif" width="3570" height="4462"/>
     </resources>
 </document>

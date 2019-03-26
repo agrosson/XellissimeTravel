@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Nw-0t-v0i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iNA-sO-WQj">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,12 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--change-->
+        <!--Navigation Controller-->
         <scene sceneID="y7G-Fi-557">
             <objects>
                 <navigationController id="9Nw-0t-v0i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="change" image="dollarblue" id="gsX-2k-nee"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="wSN-sH-dIH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -52,7 +50,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGn-UA-ky0">
-                                <rect key="frame" x="20" y="721" width="374" height="72"/>
+                                <rect key="frame" x="20" y="770" width="374" height="72"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
                                 <state key="normal" title="GO">
                                     <color key="titleColor" red="0.039215686270000001" green="0.37647058820000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -79,6 +77,83 @@
             </objects>
             <point key="canvasLocation" x="1249" y="706"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vPq-fx-kge">
+            <objects>
+                <navigationController id="iNA-sO-WQj" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BNH-mS-QWK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.61960784310000006" green="0.59215686270000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.61960784310000006" green="0.59215686270000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="u39-ZK-tnR" kind="relationship" relationship="rootViewController" id="hEz-Jp-dWG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ucl-GL-hTb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="436" y="1441"/>
+        </scene>
+        <!--WeatherScreen1-->
+        <scene sceneID="HI4-eX-599">
+            <objects>
+                <viewController title="WeatherScreen1" id="u39-ZK-tnR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b7E-EU-xO3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cheack the weather before you ..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytb-7f-jEB">
+                                <rect key="frame" x="20" y="412" width="374" height="72"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <color key="textColor" red="0.90196078430000004" green="0.86274509799999999" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="highlightedColor" red="0.90196078430000004" green="0.86274509799999999" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zmx-hU-dfK">
+                                <rect key="frame" x="20" y="770" width="374" height="72"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
+                                <state key="normal" title="GO">
+                                    <color key="titleColor" red="0.039215686270000001" green="0.37647058820000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="wB7-hD-YIF" kind="show" id="O5f-EP-bQ4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.61960784310000006" green="0.59215686270000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="YR4-a5-0KD" firstAttribute="trailing" secondItem="Zmx-hU-dfK" secondAttribute="trailing" constant="20" id="9vd-bI-MVs"/>
+                            <constraint firstItem="Zmx-hU-dfK" firstAttribute="leading" secondItem="YR4-a5-0KD" secondAttribute="leading" constant="20" id="ATn-Xt-Vtx"/>
+                            <constraint firstItem="ytb-7f-jEB" firstAttribute="centerY" secondItem="b7E-EU-xO3" secondAttribute="centerY" id="h5j-f7-hhC"/>
+                            <constraint firstItem="YR4-a5-0KD" firstAttribute="trailing" secondItem="ytb-7f-jEB" secondAttribute="trailing" constant="20" id="iLN-ZW-HsY"/>
+                            <constraint firstItem="YR4-a5-0KD" firstAttribute="bottom" secondItem="Zmx-hU-dfK" secondAttribute="bottom" constant="20" id="rbR-7t-eF3"/>
+                            <constraint firstItem="ytb-7f-jEB" firstAttribute="leading" secondItem="YR4-a5-0KD" secondAttribute="leading" constant="20" id="tHJ-mu-ymd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YR4-a5-0KD"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3NH-VR-vji"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pw1-SW-en8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1274" y="1450"/>
+        </scene>
+        <!--Weather-->
+        <scene sceneID="Slb-UY-a8M">
+            <objects>
+                <viewController title="Weather" id="wB7-hD-YIF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hxm-Or-ZYy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.61960784310000006" green="0.59215686270000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="OgU-Ai-qcC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wKl-jP-SEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2104" y="1446"/>
+        </scene>
         <!--Change-->
         <scene sceneID="Xvi-8e-a1h">
             <objects>
@@ -96,7 +171,4 @@
             <point key="canvasLocation" x="1954" y="710"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="dollarblue" width="30" height="30"/>
-    </resources>
 </document>

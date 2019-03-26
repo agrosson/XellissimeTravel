@@ -51,6 +51,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="6GE-se-kze" kind="relationship" relationship="viewControllers" id="Px0-2v-Wdh"/>
                         <segue destination="DzT-4n-Qpk" kind="relationship" relationship="viewControllers" id="GuR-UB-iZM"/>
                     </connections>
                 </tabBarController>
@@ -68,9 +69,20 @@
             </objects>
             <point key="canvasLocation" x="1582" y="74"/>
         </scene>
+        <!--Weather-->
+        <scene sceneID="Csa-6G-u7P">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Weather" id="6GE-se-kze" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Weather" image="weather" id="0AS-j6-FYY"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VKh-CM-bLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1502" y="196"/>
+        </scene>
     </scenes>
     <resources>
         <image name="MountainGif" width="3570" height="4462"/>
         <image name="dollarblue" width="30" height="30"/>
+        <image name="weather" width="30" height="30"/>
     </resources>
 </document>
