@@ -10,6 +10,10 @@
 		C1BCA8A0224B5C0300EB9BEA /* Translate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BCA89F224B5C0300EB9BEA /* Translate.storyboard */; };
 		C1BCA8A3224B624E00EB9BEA /* Parameters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BCA8A1224B624E00EB9BEA /* Parameters.storyboard */; };
 		C1BCA8A6224B63C500EB9BEA /* Photos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BCA8A4224B63C500EB9BEA /* Photos.storyboard */; };
+		C1BCA8A8224B67B100EB9BEA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BCA8A7224B67B100EB9BEA /* APIManager.swift */; };
+		C1BCA8AA224B733A00EB9BEA /* FixerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BCA8A9224B733A00EB9BEA /* FixerAPI.swift */; };
+		C1BCA8AC224B73AA00EB9BEA /* GoogleTranslateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BCA8AB224B73AA00EB9BEA /* GoogleTranslateAPI.swift */; };
+		C1BCA8AE224B74A800EB9BEA /* OpenweathermapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BCA8AD224B74A800EB9BEA /* OpenweathermapAPI.swift */; };
 		C1E82213224A6A7D00CE07F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E82212224A6A7D00CE07F4 /* AppDelegate.swift */; };
 		C1E82215224A6A7D00CE07F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E82214224A6A7D00CE07F4 /* ViewController.swift */; };
 		C1E82218224A6A7D00CE07F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E82216224A6A7D00CE07F4 /* Main.storyboard */; };
@@ -36,6 +40,10 @@
 		C1BCA89F224B5C0300EB9BEA /* Translate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Translate.storyboard; sourceTree = "<group>"; };
 		C1BCA8A2224B624E00EB9BEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = XellissimeTravel/Storyboard/XellissimeTravel/Storyboard/Base.lproj/Parameters.storyboard; sourceTree = "<group>"; };
 		C1BCA8A5224B63C500EB9BEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = XellissimeTravel/Storyboard/XellissimeTravel/Storyboard/XellissimeTravel/Storyboard/Base.lproj/Photos.storyboard; sourceTree = "<group>"; };
+		C1BCA8A7224B67B100EB9BEA /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		C1BCA8A9224B733A00EB9BEA /* FixerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerAPI.swift; sourceTree = "<group>"; };
+		C1BCA8AB224B73AA00EB9BEA /* GoogleTranslateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTranslateAPI.swift; sourceTree = "<group>"; };
+		C1BCA8AD224B74A800EB9BEA /* OpenweathermapAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenweathermapAPI.swift; sourceTree = "<group>"; };
 		C1E8220F224A6A7D00CE07F4 /* XellissimeTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XellissimeTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1E82212224A6A7D00CE07F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1E82214224A6A7D00CE07F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +131,10 @@
 		C1E82239224A7A2B00CE07F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C1BCA8A7224B67B100EB9BEA /* APIManager.swift */,
+				C1BCA8AD224B74A800EB9BEA /* OpenweathermapAPI.swift */,
+				C1BCA8A9224B733A00EB9BEA /* FixerAPI.swift */,
+				C1BCA8AB224B73AA00EB9BEA /* GoogleTranslateAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,8 +276,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1BCA8A8224B67B100EB9BEA /* APIManager.swift in Sources */,
 				C1E82215224A6A7D00CE07F4 /* ViewController.swift in Sources */,
 				C1E82237224A79E900CE07F4 /* InitialScreenViewController.swift in Sources */,
+				C1BCA8AA224B733A00EB9BEA /* FixerAPI.swift in Sources */,
+				C1BCA8AC224B73AA00EB9BEA /* GoogleTranslateAPI.swift in Sources */,
+				C1BCA8AE224B74A800EB9BEA /* OpenweathermapAPI.swift in Sources */,
 				C1E82213224A6A7D00CE07F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
