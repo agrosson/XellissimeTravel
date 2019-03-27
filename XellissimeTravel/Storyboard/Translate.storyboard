@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W7O-bH-KbH">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Translate-->
+        <scene sceneID="ZNV-oT-neO">
+            <objects>
+                <navigationController id="W7O-bH-KbH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Translate" image="google-translate-icon" id="sax-8H-WfQ"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gal-ef-6zs">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.35323774810000003" green="0.3794608116" blue="0.42745843529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.35323774810000003" green="0.3794608116" blue="0.42745843529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3w1-Tg-99G" kind="relationship" relationship="rootViewController" id="RXk-bn-Rof"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DX5-s2-sgv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-468" y="1457"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="y5b-lQ-bhA">
+            <objects>
+                <viewController id="3w1-Tg-99G" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FcV-Fc-GfZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In the next screen, please write your text down to translate" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWX-F0-omw">
+                                <rect key="frame" x="20" y="394.5" width="374" height="107.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <color key="textColor" red="0.35323774810000003" green="0.3794608116" blue="0.42745843529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSF-7e-JVc">
+                                <rect key="frame" x="20" y="721" width="374" height="72"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
+                                <state key="normal" title="GO">
+                                    <color key="titleColor" red="0.039215686270000001" green="0.37647058820000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="gsX-8q-OCL" kind="show" id="guC-Mc-GTG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.63921568630000003" green="0.71372549019999998" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Rfb-7l-9pj" firstAttribute="trailing" secondItem="sSF-7e-JVc" secondAttribute="trailing" constant="20" id="234-3A-c2Z"/>
+                            <constraint firstItem="Rfb-7l-9pj" firstAttribute="bottom" secondItem="sSF-7e-JVc" secondAttribute="bottom" constant="20" id="J4n-Rf-krd"/>
+                            <constraint firstItem="qWX-F0-omw" firstAttribute="leading" secondItem="Rfb-7l-9pj" secondAttribute="leading" constant="20" id="PRB-KI-hlM"/>
+                            <constraint firstItem="qWX-F0-omw" firstAttribute="centerY" secondItem="FcV-Fc-GfZ" secondAttribute="centerY" id="kkS-c7-g3v"/>
+                            <constraint firstItem="sSF-7e-JVc" firstAttribute="leading" secondItem="Rfb-7l-9pj" secondAttribute="leading" constant="20" id="s9g-u6-uMj"/>
+                            <constraint firstAttribute="trailing" secondItem="qWX-F0-omw" secondAttribute="trailing" constant="20" id="w3T-xX-D37"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rfb-7l-9pj"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="43u-oW-4Sa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZPJ-Wu-L1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="403" y="1462"/>
+        </scene>
+        <!--Translate-->
+        <scene sceneID="pdY-xO-d8Q">
+            <objects>
+                <viewController title="Translate" id="gsX-8q-OCL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7My-bS-R4I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.63921568630000003" green="0.71372549019999998" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="zcd-FA-964"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ugx-2B-0YT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1181" y="1471"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="google-translate-icon" width="30" height="30"/>
+    </resources>
+</document>
