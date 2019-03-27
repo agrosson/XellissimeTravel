@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C1BCA8A0224B5C0300EB9BEA /* Translate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BCA89F224B5C0300EB9BEA /* Translate.storyboard */; };
+		C1BCA8A3224B624E00EB9BEA /* Parameters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BCA8A1224B624E00EB9BEA /* Parameters.storyboard */; };
+		C1BCA8A6224B63C500EB9BEA /* Photos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BCA8A4224B63C500EB9BEA /* Photos.storyboard */; };
 		C1E82213224A6A7D00CE07F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E82212224A6A7D00CE07F4 /* AppDelegate.swift */; };
 		C1E82215224A6A7D00CE07F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E82214224A6A7D00CE07F4 /* ViewController.swift */; };
 		C1E82218224A6A7D00CE07F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E82216224A6A7D00CE07F4 /* Main.storyboard */; };
@@ -32,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		C1BCA89F224B5C0300EB9BEA /* Translate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Translate.storyboard; sourceTree = "<group>"; };
+		C1BCA8A2224B624E00EB9BEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = XellissimeTravel/Storyboard/XellissimeTravel/Storyboard/Base.lproj/Parameters.storyboard; sourceTree = "<group>"; };
+		C1BCA8A5224B63C500EB9BEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = XellissimeTravel/Storyboard/XellissimeTravel/Storyboard/XellissimeTravel/Storyboard/Base.lproj/Photos.storyboard; sourceTree = "<group>"; };
 		C1E8220F224A6A7D00CE07F4 /* XellissimeTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XellissimeTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1E82212224A6A7D00CE07F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1E82214224A6A7D00CE07F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 		C1E8223B224A7A6200CE07F4 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				C1BCA8A4224B63C500EB9BEA /* Photos.storyboard */,
+				C1BCA8A1224B624E00EB9BEA /* Parameters.storyboard */,
 				C1BCA89F224B5C0300EB9BEA /* Translate.storyboard */,
 				C1E82240224A8C8100CE07F4 /* Weather.storyboard */,
 				C1E8223D224A84CA00CE07F4 /* Change.storyboard */,
@@ -232,8 +238,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1BCA8A3224B624E00EB9BEA /* Parameters.storyboard in Resources */,
 				C1BCA8A0224B5C0300EB9BEA /* Translate.storyboard in Resources */,
 				C1E8221D224A6A8000CE07F4 /* LaunchScreen.storyboard in Resources */,
+				C1BCA8A6224B63C500EB9BEA /* Photos.storyboard in Resources */,
 				C1E82242224A8C8100CE07F4 /* Weather.storyboard in Resources */,
 				C1E8223F224A84CA00CE07F4 /* Change.storyboard in Resources */,
 				C1E82235224A72B000CE07F4 /* APITest.plist in Resources */,
@@ -281,6 +289,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C1BCA8A1224B624E00EB9BEA /* Parameters.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1BCA8A2224B624E00EB9BEA /* Base */,
+			);
+			name = Parameters.storyboard;
+			sourceTree = "<group>";
+		};
+		C1BCA8A4224B63C500EB9BEA /* Photos.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1BCA8A5224B63C500EB9BEA /* Base */,
+			);
+			name = Photos.storyboard;
+			sourceTree = "<group>";
+		};
 		C1E82216224A6A7D00CE07F4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

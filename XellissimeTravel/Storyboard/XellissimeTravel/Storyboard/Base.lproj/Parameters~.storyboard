@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Nw-0t-v0i">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--change-->
+        <scene sceneID="y7G-Fi-557">
+            <objects>
+                <navigationController id="9Nw-0t-v0i" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="change" image="dollarblue" id="gsX-2k-nee"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="wSN-sH-dIH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.039215686270000001" green="0.37647058820000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="n2N-TW-yWI" kind="relationship" relationship="rootViewController" id="EyM-Ui-seW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10r-JO-DcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="420" y="705"/>
+        </scene>
+        <!--ChangeScreen1-->
+        <scene sceneID="CPs-8J-icu">
+            <objects>
+                <viewController title="ChangeScreen1" id="n2N-TW-yWI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BZs-Lb-FJl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In the next screen, please enter your amount in euro to change. You can switch from one currency to another as you want " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1d-cb-Q6w">
+                                <rect key="frame" x="20" y="358.5" width="374" height="179.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <color key="textColor" red="0.90196078430000004" green="0.86274509799999999" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGn-UA-ky0">
+                                <rect key="frame" x="20" y="721" width="374" height="72"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
+                                <state key="normal" title="GO">
+                                    <color key="titleColor" red="0.039215686270000001" green="0.37647058820000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="YSi-Eq-Ean" kind="show" id="zEf-Yk-cng"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.49623023040511227" green="0.69865077730000003" blue="0.61791028286676275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="4Xr-Vz-9MQ" firstAttribute="trailing" secondItem="T1d-cb-Q6w" secondAttribute="trailing" constant="20" id="44Y-s1-w0h"/>
+                            <constraint firstItem="T1d-cb-Q6w" firstAttribute="leading" secondItem="4Xr-Vz-9MQ" secondAttribute="leading" constant="20" id="AfA-hy-jBN"/>
+                            <constraint firstItem="NGn-UA-ky0" firstAttribute="leading" secondItem="4Xr-Vz-9MQ" secondAttribute="leading" constant="20" id="HuC-i5-Dmi"/>
+                            <constraint firstItem="4Xr-Vz-9MQ" firstAttribute="bottom" secondItem="NGn-UA-ky0" secondAttribute="bottom" constant="20" id="Iik-ky-YbI"/>
+                            <constraint firstItem="T1d-cb-Q6w" firstAttribute="centerY" secondItem="BZs-Lb-FJl" secondAttribute="centerY" id="YlJ-jH-qyM"/>
+                            <constraint firstItem="4Xr-Vz-9MQ" firstAttribute="trailing" secondItem="NGn-UA-ky0" secondAttribute="trailing" constant="20" id="yc2-t6-85e"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Xr-Vz-9MQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bVZ-Mi-ldF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yyb-oj-DCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1249" y="706"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yhu-S2-IqZ">
+            <objects>
+                <navigationController id="2xs-ZM-Cvw" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ggc-Lv-gda">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="yvM-zc-jPd" kind="relationship" relationship="rootViewController" id="qXu-c0-tO2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m7L-ZF-Hrc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="430" y="1376"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5Sz-wX-5aQ">
+            <objects>
+                <viewController id="yvM-zc-jPd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xrk-P0-RjO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ggV-hR-SOF"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gug-Fa-FF2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OiG-ZV-pOD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1252" y="1374"/>
+        </scene>
+        <!--Change-->
+        <scene sceneID="Xvi-8e-a1h">
+            <objects>
+                <viewController title="Change" modalTransitionStyle="flipHorizontal" id="YSi-Eq-Ean" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3PY-mQ-hx0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.49623023040000003" green="0.69865077730000003" blue="0.61791028290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.62714248900000003" green="0.32853841779999998" blue="0.53334838149999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="bzv-6z-Cgt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GOq-5x-r70" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1954" y="710"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dollarblue" width="30" height="30"/>
+    </resources>
+</document>
