@@ -27,4 +27,3 @@ class FixerAPI {
         return body
     }
 }
-// var myTargetRequest: URLRequest = createRequest(url: FixerAPI.urlEndPoint!, httpMethod: "post", httpBody: "body")
