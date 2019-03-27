@@ -53,6 +53,7 @@
                     <connections>
                         <segue destination="6GE-se-kze" kind="relationship" relationship="viewControllers" id="Px0-2v-Wdh"/>
                         <segue destination="DzT-4n-Qpk" kind="relationship" relationship="viewControllers" id="GuR-UB-iZM"/>
+                        <segue destination="5XS-js-K14" kind="relationship" relationship="viewControllers" id="mSB-FX-4u2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TUt-lf-0Ct" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -79,10 +80,21 @@
             </objects>
             <point key="canvasLocation" x="1502" y="196"/>
         </scene>
+        <!--Translate-->
+        <scene sceneID="LRb-i1-G8y">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Translate" id="5XS-js-K14" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Translate" image="google-translate-icon" id="eQq-Wl-hll"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VVY-YR-n70" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1551" y="273"/>
+        </scene>
     </scenes>
     <resources>
         <image name="MountainGif" width="3570" height="4462"/>
         <image name="dollarblue" width="30" height="30"/>
+        <image name="google-translate-icon" width="30" height="30"/>
         <image name="weather" width="30" height="30"/>
     </resources>
 </document>
