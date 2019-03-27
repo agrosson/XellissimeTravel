@@ -12,10 +12,10 @@ import UIKit
 
 
 class FixerAPI {
-    static let endPoint = "http://data.fixer.io/api/latest"
-    static let urlEndPoint = URL(string: endPoint)
-    static let httpMethod = "GET"
-    let keyAPI = "123"
+    private let endPoint = "http://data.fixer.io/api/latest"
+    lazy var urlEndPoint = URL(string: endPoint)
+    let httpMethod = "GET"
+    private let keyAPI = "123"
     var symbol: String
     lazy var body:String = createBody()
     init(symbol: String){

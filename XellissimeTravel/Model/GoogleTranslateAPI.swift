@@ -10,5 +10,22 @@ import Foundation
 import UIKit
 
 class GoogleTranslateAPI {
-    let endPoint = "https://translation.googleapis.com/language/translate/v2"
+    private let endPoint = "https://translation.googleapis.com/language/translate/v2"
+    lazy var urlEndPoint = URL(string: endPoint)
+    let httpMethod = "GET"
+    private let keyAPI = "789"
+    var textInput: String
+    var targetLanguage: String
+    var sourceLanguage: String
+    var format = "text"
+    lazy var body:String = createBody()
+    init(textInput: String, targetLanguage: String, sourceLanguage: String){
+        self.textInput = textInput
+        self.targetLanguage = targetLanguage
+        self.sourceLanguage = sourceLanguage
+    }
+    func createBody() -> String {
+        let body = "q=\(textInput)&target=\(targetLanguage)&format=\(format)&source=\(sourceLanguage)&key=\(keyAPI)"
+        return body
+    }
 }

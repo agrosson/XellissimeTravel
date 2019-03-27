@@ -20,9 +20,11 @@ import UIKit
 
 // MARK: API EndPoint :  variable to switch from one API to another
 
-var myTargetRequest: URLRequest = createRequest(url: FixerAPI.urlEndPoint!, httpMethod: FixerAPI.httpMethod, httpBody: FixerAPI(symbol: "usd").body)
+private var myAPI = GoogleTranslateAPI(textInput: "je cherche un traducteur", targetLanguage: "en", sourceLanguage: "fr")
 
-func createRequest(url: URL, httpMethod: String, httpBody: String) -> URLRequest {
+private var myTargetRequest: URLRequest = createRequest(url: myAPI.urlEndPoint!, httpMethod: myAPI.httpMethod, httpBody: myAPI.body)
+
+private func createRequest(url: URL, httpMethod: String, httpBody: String) -> URLRequest {
     var request = URLRequest(url: url)
     request.httpMethod = httpMethod
     request.httpBody = httpBody.data(using: .utf8)
