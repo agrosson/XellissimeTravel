@@ -19,19 +19,23 @@ import UIKit
  */
 
 // MARK: API EndPoint :  variable to switch from one API to another
-var myTargetUrl = FixerAPI().endPoint
+
+var myTargetRequest: URLRequest = createRequest(url: FixerAPI.urlEndPoint!, httpMethod: FixerAPI.httpMethod, httpBody: FixerAPI(symbol: "usd").body)
+
+func createRequest(url: URL, httpMethod: String, httpBody: String) -> URLRequest {
+    var request = URLRequest(url: url)
+    request.httpMethod = httpMethod
+    request.httpBody = httpBody.data(using: .utf8)
+    return request
+}
 
 // MARK: Networking class
 class NetworkManager {
     // MARK: Networking properties
     static var shared = NetworkManager()
     private init(){}
-    
-    // Url to use for API Call
-    
-    #warning("may be change in not private and var")
-    private static let targetUrl = URL(string: myTargetUrl)
-    
+    // Task creation
+    private var task = URLSessionTask?.self
     
 }
 
