@@ -15,10 +15,19 @@ class ChangeScreen2ViewController: UIViewController {
     
     @IBOutlet weak var textFieldFX: UITextField!
     
+   @IBOutlet weak var flag: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldFX.delegate = self
         gestureTapCreation()
+        
+        
+        let bundle = FlagKit.assetBundle
+        let flagIma:UIImage = UIImage.init(named: "US", in: bundle, compatibleWith: nil)!
+        flag.image = flagIma
+       
         // Do any additional setup after loading the view.
     }
     

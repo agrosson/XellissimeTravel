@@ -1,0 +1,6 @@
+framework module Pods_XellissimeTravel {
+  umbrella header "Pods-XellissimeTravel-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - FlagKit (1.1.1)
+
+DEPENDENCIES:
+  - FlagKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FlagKit
+
+SPEC CHECKSUMS:
+  FlagKit: 8e37733affacc62ba877217195b82c8b44ccfcaf
+
+PODFILE CHECKSUM: 53428444fc56e582a1d7788882bce8773fbae62a
+
+COCOAPODS: 1.5.3

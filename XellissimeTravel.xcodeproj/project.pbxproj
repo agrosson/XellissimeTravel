@@ -10,6 +10,11 @@
 		590FA15BF769258C70FA3051 /* Pods_XellissimeTravelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C754669E6161F038E74209 /* Pods_XellissimeTravelTests.framework */; };
 		C12D0D87224BB484001B8525 /* ChangeScreen1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D0D86224BB484001B8525 /* ChangeScreen1ViewController.swift */; };
 		C12D0D89224BEF20001B8525 /* TranslateScreen1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */; };
+		C1AFB913224D5290009593C2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C1AFB90D224D5290009593C2 /* LICENSE */; };
+		C1AFB914224D5290009593C2 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AFB90F224D5290009593C2 /* UIImage.swift */; };
+		C1AFB915224D5290009593C2 /* FlagKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AFB910224D5290009593C2 /* FlagKit.swift */; };
+		C1AFB916224D5290009593C2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C1AFB911224D5290009593C2 /* README.md */; };
+		C1AFB917224D5290009593C2 /* FlagKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1AFB912224D5290009593C2 /* FlagKit.xcassets */; };
 		C1B4A8BB224D205D002CD0A6 /* ChangeScreen2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B4A8BA224D205D002CD0A6 /* ChangeScreen2ViewController.swift */; };
 		C1BCA8A0224B5C0300EB9BEA /* Translate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BCA89F224B5C0300EB9BEA /* Translate.storyboard */; };
 		C1BCA8A3224B624E00EB9BEA /* Parameters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BCA8A1224B624E00EB9BEA /* Parameters.storyboard */; };
@@ -48,6 +53,11 @@
 		A16B82D0B8FB27B6001B1317 /* Pods-XellissimeTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XellissimeTravel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XellissimeTravel/Pods-XellissimeTravel.debug.xcconfig"; sourceTree = "<group>"; };
 		C12D0D86224BB484001B8525 /* ChangeScreen1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeScreen1ViewController.swift; sourceTree = "<group>"; };
 		C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreen1ViewController.swift; sourceTree = "<group>"; };
+		C1AFB90D224D5290009593C2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C1AFB90F224D5290009593C2 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		C1AFB910224D5290009593C2 /* FlagKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagKit.swift; sourceTree = "<group>"; };
+		C1AFB911224D5290009593C2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C1AFB912224D5290009593C2 /* FlagKit.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FlagKit.xcassets; sourceTree = "<group>"; };
 		C1B4A8BA224D205D002CD0A6 /* ChangeScreen2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeScreen2ViewController.swift; sourceTree = "<group>"; };
 		C1BCA89F224B5C0300EB9BEA /* Translate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Translate.storyboard; sourceTree = "<group>"; };
 		C1BCA8A2224B624E00EB9BEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = XellissimeTravel/Storyboard/XellissimeTravel/Storyboard/Base.lproj/Parameters.storyboard; sourceTree = "<group>"; };
@@ -114,12 +124,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C1AFB90C224D5290009593C2 /* FlagKit */ = {
+			isa = PBXGroup;
+			children = (
+				C1AFB90D224D5290009593C2 /* LICENSE */,
+				C1AFB90E224D5290009593C2 /* Source */,
+				C1AFB911224D5290009593C2 /* README.md */,
+				C1AFB912224D5290009593C2 /* FlagKit.xcassets */,
+			);
+			name = FlagKit;
+			path = Pods/FlagKit;
+			sourceTree = "<group>";
+		};
+		C1AFB90E224D5290009593C2 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C1AFB90F224D5290009593C2 /* UIImage.swift */,
+				C1AFB910224D5290009593C2 /* FlagKit.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		C1E82206224A6A7C00CE07F4 = {
 			isa = PBXGroup;
 			children = (
 				C1E82211224A6A7D00CE07F4 /* XellissimeTravel */,
 				C1E82226224A6A8000CE07F4 /* XellissimeTravelTests */,
 				C1E82210224A6A7D00CE07F4 /* Products */,
+				C1AFB90C224D5290009593C2 /* FlagKit */,
 				BCD997F8D094402041BC6F9C /* Pods */,
 				0CCB1C84DB9EE7BF849DE4CF /* Frameworks */,
 			);
@@ -296,12 +328,15 @@
 			files = (
 				C1BCA8A3224B624E00EB9BEA /* Parameters.storyboard in Resources */,
 				C1BCA8A0224B5C0300EB9BEA /* Translate.storyboard in Resources */,
+				C1AFB917224D5290009593C2 /* FlagKit.xcassets in Resources */,
 				C1E8221D224A6A8000CE07F4 /* LaunchScreen.storyboard in Resources */,
 				C1BCA8A6224B63C500EB9BEA /* Photos.storyboard in Resources */,
+				C1AFB913224D5290009593C2 /* LICENSE in Resources */,
 				C1E82242224A8C8100CE07F4 /* Weather.storyboard in Resources */,
 				C1E8223F224A84CA00CE07F4 /* Change.storyboard in Resources */,
 				C1E82235224A72B000CE07F4 /* APITest.plist in Resources */,
 				C1E8221A224A6A8000CE07F4 /* Assets.xcassets in Resources */,
+				C1AFB916224D5290009593C2 /* README.md in Resources */,
 				C1E82218224A6A7D00CE07F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +425,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1BCA8A8224B67B100EB9BEA /* APIManager.swift in Sources */,
+				C1AFB914224D5290009593C2 /* UIImage.swift in Sources */,
+				C1AFB915224D5290009593C2 /* FlagKit.swift in Sources */,
 				C1E82215224A6A7D00CE07F4 /* ViewController.swift in Sources */,
 				C1E82237224A79E900CE07F4 /* InitialScreenViewController.swift in Sources */,
 				C12D0D89224BEF20001B8525 /* TranslateScreen1ViewController.swift in Sources */,

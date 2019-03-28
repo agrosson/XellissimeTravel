@@ -114,6 +114,13 @@
                                     <outlet property="delegate" destination="YSi-Eq-Ean" id="9E6-dq-RuB"/>
                                 </connections>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8ge-dy-rwU">
+                                <rect key="frame" x="182" y="423" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BZY-bM-Zfg"/>
+                                    <constraint firstAttribute="width" constant="50" id="HEz-eS-4cg"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.49623023040000003" green="0.69865077730000003" blue="0.61791028290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.62714248900000003" green="0.32853841779999998" blue="0.53334838149999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -125,18 +132,21 @@
                             <constraint firstItem="3CI-Ah-oEX" firstAttribute="leading" secondItem="bzv-6z-Cgt" secondAttribute="leading" constant="20" id="bCM-n4-KDG"/>
                             <constraint firstItem="ceE-UH-HPu" firstAttribute="leading" secondItem="bzv-6z-Cgt" secondAttribute="leading" constant="20" id="dnc-Cp-skZ"/>
                             <constraint firstItem="T8H-rS-aw7" firstAttribute="leading" secondItem="bzv-6z-Cgt" secondAttribute="leading" constant="20" id="jbP-pi-2TZ"/>
+                            <constraint firstItem="8ge-dy-rwU" firstAttribute="centerX" secondItem="3PY-mQ-hx0" secondAttribute="centerX" id="jiz-vC-3hf"/>
                             <constraint firstItem="bzv-6z-Cgt" firstAttribute="trailing" secondItem="ceE-UH-HPu" secondAttribute="trailing" constant="20" id="jo9-bq-ywd"/>
                             <constraint firstItem="ceE-UH-HPu" firstAttribute="top" secondItem="3CI-Ah-oEX" secondAttribute="bottom" constant="20" id="vKW-go-mH5"/>
+                            <constraint firstItem="8ge-dy-rwU" firstAttribute="centerY" secondItem="3PY-mQ-hx0" secondAttribute="centerY" id="wxZ-57-NqQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bzv-6z-Cgt"/>
                     </view>
                     <connections>
+                        <outlet property="flag" destination="8ge-dy-rwU" id="f9t-qe-8Ul"/>
                         <outlet property="textFieldFX" destination="ceE-UH-HPu" id="dMt-IZ-rA8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOq-5x-r70" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1470" y="709"/>
+            <point key="canvasLocation" x="1117" y="706"/>
         </scene>
     </scenes>
     <resources>
