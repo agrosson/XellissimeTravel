@@ -35,12 +35,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10r-JO-DcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="420" y="705"/>
+            <point key="canvasLocation" x="-349" y="702"/>
         </scene>
         <!--ChangeScreen1-->
         <scene sceneID="CPs-8J-icu">
             <objects>
-                <viewController title="ChangeScreen1" id="n2N-TW-yWI" customClass="ChangeSreen1ViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ChangeScreen1" id="n2N-TW-yWI" customClass="ChangeScreen1ViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BZs-Lb-FJl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,23 +78,65 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yyb-oj-DCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1249" y="706"/>
+            <point key="canvasLocation" x="380" y="706"/>
         </scene>
         <!--Change-->
         <scene sceneID="Xvi-8e-a1h">
             <objects>
-                <viewController title="Change" modalTransitionStyle="flipHorizontal" id="YSi-Eq-Ean" sceneMemberID="viewController">
+                <viewController title="Change" modalTransitionStyle="flipHorizontal" id="YSi-Eq-Ean" customClass="ChangeScreen2ViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3PY-mQ-hx0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8H-rS-aw7">
+                                <rect key="frame" x="20" y="721" width="374" height="72"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
+                                <state key="normal" title="GO">
+                                    <color key="titleColor" red="0.039215686270000001" green="0.37647058820000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="goFXButton:" destination="YSi-Eq-Ean" eventType="touchUpInside" id="9xE-oj-qch"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your amount to change..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CI-Ah-oEX">
+                                <rect key="frame" x="20" y="108" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your amount here" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ceE-UH-HPu">
+                                <rect key="frame" x="20" y="152" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.49623023040000003" green="0.69865077730000003" blue="0.61791028290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="go"/>
+                                <connections>
+                                    <outlet property="delegate" destination="YSi-Eq-Ean" id="9E6-dq-RuB"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="0.49623023040000003" green="0.69865077730000003" blue="0.61791028290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.62714248900000003" green="0.32853841779999998" blue="0.53334838149999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="bzv-6z-Cgt" firstAttribute="bottom" secondItem="T8H-rS-aw7" secondAttribute="bottom" constant="20" id="2LJ-vy-Vhh"/>
+                            <constraint firstItem="3CI-Ah-oEX" firstAttribute="top" secondItem="bzv-6z-Cgt" secondAttribute="top" constant="20" id="Bki-kq-Q25"/>
+                            <constraint firstItem="bzv-6z-Cgt" firstAttribute="trailing" secondItem="T8H-rS-aw7" secondAttribute="trailing" constant="20" id="Mi8-hq-4pp"/>
+                            <constraint firstItem="bzv-6z-Cgt" firstAttribute="trailing" secondItem="3CI-Ah-oEX" secondAttribute="trailing" constant="20" id="QNL-f7-0vS"/>
+                            <constraint firstItem="3CI-Ah-oEX" firstAttribute="leading" secondItem="bzv-6z-Cgt" secondAttribute="leading" constant="20" id="bCM-n4-KDG"/>
+                            <constraint firstItem="ceE-UH-HPu" firstAttribute="leading" secondItem="bzv-6z-Cgt" secondAttribute="leading" constant="20" id="dnc-Cp-skZ"/>
+                            <constraint firstItem="T8H-rS-aw7" firstAttribute="leading" secondItem="bzv-6z-Cgt" secondAttribute="leading" constant="20" id="jbP-pi-2TZ"/>
+                            <constraint firstItem="bzv-6z-Cgt" firstAttribute="trailing" secondItem="ceE-UH-HPu" secondAttribute="trailing" constant="20" id="jo9-bq-ywd"/>
+                            <constraint firstItem="ceE-UH-HPu" firstAttribute="top" secondItem="3CI-Ah-oEX" secondAttribute="bottom" constant="20" id="vKW-go-mH5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bzv-6z-Cgt"/>
                     </view>
+                    <connections>
+                        <outlet property="textFieldFX" destination="ceE-UH-HPu" id="dMt-IZ-rA8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOq-5x-r70" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1954" y="710"/>
+            <point key="canvasLocation" x="1470" y="709"/>
         </scene>
     </scenes>
     <resources>

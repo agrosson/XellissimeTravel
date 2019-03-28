@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChangeSreen1ViewController: UIViewController {
+class ChangeScreen1ViewController: UIViewController {
     
     @IBAction func changeGoButton(_ sender: UIButton) {
         let api = FixerAPI(symbol: "GBP")
