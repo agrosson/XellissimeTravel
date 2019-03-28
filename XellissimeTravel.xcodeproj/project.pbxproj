@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C12D0D87224BB484001B8525 /* ChangeSreen1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D0D86224BB484001B8525 /* ChangeSreen1ViewController.swift */; };
+		C12D0D89224BEF20001B8525 /* TranslateScreen1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */; };
 		C1BCA8A0224B5C0300EB9BEA /* Translate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BCA89F224B5C0300EB9BEA /* Translate.storyboard */; };
 		C1BCA8A3224B624E00EB9BEA /* Parameters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BCA8A1224B624E00EB9BEA /* Parameters.storyboard */; };
 		C1BCA8A6224B63C500EB9BEA /* Photos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BCA8A4224B63C500EB9BEA /* Photos.storyboard */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C12D0D86224BB484001B8525 /* ChangeSreen1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSreen1ViewController.swift; sourceTree = "<group>"; };
+		C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreen1ViewController.swift; sourceTree = "<group>"; };
 		C1BCA89F224B5C0300EB9BEA /* Translate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Translate.storyboard; sourceTree = "<group>"; };
 		C1BCA8A2224B624E00EB9BEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = XellissimeTravel/Storyboard/XellissimeTravel/Storyboard/Base.lproj/Parameters.storyboard; sourceTree = "<group>"; };
 		C1BCA8A5224B63C500EB9BEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = XellissimeTravel/Storyboard/XellissimeTravel/Storyboard/XellissimeTravel/Storyboard/Base.lproj/Photos.storyboard; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 		C1E82238224A79FB00CE07F4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C12D0D86224BB484001B8525 /* ChangeSreen1ViewController.swift */,
+				C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */,
 				C1E82214224A6A7D00CE07F4 /* ViewController.swift */,
 				C1E82236224A79E900CE07F4 /* InitialScreenViewController.swift */,
 			);
@@ -279,7 +285,9 @@
 				C1BCA8A8224B67B100EB9BEA /* APIManager.swift in Sources */,
 				C1E82215224A6A7D00CE07F4 /* ViewController.swift in Sources */,
 				C1E82237224A79E900CE07F4 /* InitialScreenViewController.swift in Sources */,
+				C12D0D89224BEF20001B8525 /* TranslateScreen1ViewController.swift in Sources */,
 				C1BCA8AA224B733A00EB9BEA /* FixerAPI.swift in Sources */,
+				C12D0D87224BB484001B8525 /* ChangeSreen1ViewController.swift in Sources */,
 				C1BCA8AC224B73AA00EB9BEA /* GoogleTranslateAPI.swift in Sources */,
 				C1BCA8AE224B74A800EB9BEA /* OpenweathermapAPI.swift in Sources */,
 				C1E82213224A6A7D00CE07F4 /* AppDelegate.swift in Sources */,
@@ -479,6 +487,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2UG4LAMEK9;
 				INFOPLIST_FILE = XellissimeTravel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,6 +506,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2UG4LAMEK9;
 				INFOPLIST_FILE = XellissimeTravel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

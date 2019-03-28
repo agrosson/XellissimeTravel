@@ -40,7 +40,7 @@
         <!--ChangeScreen1-->
         <scene sceneID="CPs-8J-icu">
             <objects>
-                <viewController title="ChangeScreen1" id="n2N-TW-yWI" sceneMemberID="viewController">
+                <viewController title="ChangeScreen1" id="n2N-TW-yWI" customClass="ChangeSreen1ViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BZs-Lb-FJl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,6 +58,7 @@
                                     <color key="titleColor" red="0.039215686270000001" green="0.37647058820000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
+                                    <action selector="changeGoButton:" destination="n2N-TW-yWI" eventType="touchUpInside" id="Emd-ID-WYV"/>
                                     <segue destination="YSi-Eq-Ean" kind="show" id="zEf-Yk-cng"/>
                                 </connections>
                             </button>

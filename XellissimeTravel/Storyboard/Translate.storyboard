@@ -32,10 +32,10 @@
             </objects>
             <point key="canvasLocation" x="-468" y="1457"/>
         </scene>
-        <!--View Controller-->
+        <!--Translate Screen1 View Controller-->
         <scene sceneID="y5b-lQ-bhA">
             <objects>
-                <viewController id="3w1-Tg-99G" sceneMemberID="viewController">
+                <viewController id="3w1-Tg-99G" customClass="TranslateScreen1ViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FcV-Fc-GfZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,6 +53,7 @@
                                     <color key="titleColor" red="0.039215686270000001" green="0.37647058820000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
+                                    <action selector="translareGoButton:" destination="3w1-Tg-99G" eventType="touchUpInside" id="Fj4-qI-RZf"/>
                                     <segue destination="gsX-8q-OCL" kind="show" id="guC-Mc-GTG"/>
                                 </connections>
                             </button>
