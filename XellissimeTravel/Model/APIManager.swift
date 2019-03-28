@@ -20,16 +20,7 @@ import UIKit
 
 // MARK: API EndPoint :  variable to switch from one API to another
 
-private var myAPI = FixerAPI(symbol: "usd")
 
-private var myTargetRequest: URLRequest = createRequest(url: myAPI.urlEndPoint!, httpMethod: myAPI.httpMethod, httpBody: myAPI.body)
-
-private func createRequest(url: URL, httpMethod: String, httpBody: String) -> URLRequest {
-    var request = URLRequest(url: url)
-    request.httpMethod = httpMethod
-    request.httpBody = httpBody.data(using: .utf8)
-    return request
-}
 
 // MARK: Networking class
 class NetworkManager {
@@ -38,10 +29,12 @@ class NetworkManager {
     private init(){}
     // Task creation
     private var task = URLSessionTask?.self
-    
-   // #warning("this is for Fixer : changes will be made later on")
-    func getChange(callBack : @escaping (Bool,String?) -> ()) {
-        let request = myTargetRequest
+}
+
+extension NetworkManager {
+    func getChange(fullUrl : URL,method : String,ToCurrency: String, callBack : @escaping (Bool,Float?) -> ()) {
+        var request = URLRequest(url: fullUrl)
+        request.httpMethod = method
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
@@ -53,22 +46,16 @@ class NetworkManager {
                     callBack(false,nil)
                     return
                 }
-//                guard let responseJson = try? JSONDecoder().decode([FixerAnswer].self, from: data),
-//                    
-//                    let changeResult? = responseJson[0]
-//                    
-//                else { callBack(false, nil)
-//                    return}
-                callBack(true,"result")
-            
+                guard let responseJson = try? JSONDecoder().decode(ExchangeAnswer.self, from: data),
+                    let changeResult = responseJson.rates
+                    else {
+                        callBack(false, nil)
+                        return
                 }
+                let test = changeResult[ToCurrency]
+                callBack(true,test)
             }
-        
+        }
         task.resume()
-  
     }
- 
-    
-    // answer for Fixer is type [String : Any]
 }
-

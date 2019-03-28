@@ -9,24 +9,22 @@
 import UIKit
 
 class ChangeSreen1ViewController: UIViewController {
-
+    
     @IBAction func changeGoButton(_ sender: UIButton) {
-        
+        let api = FixerAPI(symbol: "GBP")
+        let fullUrl = api.createFullUrl()
+        let method = api.httpMethod
         let myFirstCall = NetworkManager.shared
-        print("CHANGE SCREEN étape 2")
-        myFirstCall.ChangeRequest(completionHandler: { (rateLevel) in
-            print("CHANGE SCREEN étape 3")
-            if rateLevel != nil {
-                 print(rateLevel!)
+        myFirstCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in
+            if textresult != nil {
+                print(textresult!)
             } else {
-                print("putain d'erreur")
+                print("Mince encore une erreur")
             }
-        })
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 }

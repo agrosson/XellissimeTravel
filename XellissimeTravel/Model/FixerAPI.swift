@@ -9,28 +9,29 @@
 import Foundation
 import UIKit
 
-
-
 class FixerAPI {
     private let endPoint = "http://data.fixer.io/api/latest"
     lazy var urlEndPoint = URL(string: endPoint)
     let httpMethod = "GET"
     private let keyAPI = "123"
     var symbol: String
-    lazy var body:String = createBody()
+    lazy var fixerFullUrl:URL? = createFullUrl()
     init(symbol: String){
         self.symbol = symbol
     }
     
-    func createBody() -> String {
+    func createFullUrl() -> URL? {
+        let endPointUrl = endPoint
         let body = "access_key=\(keyAPI)&base=EUR&symbols=\(symbol)"
-        return body
+        let fullUrl = "\(endPointUrl)?\(body)"
+        guard let url = URL(string: fullUrl) else { return nil }
+        return url
     }
 }
 
-struct FixerAnswer: Codable {
+struct ExchangeAnswer: Codable {
     let success: Bool?
     let timestamp: Int?
     let base, date: String?
-    let rates: [String: Double]?
+    let rates: [String:Float]?
 }
