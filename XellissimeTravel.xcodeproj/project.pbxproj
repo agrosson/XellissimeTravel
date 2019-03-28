@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		590FA15BF769258C70FA3051 /* Pods_XellissimeTravelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C754669E6161F038E74209 /* Pods_XellissimeTravelTests.framework */; };
 		C12D0D87224BB484001B8525 /* ChangeScreen1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D0D86224BB484001B8525 /* ChangeScreen1ViewController.swift */; };
 		C12D0D89224BEF20001B8525 /* TranslateScreen1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */; };
 		C1B4A8BB224D205D002CD0A6 /* ChangeScreen2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B4A8BA224D205D002CD0A6 /* ChangeScreen2ViewController.swift */; };
@@ -27,6 +28,7 @@
 		C1E82237224A79E900CE07F4 /* InitialScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E82236224A79E900CE07F4 /* InitialScreenViewController.swift */; };
 		C1E8223F224A84CA00CE07F4 /* Change.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E8223D224A84CA00CE07F4 /* Change.storyboard */; };
 		C1E82242224A8C8100CE07F4 /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E82240224A8C8100CE07F4 /* Weather.storyboard */; };
+		E880925B2CB36DAB104F1CC6 /* Pods_XellissimeTravel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034716EB3553D55E611F7A9D /* Pods_XellissimeTravel.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		034716EB3553D55E611F7A9D /* Pods_XellissimeTravel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XellissimeTravel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60C754669E6161F038E74209 /* Pods_XellissimeTravelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XellissimeTravelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B325D83C17BEDC9DCF16CCA /* Pods-XellissimeTravelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XellissimeTravelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XellissimeTravelTests/Pods-XellissimeTravelTests.release.xcconfig"; sourceTree = "<group>"; };
+		A16B82D0B8FB27B6001B1317 /* Pods-XellissimeTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XellissimeTravel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XellissimeTravel/Pods-XellissimeTravel.debug.xcconfig"; sourceTree = "<group>"; };
 		C12D0D86224BB484001B8525 /* ChangeScreen1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeScreen1ViewController.swift; sourceTree = "<group>"; };
 		C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreen1ViewController.swift; sourceTree = "<group>"; };
 		C1B4A8BA224D205D002CD0A6 /* ChangeScreen2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeScreen2ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +70,8 @@
 		C1E82236224A79E900CE07F4 /* InitialScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreenViewController.swift; sourceTree = "<group>"; };
 		C1E8223E224A84CA00CE07F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = XellissimeTravel/Storyboard/Base.lproj/Change.storyboard; sourceTree = "<group>"; };
 		C1E82241224A8C8100CE07F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = XellissimeTravel/Storyboard/XellissimeTravel/Storyboard/Base.lproj/Weather.storyboard; sourceTree = "<group>"; };
+		D3602D5B98C5DCF403F90C66 /* Pods-XellissimeTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XellissimeTravel.release.xcconfig"; path = "Pods/Target Support Files/Pods-XellissimeTravel/Pods-XellissimeTravel.release.xcconfig"; sourceTree = "<group>"; };
+		E764098A0C3852E294D7EA07 /* Pods-XellissimeTravelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XellissimeTravelTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XellissimeTravelTests/Pods-XellissimeTravelTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E880925B2CB36DAB104F1CC6 /* Pods_XellissimeTravel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,18 +87,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				590FA15BF769258C70FA3051 /* Pods_XellissimeTravelTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CCB1C84DB9EE7BF849DE4CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				034716EB3553D55E611F7A9D /* Pods_XellissimeTravel.framework */,
+				60C754669E6161F038E74209 /* Pods_XellissimeTravelTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCD997F8D094402041BC6F9C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A16B82D0B8FB27B6001B1317 /* Pods-XellissimeTravel.debug.xcconfig */,
+				D3602D5B98C5DCF403F90C66 /* Pods-XellissimeTravel.release.xcconfig */,
+				E764098A0C3852E294D7EA07 /* Pods-XellissimeTravelTests.debug.xcconfig */,
+				9B325D83C17BEDC9DCF16CCA /* Pods-XellissimeTravelTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C1E82206224A6A7C00CE07F4 = {
 			isa = PBXGroup;
 			children = (
 				C1E82211224A6A7D00CE07F4 /* XellissimeTravel */,
 				C1E82226224A6A8000CE07F4 /* XellissimeTravelTests */,
 				C1E82210224A6A7D00CE07F4 /* Products */,
+				BCD997F8D094402041BC6F9C /* Pods */,
+				0CCB1C84DB9EE7BF849DE4CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,6 +217,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1E8222C224A6A8000CE07F4 /* Build configuration list for PBXNativeTarget "XellissimeTravel" */;
 			buildPhases = (
+				0428C62A34E23F3D853D6B08 /* [CP] Check Pods Manifest.lock */,
 				C1E8220B224A6A7D00CE07F4 /* Sources */,
 				C1E8220C224A6A7D00CE07F4 /* Frameworks */,
 				C1E8220D224A6A7D00CE07F4 /* Resources */,
@@ -202,9 +235,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1E8222F224A6A8000CE07F4 /* Build configuration list for PBXNativeTarget "XellissimeTravelTests" */;
 			buildPhases = (
+				2510FA6F2F2A5A764EAD728C /* [CP] Check Pods Manifest.lock */,
 				C1E8221F224A6A8000CE07F4 /* Sources */,
 				C1E82220224A6A8000CE07F4 /* Frameworks */,
 				C1E82221224A6A8000CE07F4 /* Resources */,
+				E22B316DA5A6AC70741BB142 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,6 +314,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0428C62A34E23F3D853D6B08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XellissimeTravel-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2510FA6F2F2A5A764EAD728C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XellissimeTravelTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E22B316DA5A6AC70741BB142 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-XellissimeTravelTests/Pods-XellissimeTravelTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FlagKit/FlagKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlagKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XellissimeTravelTests/Pods-XellissimeTravelTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C1E8220B224A6A7D00CE07F4 /* Sources */ = {
@@ -486,6 +590,7 @@
 		};
 		C1E8222D224A6A8000CE07F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A16B82D0B8FB27B6001B1317 /* Pods-XellissimeTravel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -505,6 +610,7 @@
 		};
 		C1E8222E224A6A8000CE07F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3602D5B98C5DCF403F90C66 /* Pods-XellissimeTravel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -524,6 +630,7 @@
 		};
 		C1E82230224A6A8000CE07F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E764098A0C3852E294D7EA07 /* Pods-XellissimeTravelTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -545,6 +652,7 @@
 		};
 		C1E82231224A6A8000CE07F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B325D83C17BEDC9DCF16CCA /* Pods-XellissimeTravelTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
