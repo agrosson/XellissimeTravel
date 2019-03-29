@@ -12,6 +12,22 @@ class ChangeScreen2ViewController: UIViewController {
 
     @IBOutlet weak var currencyPicker: UIPickerView!
     @IBAction func goFXButton(_ sender: Any) {
+        let pickerIndex = currencyPicker.selectedRow(inComponent: 0)
+        let currencySymbol = CurrencyDataBase.dB[pickerIndex]
+        let api = FixerAPI(symbol: currencySymbol)
+        let fullUrl = api.createFullUrl()
+        let method = api.httpMethod
+        let myFirstCall = NetworkManager.shared
+        myFirstCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in
+            if textresult != nil {
+                print(textresult!)
+            } else {
+                print("Mince encore une erreur")
+            }
+        }
+        
+        
+        
     }
     
     @IBAction func switchCurrencyButton(_ sender: Any) {
