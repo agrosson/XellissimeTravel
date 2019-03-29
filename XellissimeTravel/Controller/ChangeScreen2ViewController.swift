@@ -6,31 +6,69 @@
 //  Copyright © 2019 GROSSON. All rights reserved.
 //
 
+/**
+ Function that adds a digit when user types a number for the calculation
+ - Parameter newNumber: The digit chosen by user on screen
+ - Returns: The string to be displayed on screen
+ 
+ # Important Notes #
+ 0 as first character of the number is not displayed on screen
+ */
+
+
 import UIKit
 
 class ChangeScreen2ViewController: UIViewController {
-    lazy var amountToConvert = (textFieldFX.text! as NSString).floatValue
+    
+    // MARK: - Properties
+    /// Initial exchange rate set at 1
     var myRateResult: Float = 1
+    /// Currency for flag: default EUR
+    var currencyOne = "EU"
+    /// Currency target for flag: default US
+    var currencyTwo = "US"
+    /// Bundle where Flags images are stored
+    let bundle = FlagKit.assetBundle
+    /// Image one for flag, initial with currencyOne
+    lazy var flagImageOne:UIImage = UIImage.init(named: currencyOne, in: bundle, compatibleWith: nil)!
+    /// Image two for flag, initial with CurrencyTwo
+    lazy var flagImageTwo:UIImage = UIImage.init(named: currencyTwo, in: bundle, compatibleWith: nil)!
+    /// Initial settings for flag One
+    lazy var flagOneInitial = flagImageOne
+    /// Initial settings for flag Two
+    lazy var flagTwoInitial = flagImageTwo
+    /// Amount to convert
+    lazy var amountToConvert = (textFieldFX.text! as NSString).floatValue
+    
+    // MARK: - Outlets - Labels
     @IBOutlet weak var amountToConvertLabel: UILabel!
-    
     @IBOutlet weak var amountConvertedLabel: UILabel!
+    @IBOutlet weak var rateLabel: UILabel!
     
+    // MARK: - Outlets - PickerView
     @IBOutlet weak var currencyPicker: UIPickerView!
+    
+    // MARK: - Outlets - TextField
+    @IBOutlet weak var textFieldFX: UITextField!
+    
+    // MARK: - Outlets - ImageView
+    @IBOutlet weak var flagLeft: UIImageView!
+    @IBOutlet weak var flagRight: UIImageView!
+    
+    // MARK: - Actions
+    
     @IBAction func goFXButton(_ sender: Any) {
-        amountToConvert = (textFieldFX.text! as NSString).floatValue
         let pickerIndex = currencyPicker.selectedRow(inComponent: 0)
         let currencySymbol = CurrencyDataBase.dB[pickerIndex]
-
-        
-        flagLeft.image = flagOneInitial
-        flagRight.image = flagTwoInitial
-        flagImageOne = flagOneInitial
-        flagImageTwo = flagTwoInitial
-        
         let api = FixerAPI(symbol: currencySymbol)
         let fullUrl = api.createFullUrl()
         let method = api.httpMethod
         let myFirstCall = NetworkManager.shared
+        amountToConvert = (textFieldFX.text! as NSString).floatValue
+        flagLeft.image = flagOneInitial
+        flagRight.image = flagTwoInitial
+        flagImageOne = flagOneInitial
+        flagImageTwo = flagTwoInitial
         myFirstCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in
             if textresult != nil {
                 self.rateLabel.text = String(format: "%.4f", textresult!)
@@ -39,45 +77,38 @@ class ChangeScreen2ViewController: UIViewController {
                 self.amountConvertedLabel.text = String(format: "%.2f", (self.amountToConvert*self.myRateResult))
                 print(textresult!)
             } else {
-                print("Mince encore une erreur")
+                print("Sorry there is an error somewhere")
             }
         }
     }
-    
+    // Enable to switch converted amount and amount to convert
     @IBAction func switchCurrencyButton(_ sender: Any) {
         switchFlag()
         switchAmount()
     }
-    @IBOutlet weak var textFieldFX: UITextField!
-    
-   @IBOutlet weak var flagLeft: UIImageView!
-    
-    @IBOutlet weak var flagRight: UIImageView!
-    
-    @IBOutlet weak var rateLabel: UILabel!
-    var currencyOne = "EU"
-    var currencyTwo = "US"
-    let bundle = FlagKit.assetBundle
-    lazy var flagImageOne:UIImage = UIImage.init(named: currencyOne, in: bundle, compatibleWith: nil)!
-    lazy var flagImageTwo:UIImage = UIImage.init(named: currencyTwo, in: bundle, compatibleWith: nil)!
-    lazy var flagOneInitial = flagImageOne
-    lazy var flagTwoInitial = flagImageTwo
+     // MARK: - Methods - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldFX.delegate = self
         gestureTapCreation()
         flagLeft.image = flagImageOne
         flagRight.image = flagImageTwo
-        
-       
-        // Do any additional setup after loading the view.
     }
+    
+     // MARK: - Methods
+  
+    /**
+     Function that switches amount to convert and converted amount. It calculates also the new rate to use
+     */
     private func switchAmount(){
         myRateResult = 1/myRateResult
         rateLabel.text = String(format: "%.4f", myRateResult)
         self.amountConvertedLabel.text = String(format: "%.2f", (amountToConvert*myRateResult))
-        
     }
+    
+    /**
+     Function that switches flag images
+     */
     private func switchFlag(){
         let tempImage = flagImageOne
         flagImageOne = flagImageTwo
@@ -86,15 +117,23 @@ class ChangeScreen2ViewController: UIViewController {
         flagRight.image = flagImageTwo
     }
     
+    /**
+     Function that creates a tapGestureRecognizer
+     */
     private func gestureTapCreation(){
         let mytapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(myTap))
         mytapGestureRecognizer.numberOfTapsRequired = 1
         self.view.addGestureRecognizer(mytapGestureRecognizer)
     }
+    /**
+     Function that creates an action for a tapGestureRecognizer. Dissmiss Keyboard
+     */
     @objc func myTap(){
         textFieldFX.resignFirstResponder()
     }
 }
+
+ // MARK: - Extension - TextfieldDelegate
 
 extension ChangeScreen2ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -110,15 +149,25 @@ extension ChangeScreen2ViewController: UITextFieldDelegate {
         return replacementText.isValidDouble(maxDecimalPlaces: 2)
     }
 }
-
-// Alert
-extension ChangeScreen2ViewController {
-    func alertNonNumeric() {
-        let actionSheet = UIAlertController(title: "Attention", message: "Amount should be numeric", preferredStyle: .alert)
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        self.present(actionSheet, animated: true, completion : nil)
+// MARK: - Extension - PickerView Delegate and DataSource
+extension ChangeScreen2ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return CurrencyDataBase.dB.count
+    }
+    //    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    //        return CurrencyDataBase.dB[row]
+    //    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
+        let string = CurrencyDataBase.dB[row]
+        return NSAttributedString(string: string, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+    }
+    
 }
 
 extension String {
@@ -134,22 +183,5 @@ extension String {
         return false
     }
 }
-extension ChangeScreen2ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return CurrencyDataBase.dB.count
-    }
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return CurrencyDataBase.dB[row]
-//    }
-    
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        
-        let string = CurrencyDataBase.dB[row]
-        return NSAttributedString(string: string, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-    }
-    
-}
+
+

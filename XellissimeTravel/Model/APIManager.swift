@@ -9,17 +9,7 @@
 import Foundation
 import UIKit
 
-/**
- Function that adds a digit when user types a number for the calculation
- - Parameter newNumber: The digit chosen by user on screen
- - Returns: The string to be displayed on screen
- 
- # Important Notes #
- 0 as first character of the number is not displayed on screen
- */
-
 // MARK: API EndPoint :  variable to switch from one API to another
-
 
 
 // MARK: Networking class
