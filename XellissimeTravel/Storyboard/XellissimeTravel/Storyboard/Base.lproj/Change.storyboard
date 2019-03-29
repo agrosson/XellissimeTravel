@@ -78,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yyb-oj-DCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="380" y="706"/>
+            <point key="canvasLocation" x="32" y="705"/>
         </scene>
         <!--Change-->
         <scene sceneID="Xvi-8e-a1h">
@@ -114,39 +114,83 @@
                                     <outlet property="delegate" destination="YSi-Eq-Ean" id="9E6-dq-RuB"/>
                                 </connections>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8ge-dy-rwU">
-                                <rect key="frame" x="182" y="423" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="BZY-bM-Zfg"/>
-                                    <constraint firstAttribute="width" constant="50" id="HEz-eS-4cg"/>
-                                </constraints>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="92" translatesAutoresizingMaskIntoConstraints="NO" id="fda-S1-JeL">
+                                <rect key="frame" x="20.5" y="438" width="373" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8ge-dy-rwU">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="BZY-bM-Zfg"/>
+                                            <constraint firstAttribute="width" constant="50" id="HEz-eS-4cg"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your rate " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgr-aH-eU6">
+                                        <rect key="frame" x="142" y="0.0" width="89" height="50"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8tV-Rf-4Zb">
+                                        <rect key="frame" x="323" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="HDA-6g-HBP"/>
+                                            <constraint firstAttribute="height" constant="50" id="oKv-T8-lbc"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ATk-rD-IrT">
+                                <rect key="frame" x="50" y="202" width="314" height="216"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="YSi-Eq-Ean" id="lj0-RO-vR9"/>
+                                    <outlet property="delegate" destination="YSi-Eq-Ean" id="uiL-dx-0Ru"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZX-ha-Fn7">
+                                <rect key="frame" x="131" y="508" width="152" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Switch Currency">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="switchCurrencyButton:" destination="YSi-Eq-Ean" eventType="touchUpInside" id="7Xs-Of-SAX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.49623023040000003" green="0.69865077730000003" blue="0.61791028290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.62714248900000003" green="0.32853841779999998" blue="0.53334838149999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="bzv-6z-Cgt" firstAttribute="bottom" secondItem="T8H-rS-aw7" secondAttribute="bottom" constant="20" id="2LJ-vy-Vhh"/>
                             <constraint firstItem="3CI-Ah-oEX" firstAttribute="top" secondItem="bzv-6z-Cgt" secondAttribute="top" constant="20" id="Bki-kq-Q25"/>
+                            <constraint firstItem="HZX-ha-Fn7" firstAttribute="centerX" secondItem="3PY-mQ-hx0" secondAttribute="centerX" id="IVg-4k-src"/>
                             <constraint firstItem="bzv-6z-Cgt" firstAttribute="trailing" secondItem="T8H-rS-aw7" secondAttribute="trailing" constant="20" id="Mi8-hq-4pp"/>
                             <constraint firstItem="bzv-6z-Cgt" firstAttribute="trailing" secondItem="3CI-Ah-oEX" secondAttribute="trailing" constant="20" id="QNL-f7-0vS"/>
                             <constraint firstItem="3CI-Ah-oEX" firstAttribute="leading" secondItem="bzv-6z-Cgt" secondAttribute="leading" constant="20" id="bCM-n4-KDG"/>
+                            <constraint firstItem="bzv-6z-Cgt" firstAttribute="trailing" secondItem="ATk-rD-IrT" secondAttribute="trailing" constant="50" id="dMe-VI-yzf"/>
                             <constraint firstItem="ceE-UH-HPu" firstAttribute="leading" secondItem="bzv-6z-Cgt" secondAttribute="leading" constant="20" id="dnc-Cp-skZ"/>
+                            <constraint firstItem="HZX-ha-Fn7" firstAttribute="top" secondItem="fda-S1-JeL" secondAttribute="bottom" constant="20" id="isd-FI-6Z1"/>
                             <constraint firstItem="T8H-rS-aw7" firstAttribute="leading" secondItem="bzv-6z-Cgt" secondAttribute="leading" constant="20" id="jbP-pi-2TZ"/>
-                            <constraint firstItem="8ge-dy-rwU" firstAttribute="centerX" secondItem="3PY-mQ-hx0" secondAttribute="centerX" id="jiz-vC-3hf"/>
                             <constraint firstItem="bzv-6z-Cgt" firstAttribute="trailing" secondItem="ceE-UH-HPu" secondAttribute="trailing" constant="20" id="jo9-bq-ywd"/>
+                            <constraint firstItem="ATk-rD-IrT" firstAttribute="centerX" secondItem="3PY-mQ-hx0" secondAttribute="centerX" id="mO8-pt-LfF"/>
+                            <constraint firstItem="ATk-rD-IrT" firstAttribute="top" secondItem="ceE-UH-HPu" secondAttribute="bottom" constant="20" id="pMX-fK-gxq"/>
+                            <constraint firstItem="fda-S1-JeL" firstAttribute="centerX" secondItem="3PY-mQ-hx0" secondAttribute="centerX" id="rML-am-T0G"/>
+                            <constraint firstItem="fda-S1-JeL" firstAttribute="top" secondItem="ATk-rD-IrT" secondAttribute="bottom" constant="20" id="tAG-UD-fzv"/>
                             <constraint firstItem="ceE-UH-HPu" firstAttribute="top" secondItem="3CI-Ah-oEX" secondAttribute="bottom" constant="20" id="vKW-go-mH5"/>
-                            <constraint firstItem="8ge-dy-rwU" firstAttribute="centerY" secondItem="3PY-mQ-hx0" secondAttribute="centerY" id="wxZ-57-NqQ"/>
+                            <constraint firstItem="ATk-rD-IrT" firstAttribute="leading" secondItem="bzv-6z-Cgt" secondAttribute="leading" constant="50" id="xGB-Jg-GAF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bzv-6z-Cgt"/>
                     </view>
                     <connections>
-                        <outlet property="flag" destination="8ge-dy-rwU" id="f9t-qe-8Ul"/>
+                        <outlet property="currencyPicker" destination="ATk-rD-IrT" id="gKN-We-arc"/>
+                        <outlet property="flagLeft" destination="8ge-dy-rwU" id="f9t-qe-8Ul"/>
+                        <outlet property="flagRight" destination="8tV-Rf-4Zb" id="iEu-cw-n5I"/>
                         <outlet property="textFieldFX" destination="ceE-UH-HPu" id="dMt-IZ-rA8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOq-5x-r70" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117" y="706"/>
+            <point key="canvasLocation" x="971" y="698"/>
         </scene>
     </scenes>
     <resources>

@@ -35,3 +35,7 @@ struct ExchangeAnswer: Codable {
     let base, date: String?
     let rates: [String:Float]?
 }
+
+struct CurrencyDataBase {
+    static let dB = ["USD", "GBP", "CAD"]
+}
