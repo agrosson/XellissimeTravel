@@ -9,29 +9,44 @@
 import UIKit
 
 class ChangeScreen2ViewController: UIViewController {
-
+    lazy var amountToConvert = (textFieldFX.text! as NSString).floatValue
+    var myRateResult: Float = 1
+    @IBOutlet weak var amountToConvertLabel: UILabel!
+    
+    @IBOutlet weak var amountConvertedLabel: UILabel!
+    
     @IBOutlet weak var currencyPicker: UIPickerView!
     @IBAction func goFXButton(_ sender: Any) {
+        amountToConvert = (textFieldFX.text! as NSString).floatValue
         let pickerIndex = currencyPicker.selectedRow(inComponent: 0)
         let currencySymbol = CurrencyDataBase.dB[pickerIndex]
+
+        
+        flagLeft.image = flagOneInitial
+        flagRight.image = flagTwoInitial
+        flagImageOne = flagOneInitial
+        flagImageTwo = flagTwoInitial
+        
         let api = FixerAPI(symbol: currencySymbol)
         let fullUrl = api.createFullUrl()
         let method = api.httpMethod
         let myFirstCall = NetworkManager.shared
         myFirstCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in
             if textresult != nil {
+                self.rateLabel.text = String(format: "%.4f", textresult!)
+                self.myRateResult = textresult!
+                self.amountToConvertLabel.text = String(format: "%.2f", self.amountToConvert)
+                self.amountConvertedLabel.text = String(format: "%.2f", (self.amountToConvert*self.myRateResult))
                 print(textresult!)
             } else {
                 print("Mince encore une erreur")
             }
         }
-        
-        
-        
     }
     
     @IBAction func switchCurrencyButton(_ sender: Any) {
         switchFlag()
+        switchAmount()
     }
     @IBOutlet weak var textFieldFX: UITextField!
     
@@ -39,11 +54,14 @@ class ChangeScreen2ViewController: UIViewController {
     
     @IBOutlet weak var flagRight: UIImageView!
     
+    @IBOutlet weak var rateLabel: UILabel!
     var currencyOne = "EU"
     var currencyTwo = "US"
     let bundle = FlagKit.assetBundle
     lazy var flagImageOne:UIImage = UIImage.init(named: currencyOne, in: bundle, compatibleWith: nil)!
     lazy var flagImageTwo:UIImage = UIImage.init(named: currencyTwo, in: bundle, compatibleWith: nil)!
+    lazy var flagOneInitial = flagImageOne
+    lazy var flagTwoInitial = flagImageTwo
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldFX.delegate = self
@@ -54,7 +72,12 @@ class ChangeScreen2ViewController: UIViewController {
        
         // Do any additional setup after loading the view.
     }
-    
+    private func switchAmount(){
+        myRateResult = 1/myRateResult
+        rateLabel.text = String(format: "%.4f", myRateResult)
+        self.amountConvertedLabel.text = String(format: "%.2f", (amountToConvert*myRateResult))
+        
+    }
     private func switchFlag(){
         let tempImage = flagImageOne
         flagImageOne = flagImageTwo
