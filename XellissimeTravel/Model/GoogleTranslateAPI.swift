@@ -13,7 +13,7 @@ class GoogleTranslateAPI {
     let endPoint = "https://translation.googleapis.com/language/translate/v2"
     lazy var urlEndPoint: URL? = createFullUrl()
     let httpMethod = "GET"
-    private let keyAPI = "125"
+    private let keyAPI = "456"
     var textInput: String
     var targetLanguage: String
     var sourceLanguage: String

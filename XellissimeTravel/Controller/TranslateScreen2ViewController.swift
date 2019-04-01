@@ -39,7 +39,7 @@ class TranslateScreen2ViewController: UIViewController {
         myTranslateCall.translate(fullUrl: url!, method: method, body: body) { (success, translation) in
             if translation != nil{
                 print(translation!)
-                self.translatedTextLabel.text = translation?.uppercased()
+                self.translatedTextLabel.text = translation//.uppercased()
                 
             } else {
                 print("une erreur de traduction")
@@ -91,7 +91,7 @@ class TranslateScreen2ViewController: UIViewController {
 extension TranslateScreen2ViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         clearButton.isHidden = textTotranslateTextView.text.isEmpty
-        textTotranslateTextView.text =  textTotranslateTextView.text.uppercased()
+        //textTotranslateTextView.text =  textTotranslateTextView.text.uppercased()
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
