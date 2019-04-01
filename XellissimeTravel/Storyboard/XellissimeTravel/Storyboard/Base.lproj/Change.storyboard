@@ -35,7 +35,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10r-JO-DcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-349" y="702"/>
+            <point key="canvasLocation" x="-919" y="705"/>
         </scene>
         <!--ChangeScreen1-->
         <scene sceneID="CPs-8J-icu">
@@ -78,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yyb-oj-DCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32" y="705"/>
+            <point key="canvasLocation" x="-229" y="705"/>
         </scene>
         <!--Change-->
         <scene sceneID="Xvi-8e-a1h">
@@ -104,7 +104,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="Enter your amount here" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ceE-UH-HPu">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="Enter your amount here" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ceE-UH-HPu">
                                 <rect key="frame" x="20" y="152" width="374" height="30"/>
                                 <color key="backgroundColor" red="0.49623023040000003" green="0.69865077730000003" blue="0.61791028290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -117,20 +117,20 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="92" translatesAutoresizingMaskIntoConstraints="NO" id="fda-S1-JeL">
                                 <rect key="frame" x="20" y="438" width="374" height="50"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8ge-dy-rwU">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="8ge-dy-rwU">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="BZY-bM-Zfg"/>
                                             <constraint firstAttribute="width" constant="50" id="HEz-eS-4cg"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your rate " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgr-aH-eU6">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="10" verticalHuggingPriority="251" text="Your rate " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="mgr-aH-eU6">
                                         <rect key="frame" x="142" y="0.0" width="90" height="50"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8tV-Rf-4Zb">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="8tV-Rf-4Zb">
                                         <rect key="frame" x="324" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="HDA-6g-HBP"/>
@@ -161,17 +161,23 @@
                                     <action selector="switchCurrencyButton:" destination="YSi-Eq-Ean" eventType="touchUpInside" id="7Xs-Of-SAX"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="YLr-wp-1wp">
-                                <rect key="frame" x="20" y="508" width="374" height="24"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="YLr-wp-1wp">
+                                <rect key="frame" x="20" y="508" width="374" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zy0-YG-gKN">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zy0-YG-gKN">
+                                        <rect key="frame" x="0.0" y="0.0" width="13.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGT-To-8un">
-                                        <rect key="frame" x="194" y="0.0" width="180" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bmr-kZ-I8N">
+                                        <rect key="frame" x="27.5" y="0.0" width="319" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cGT-To-8un">
+                                        <rect key="frame" x="360.5" y="0.0" width="13.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -211,6 +217,7 @@
                     <connections>
                         <outlet property="amountConvertedLabel" destination="cGT-To-8un" id="mm4-WC-mwf"/>
                         <outlet property="amountToConvertLabel" destination="zy0-YG-gKN" id="od2-tM-e7e"/>
+                        <outlet property="currencyLabel" destination="bmr-kZ-I8N" id="eC8-gF-wTA"/>
                         <outlet property="currencyPicker" destination="ATk-rD-IrT" id="gKN-We-arc"/>
                         <outlet property="flagLeft" destination="8ge-dy-rwU" id="f9t-qe-8Ul"/>
                         <outlet property="flagRight" destination="8tV-Rf-4Zb" id="iEu-cw-n5I"/>
@@ -220,7 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOq-5x-r70" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="971" y="698"/>
+            <point key="canvasLocation" x="512" y="703"/>
         </scene>
     </scenes>
     <resources>

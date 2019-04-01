@@ -25,8 +25,12 @@ class ChangeScreen2ViewController: UIViewController {
     var myRateResult: Float = 1
     /// Currency for flag: default EUR
     var currencyOne = "EU"
+    /// Currency Symbol
+    var currencySymbol = "USD"
+    /// Currency name
+    var currencyName = ""
     /// Currency target for flag: default US
-    var currencyTwo = "US"
+    lazy var currencyTwo = CurrencyDataBase.currencyCountryCode[currencySymbol]![0]//"US" //currency symbol
     /// Bundle where Flags images are stored
     let bundle = FlagKit.assetBundle
     /// Image one for flag, initial with currencyOne
@@ -44,6 +48,7 @@ class ChangeScreen2ViewController: UIViewController {
     @IBOutlet weak var amountToConvertLabel: UILabel!
     @IBOutlet weak var amountConvertedLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
+    @IBOutlet weak var currencyLabel: UILabel!
     
     // MARK: - Outlets - PickerView
     @IBOutlet weak var currencyPicker: UIPickerView!
@@ -58,24 +63,34 @@ class ChangeScreen2ViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func goFXButton(_ sender: Any) {
+        flagImageOne = flagOneInitial
+        flagImageTwo = flagTwoInitial
         let pickerIndex = currencyPicker.selectedRow(inComponent: 0)
-        let currencySymbol = CurrencyDataBase.dB[pickerIndex]
+        currencySymbol = CurrencyDataBase.dB[pickerIndex]
+        currencyTwo = CurrencyDataBase.currencyCountryCode[currencySymbol]![0]
+        currencyName = CurrencyDataBase.currencyCountryCode[currencySymbol]![1]
+        flagImageTwo = UIImage.init(named: currencyTwo, in: bundle, compatibleWith: nil)!
         let api = FixerAPI(symbol: currencySymbol)
         let fullUrl = api.createFullUrl()
         let method = api.httpMethod
         let myFirstCall = NetworkManager.shared
-        amountToConvert = (textFieldFX.text! as NSString).floatValue
-        flagLeft.image = flagOneInitial
-        flagRight.image = flagTwoInitial
-        flagImageOne = flagOneInitial
-        flagImageTwo = flagTwoInitial
+        if textFieldFX.text == "" || textFieldFX.text == "0" {
+            amountToConvert = 1
+            textFieldFX.text = "1"
+        } else {
+            amountToConvert = (textFieldFX.text! as NSString).floatValue
+            if amountToConvert == 0 {
+                amountToConvert = Float(1)
+                textFieldFX.text = "1"
+            }
+        }
         myFirstCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in
             if textresult != nil {
                 self.rateLabel.text = String(format: "%.4f", textresult!)
                 self.myRateResult = textresult!
                 self.amountToConvertLabel.text = String(format: "%.2f", self.amountToConvert)
                 self.amountConvertedLabel.text = String(format: "%.2f", (self.amountToConvert*self.myRateResult))
-                print(textresult!)
+                self.updateFlagImages()
             } else {
                 print("Sorry there is an error somewhere")
             }
@@ -86,7 +101,7 @@ class ChangeScreen2ViewController: UIViewController {
         switchFlag()
         switchAmount()
     }
-     // MARK: - Methods - ViewDidLoad
+    // MARK: - Methods - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldFX.delegate = self
@@ -95,8 +110,16 @@ class ChangeScreen2ViewController: UIViewController {
         flagRight.image = flagImageTwo
     }
     
-     // MARK: - Methods
-  
+    // MARK: - Methods
+    /**
+     Function that Update screen with flagImage
+     */
+    private func updateFlagImages(){
+        flagLeft.image = flagImageOne
+        flagRight.image = flagImageTwo
+        currencyLabel.text = currencyName
+    }
+    
     /**
      Function that switches amount to convert and converted amount. It calculates also the new rate to use
      */
@@ -133,7 +156,7 @@ class ChangeScreen2ViewController: UIViewController {
     }
 }
 
- // MARK: - Extension - TextfieldDelegate
+// MARK: - Extension - TextfieldDelegate
 
 extension ChangeScreen2ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
