@@ -9,23 +9,10 @@
 import UIKit
 
 class TranslateScreen1ViewController: UIViewController {
-
-    @IBAction func translareGoButton(_ sender: Any) {
-      //  myAPI = GoogleTranslateAPI(textInput: "je cherche un traducteur", targetLanguage: "en", sourceLanguage: "fr")
-//        print("Translate SCREEN étape 1")
-//        let myFirstCall = NetworkManager.shared
-//        print("translate SCREEN étape 2")
-//        myFirstCall.translateRequest { (success, text) in
-//            print("translate SCREEN étape 3")
-//            if success == true {
-//                print("la requete est un succès et la traduction est \(String(describing: text))")
-//            } else {
-//                print("une erreur de traduction  qqpart")
-//            }
-//        }
+    
+    @IBAction func translateGoButton(_ sender: Any) {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 }

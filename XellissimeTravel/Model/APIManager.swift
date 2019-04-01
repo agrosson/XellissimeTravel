@@ -49,3 +49,42 @@ extension NetworkManager {
         task.resume()
     }
 }
+
+extension NetworkManager {
+    
+    func translate(fullUrl : URL,method : String,body: String, callBack : @escaping (Bool,String?) -> ()) {
+        var request = URLRequest(url: fullUrl)
+        print(fullUrl)
+        request.httpMethod = method
+       // request.httpMethod = body
+        print(body)
+        let session = URLSession(configuration: .default)
+        let task = session.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                guard let data = data, error == nil else {
+                    print("l'erreur ici")
+                    print(error as Any)
+                    callBack(false,nil)
+                    return
+                }
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    callBack(false,nil)
+                    return
+                }
+                print("so far 1")
+                guard let responseJson = try? JSONDecoder().decode([String:DataClass].self, from: data),
+                    let translationResultData = responseJson["data"]
+                    else {
+                        callBack(false, nil)
+                        return
+                }
+                
+                print("so far 2")
+                let translation = translationResultData.translations![0].translatedText
+                print(translation as Any)
+                callBack(true,translation)
+            }
+        }
+        task.resume()
+    }
+}

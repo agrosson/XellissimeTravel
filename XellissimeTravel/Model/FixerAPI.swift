@@ -11,7 +11,6 @@ import UIKit
 
 class FixerAPI {
     private let endPoint = "http://data.fixer.io/api/latest"
-    lazy var urlEndPoint = URL(string: endPoint)
     let httpMethod = "GET"
     private let keyAPI = "123"
     var symbol: String

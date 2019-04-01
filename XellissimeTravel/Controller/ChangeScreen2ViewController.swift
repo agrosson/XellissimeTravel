@@ -73,7 +73,7 @@ class ChangeScreen2ViewController: UIViewController {
         let api = FixerAPI(symbol: currencySymbol)
         let fullUrl = api.createFullUrl()
         let method = api.httpMethod
-        let myFirstCall = NetworkManager.shared
+        let myFXCall = NetworkManager.shared
         if textFieldFX.text == "" || textFieldFX.text == "0" {
             amountToConvert = 1
             textFieldFX.text = "1"
@@ -84,7 +84,7 @@ class ChangeScreen2ViewController: UIViewController {
                 textFieldFX.text = "1"
             }
         }
-        myFirstCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in
+        myFXCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in
             if textresult != nil {
                 self.rateLabel.text = String(format: "%.4f", textresult!)
                 self.myRateResult = textresult!
@@ -181,9 +181,6 @@ extension ChangeScreen2ViewController: UIPickerViewDelegate, UIPickerViewDataSou
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return CurrencyDataBase.dB.count
     }
-    //    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    //        return CurrencyDataBase.dB[row]
-    //    }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
@@ -192,7 +189,7 @@ extension ChangeScreen2ViewController: UIPickerViewDelegate, UIPickerViewDataSou
     }
     
 }
-
+// MARK: - Extension - String
 extension String {
     func isValidDouble(maxDecimalPlaces: Int) -> Bool {
         let formatter = NumberFormatter()

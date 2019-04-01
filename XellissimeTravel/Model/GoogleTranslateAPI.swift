@@ -10,22 +10,41 @@ import Foundation
 import UIKit
 
 class GoogleTranslateAPI {
-    private let endPoint = "https://translation.googleapis.com/language/translate/v2"
-    lazy var urlEndPoint = URL(string: endPoint)
+    let endPoint = "https://translation.googleapis.com/language/translate/v2"
+    lazy var urlEndPoint: URL? = createFullUrl()
     let httpMethod = "GET"
-    private let keyAPI = "789"
+    private let keyAPI = "125"
     var textInput: String
     var targetLanguage: String
     var sourceLanguage: String
     var format = "text"
-    lazy var body:String = createBody()
+    lazy var httpBody = createBody()
     init(textInput: String, targetLanguage: String, sourceLanguage: String){
         self.textInput = textInput
         self.targetLanguage = targetLanguage
         self.sourceLanguage = sourceLanguage
     }
     func createBody() -> String {
-        let body = "q=\(textInput)&target=\(targetLanguage)&format=\(format)&source=\(sourceLanguage)&key=\(keyAPI)"
+        // Transform text (string) to be used in URL(String)
+        let text = textInput.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        let body = "q=\(text!)&target=\(targetLanguage)&format=\(format)&source=\(sourceLanguage)&key=\(keyAPI)"
         return body
     }
+    func createFullUrl() -> URL? {
+        let endPointUrl = endPoint
+        let body = createBody()
+        let fullUrl = "\(endPointUrl)?\(body)"
+        guard let url = URL(string: fullUrl) else { return nil }
+        print(url as Any)
+        return url
+    }
+}
+
+
+struct DataClass: Codable {
+    let translations: [Translation]?
+}
+
+struct Translation: Codable {
+    let translatedText: String?
 }

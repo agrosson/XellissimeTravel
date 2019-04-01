@@ -53,7 +53,7 @@
                                     <color key="titleColor" red="0.039215686270000001" green="0.37647058820000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="translareGoButton:" destination="3w1-Tg-99G" eventType="touchUpInside" id="Fj4-qI-RZf"/>
+                                    <action selector="translateGoButton:" destination="3w1-Tg-99G" eventType="touchUpInside" id="Fj4-qI-RZf"/>
                                     <segue destination="gsX-8q-OCL" kind="show" id="guC-Mc-GTG"/>
                                 </connections>
                             </button>
@@ -78,20 +78,93 @@
         <!--Translate-->
         <scene sceneID="pdY-xO-d8Q">
             <objects>
-                <viewController title="Translate" id="gsX-8q-OCL" sceneMemberID="viewController">
+                <viewController title="Translate" id="gsX-8q-OCL" customClass="TranslateScreen2ViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7My-bS-R4I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your text to translate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wz-lP-79F">
+                                <rect key="frame" x="20" y="108" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR TRANSLATION HERE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nlj-Um-M32">
+                                <rect key="frame" x="20" y="372" width="374" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="rul-P7-CvZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xas-nZ-cCF">
+                                <rect key="frame" x="88.5" y="721" width="237" height="72"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
+                                <state key="normal" title="Translate">
+                                    <color key="titleColor" red="0.039215686270000001" green="0.37647058820000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="translateButton:" destination="gsX-8q-OCL" eventType="touchUpInside" id="L35-mb-ojZ"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" text="YOUR TEXT HERE" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fm9-bB-a4L">
+                                <rect key="frame" x="20" y="152" width="374" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="5pL-nN-Int"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gsX-8q-OCL" id="EuL-9s-sF4"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWx-7h-hMN">
+                                <rect key="frame" x="369" y="157" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="bik-DW-syt"/>
+                                    <constraint firstAttribute="width" constant="25" id="zDe-Rm-Xhh"/>
+                                </constraints>
+                                <state key="normal" image="clearWhite"/>
+                                <connections>
+                                    <action selector="clearButtonPressed:" destination="gsX-8q-OCL" eventType="touchUpInside" id="R2k-Ws-Ggm"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.63921568630000003" green="0.71372549019999998" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="nlj-Um-M32" firstAttribute="leading" secondItem="zcd-FA-964" secondAttribute="leading" constant="20" id="0LQ-QV-9db"/>
+                            <constraint firstItem="zcd-FA-964" firstAttribute="trailing" secondItem="8Wz-lP-79F" secondAttribute="trailing" constant="20" id="0mx-v1-xgn"/>
+                            <constraint firstItem="xas-nZ-cCF" firstAttribute="centerX" secondItem="7My-bS-R4I" secondAttribute="centerX" id="DUj-d9-RJi"/>
+                            <constraint firstItem="zcd-FA-964" firstAttribute="trailing" secondItem="UWx-7h-hMN" secondAttribute="trailing" constant="20" id="Ig2-mG-3S7"/>
+                            <constraint firstItem="zcd-FA-964" firstAttribute="bottom" secondItem="xas-nZ-cCF" secondAttribute="bottom" constant="20" id="Non-9h-yVs"/>
+                            <constraint firstItem="8Wz-lP-79F" firstAttribute="top" secondItem="zcd-FA-964" secondAttribute="top" constant="20" id="PbC-12-d6m"/>
+                            <constraint firstItem="zcd-FA-964" firstAttribute="trailing" secondItem="nlj-Um-M32" secondAttribute="trailing" constant="20" id="Qy2-Ew-BKN"/>
+                            <constraint firstItem="fm9-bB-a4L" firstAttribute="top" secondItem="8Wz-lP-79F" secondAttribute="bottom" constant="20" id="UdR-db-QRP"/>
+                            <constraint firstItem="nlj-Um-M32" firstAttribute="top" secondItem="fm9-bB-a4L" secondAttribute="bottom" constant="20" id="YNk-sm-gly"/>
+                            <constraint firstItem="8Wz-lP-79F" firstAttribute="leading" secondItem="zcd-FA-964" secondAttribute="leading" constant="20" id="i6w-SB-Ckf"/>
+                            <constraint firstItem="zcd-FA-964" firstAttribute="trailing" secondItem="fm9-bB-a4L" secondAttribute="trailing" constant="20" id="i8X-hL-GOW"/>
+                            <constraint firstItem="UWx-7h-hMN" firstAttribute="top" secondItem="8Wz-lP-79F" secondAttribute="bottom" constant="25" id="pRZ-O3-6Sx"/>
+                            <constraint firstItem="fm9-bB-a4L" firstAttribute="leading" secondItem="zcd-FA-964" secondAttribute="leading" constant="20" id="zL0-JN-24b"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zcd-FA-964"/>
                     </view>
+                    <connections>
+                        <outlet property="clearButton" destination="UWx-7h-hMN" id="FjV-HL-ffh"/>
+                        <outlet property="textTotranslateTextView" destination="fm9-bB-a4L" id="8GC-8m-ISF"/>
+                        <outlet property="translateOutlet" destination="xas-nZ-cCF" id="BCk-ye-Lzr"/>
+                        <outlet property="translatedTextLabel" destination="nlj-Um-M32" id="Wyi-A1-yYy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ugx-2B-0YT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1181" y="1471"/>
+            <point key="canvasLocation" x="1163.768115942029" y="1468.5267857142856"/>
         </scene>
     </scenes>
     <resources>
+        <image name="clearWhite" width="24" height="24"/>
         <image name="google-translate-icon" width="30" height="30"/>
     </resources>
 </document>
