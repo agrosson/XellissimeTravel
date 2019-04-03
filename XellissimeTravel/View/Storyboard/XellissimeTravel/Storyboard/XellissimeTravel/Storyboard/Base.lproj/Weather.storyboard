@@ -95,21 +95,61 @@
                                     <action selector="getWeatherButtonPressed:" destination="wB7-hD-YIF" eventType="touchUpInside" id="Kbc-qz-nTz"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WKC-7k-xfv">
+                                <rect key="frame" x="187" y="373" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="HWe-B2-g08"/>
+                                    <constraint firstAttribute="width" constant="40" id="cFK-Qs-Zng"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="101" translatesAutoresizingMaskIntoConstraints="NO" id="i1o-Oc-Vsz">
+                                <rect key="frame" x="20" y="152" width="374" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fs1-nG-C3i">
+                                        <rect key="frame" x="0.0" y="0.0" width="136.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="wB7-hD-YIF" id="lOB-FH-6s5"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="haA-9m-SVS">
+                                        <rect key="frame" x="237.5" y="0.0" width="136.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="wB7-hD-YIF" id="Py6-4B-Kjz"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.61960784310000006" green="0.59215686270000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="i1o-Oc-Vsz" firstAttribute="top" secondItem="MEH-0m-jtB" secondAttribute="bottom" constant="20" id="0Sm-GJ-enQ"/>
+                            <constraint firstItem="WKC-7k-xfv" firstAttribute="centerX" secondItem="Hxm-Or-ZYy" secondAttribute="centerX" id="1mG-KB-3Pj"/>
                             <constraint firstItem="OgU-Ai-qcC" firstAttribute="trailing" secondItem="MEH-0m-jtB" secondAttribute="trailing" constant="20" id="8GR-bp-ncn"/>
                             <constraint firstItem="MEH-0m-jtB" firstAttribute="leading" secondItem="OgU-Ai-qcC" secondAttribute="leading" constant="20" id="BlW-Aa-HIy"/>
                             <constraint firstItem="MEH-0m-jtB" firstAttribute="top" secondItem="OgU-Ai-qcC" secondAttribute="top" constant="20" id="P50-X4-KrL"/>
+                            <constraint firstItem="OgU-Ai-qcC" firstAttribute="trailing" secondItem="i1o-Oc-Vsz" secondAttribute="trailing" constant="20" id="TcI-zH-Jwt"/>
                             <constraint firstItem="9kO-rg-TMS" firstAttribute="centerX" secondItem="Hxm-Or-ZYy" secondAttribute="centerX" id="WzJ-lM-u8C"/>
+                            <constraint firstItem="9kO-rg-TMS" firstAttribute="top" secondItem="WKC-7k-xfv" secondAttribute="bottom" constant="20" id="eyL-Yd-aK1"/>
+                            <constraint firstItem="i1o-Oc-Vsz" firstAttribute="leading" secondItem="OgU-Ai-qcC" secondAttribute="leading" constant="20" id="lNi-N6-C4E"/>
                             <constraint firstItem="9kO-rg-TMS" firstAttribute="centerY" secondItem="Hxm-Or-ZYy" secondAttribute="centerY" id="pUL-iP-sJW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OgU-Ai-qcC"/>
                     </view>
+                    <connections>
+                        <outlet property="cityTextField" destination="Fs1-nG-C3i" id="viM-1q-mgB"/>
+                        <outlet property="countryTextField" destination="haA-9m-SVS" id="vLC-Hu-9uL"/>
+                        <outlet property="iconeWeatherImageView" destination="WKC-7k-xfv" id="qIU-jI-ahL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKl-jP-SEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="887" y="1436"/>
+            <point key="canvasLocation" x="886.95652173913049" y="1435.7142857142856"/>
         </scene>
     </scenes>
     <resources>
