@@ -88,3 +88,50 @@ extension NetworkManager {
         task.resume()
     }
 }
+// @@@@@@@@@@@@@@@@@@@@@@
+
+extension NetworkManager {
+    
+    func getWeather(fullUrl : URL,method : String,body: String, callBack : @escaping (Bool,WeatherResponse?) -> ()) {
+        var request = URLRequest(url: fullUrl)
+        print(fullUrl)
+        request.httpMethod = method
+        // request.httpMethod = body
+        print(body)
+        let session = URLSession(configuration: .default)
+        let task = session.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                guard let data = data, error == nil else {
+                    print("l'erreur ici")
+                    print(error as Any)
+                    callBack(false,nil)
+                    return
+                }
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                     print("l'erreur là")
+                    callBack(false,nil)
+                    return
+                }
+                print("so far 1")
+                guard let responseJson = try? JSONDecoder().decode(WeatherConditions.self, from: data)
+                    else {
+                        print("le soucis est le json?")
+                        callBack(false, nil)
+                        return
+                }
+                    let weatherResponse = WeatherResponse(temp: (responseJson.list![0].main?.temp)!,
+                                                          pressure: (responseJson.list![0].main?.pressure)!,
+                                                          humidity: (responseJson.list![0].main?.humidity)!,
+                                                          description: (responseJson.list![0].weather![0].description)!,
+                                                          iconString: (responseJson.list![0].weather![0].icon)!,
+                                                          windSpeed: (responseJson.list![0].wind?.speed)!,
+                                                          date: (responseJson.list![0].dtTxt)!)
+                
+                print("gooooooood")
+                callBack(true,weatherResponse)
+            }
+        }
+        task.resume()
+    }
+}
+

@@ -11,6 +11,7 @@
 		C12D0D87224BB484001B8525 /* ChangeScreen1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D0D86224BB484001B8525 /* ChangeScreen1ViewController.swift */; };
 		C12D0D89224BEF20001B8525 /* TranslateScreen1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */; };
 		C18CFD2D22524059002BA15A /* TranslateScreen2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18CFD2C22524059002BA15A /* TranslateScreen2ViewController.swift */; };
+		C19592C52254DFCD0055909C /* WeatherScreen2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19592C42254DFCC0055909C /* WeatherScreen2ViewController.swift */; };
 		C1AFB913224D5290009593C2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C1AFB90D224D5290009593C2 /* LICENSE */; };
 		C1AFB914224D5290009593C2 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AFB90F224D5290009593C2 /* UIImage.swift */; };
 		C1AFB915224D5290009593C2 /* FlagKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AFB910224D5290009593C2 /* FlagKit.swift */; };
@@ -55,6 +56,7 @@
 		C12D0D86224BB484001B8525 /* ChangeScreen1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeScreen1ViewController.swift; sourceTree = "<group>"; };
 		C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreen1ViewController.swift; sourceTree = "<group>"; };
 		C18CFD2C22524059002BA15A /* TranslateScreen2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreen2ViewController.swift; sourceTree = "<group>"; };
+		C19592C42254DFCC0055909C /* WeatherScreen2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherScreen2ViewController.swift; sourceTree = "<group>"; };
 		C1AFB90D224D5290009593C2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C1AFB90F224D5290009593C2 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		C1AFB910224D5290009593C2 /* FlagKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagKit.swift; sourceTree = "<group>"; };
@@ -172,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				C1E8223C224A7A8600CE07F4 /* Supporting files */,
-				C1E8223B224A7A6200CE07F4 /* Storyboard */,
 				C1E8223A224A7A4A00CE07F4 /* View */,
 				C1E82239224A7A2B00CE07F4 /* Model */,
 				C1E82238224A79FB00CE07F4 /* Controller */,
@@ -194,6 +195,7 @@
 		C1E82238224A79FB00CE07F4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C19592C42254DFCC0055909C /* WeatherScreen2ViewController.swift */,
 				C12D0D86224BB484001B8525 /* ChangeScreen1ViewController.swift */,
 				C1B4A8BA224D205D002CD0A6 /* ChangeScreen2ViewController.swift */,
 				C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */,
@@ -218,6 +220,7 @@
 		C1E8223A224A7A4A00CE07F4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C1E8223B224A7A6200CE07F4 /* Storyboard */,
 				C1E8221B224A6A8000CE07F4 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -427,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C19592C52254DFCD0055909C /* WeatherScreen2ViewController.swift in Sources */,
 				C1BCA8A8224B67B100EB9BEA /* APIManager.swift in Sources */,
 				C1AFB914224D5290009593C2 /* UIImage.swift in Sources */,
 				C1AFB915224D5290009593C2 /* FlagKit.swift in Sources */,
