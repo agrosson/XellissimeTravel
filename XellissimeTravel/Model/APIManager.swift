@@ -93,7 +93,7 @@ extension NetworkManager {
 
 extension NetworkManager {
     
-    func getWeather(fullUrl : URL,method : String,body: String, callBack : @escaping (Bool,WeatherResponse?) -> ()) {
+    func getWeather(fullUrl : URL,method : String,body: String, days: Int, callBack : @escaping (Bool,WeatherResponse?) -> ()) {
         var request = URLRequest(url: fullUrl)
         request.httpMethod = method
         let session = URLSession(configuration: .default)
@@ -114,8 +114,8 @@ extension NetworkManager {
                         callBack(false, nil)
                         return
                 }
-                
-                let iconImageweatherString = (responseJson.list![0].weather![0].icon)!
+                  print("passage là")
+                let iconImageweatherString = (responseJson.list![days].weather![0].icon)!
                 let iconImageWeatherURLString = "http://openweathermap.org/img/w/\(iconImageweatherString).png"
                 let iconURL = URL(string: iconImageWeatherURLString)
                 self.getImage(pictureURL: iconURL!, completionHandler: { (data) in
@@ -124,18 +124,16 @@ extension NetworkManager {
                         callBack(false,nil)
                         return
                     }
-                    let weatherResponse = WeatherResponse(temp: (responseJson.list![0].main?.temp)!,
-                                                          pressure: (responseJson.list![0].main?.pressure)!,
-                                                          humidity: (responseJson.list![0].main?.humidity)!,
-                                                          description: (responseJson.list![0].weather![0].description)!,
-                                                          iconString: (responseJson.list![0].weather![0].icon)!,
-                                                          windSpeed: (responseJson.list![0].wind?.speed)!,
-                                                          date: (responseJson.list![0].dtTxt)!,
+                    let weatherResponse = WeatherResponse(temp: (responseJson.list![days].main?.temp)!,
+                                                          pressure: (responseJson.list![days].main?.pressure)!,
+                                                          humidity: (responseJson.list![days].main?.humidity)!,
+                                                          description: (responseJson.list![days].weather![0].description)!,
+                                                          iconString: (responseJson.list![days].weather![0].icon)!,
+                                                          windSpeed: (responseJson.list![days].wind?.speed)!,
+                                                          date: (responseJson.list![days].dtTxt)!,
                                                           iconData: data)
                     callBack(true,weatherResponse)
                 })
-                
-                
             }
         }
         task.resume()
@@ -156,6 +154,7 @@ extension NetworkManager {
                 completionHandler(nil)
                 return
             }
+            print("passage ici")
             completionHandler(data)
         }
     }
