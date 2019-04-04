@@ -93,7 +93,7 @@ extension NetworkManager {
 
 extension NetworkManager {
     
-    func getWeather(fullUrl : URL,method : String,body: String, days: Int, callBack : @escaping (Bool,WeatherResponse?) -> ()) {
+    func getWeather(fullUrl : URL,method : String,body: String, dayArray: [Int], callBack : @escaping (Bool,[WeatherResponse]?) -> ()) {
         var request = URLRequest(url: fullUrl)
         request.httpMethod = method
         let session = URLSession(configuration: .default)
@@ -115,25 +115,20 @@ extension NetworkManager {
                         return
                 }
                   print("passage là")
-                let iconImageweatherString = (responseJson.list![days].weather![0].icon)!
-                let iconImageWeatherURLString = "http://openweathermap.org/img/w/\(iconImageweatherString).png"
-                let iconURL = URL(string: iconImageWeatherURLString)
-                self.getImage(pictureURL: iconURL!, completionHandler: { (data) in
-                    guard let data = data else {
-                        print("ici un pb?")
-                        callBack(false,nil)
-                        return
-                    }
-                    let weatherResponse = WeatherResponse(temp: (responseJson.list![days].main?.temp)!,
-                                                          pressure: (responseJson.list![days].main?.pressure)!,
-                                                          humidity: (responseJson.list![days].main?.humidity)!,
-                                                          description: (responseJson.list![days].weather![0].description)!,
-                                                          iconString: (responseJson.list![days].weather![0].icon)!,
-                                                          windSpeed: (responseJson.list![days].wind?.speed)!,
-                                                          date: (responseJson.list![days].dtTxt)!,
-                                                          iconData: data)
-                    callBack(true,weatherResponse)
-                })
+                var testArrayResponse = [WeatherResponse]()
+                for  i in dayArray {
+                    let weatherResponse = WeatherResponse(temp: (responseJson.list![i].main?.temp)!,
+                                                          pressure: (responseJson.list![i].main?.pressure)!,
+                                                          humidity: (responseJson.list![i].main?.humidity)!,
+                                                          description: (responseJson.list![i].weather![0].description)!,
+                                                          iconString: (responseJson.list![i].weather![0].icon)!,
+                                                          windSpeed: (responseJson.list![i].wind?.speed)!,
+                                                          date: (responseJson.list![i].dtTxt)!
+                    )
+                    testArrayResponse.append(weatherResponse)
+                }
+ 
+                    callBack(true,testArrayResponse)
             }
         }
         task.resume()
