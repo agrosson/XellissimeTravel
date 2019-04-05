@@ -104,10 +104,28 @@ class ChangeScreen2ViewController: UIViewController {
     // MARK: - Methods - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        getUsdWhenLoad()
         textFieldFX.delegate = self
         gestureTapCreation()
         flagLeft.image = flagImageOne
         flagRight.image = flagImageTwo
+    }
+    private func getUsdWhenLoad(){
+        let api = FixerAPI(symbol: currencySymbol)
+        let fullUrl = api.createFullUrl()
+        let method = api.httpMethod
+        let myFXCall = NetworkManager.shared
+        myFXCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in
+            if textresult != nil {
+                self.rateLabel.text = String(format: "%.4f", textresult!)
+                self.myRateResult = textresult!
+                self.amountToConvertLabel.text = String(format: "%.2f", self.amountToConvert)
+                self.amountConvertedLabel.text = String(format: "%.2f", (self.amountToConvert*self.myRateResult))
+                self.updateFlagImages()
+            } else {
+                print("Sorry there is an error at start")
+            }
+        }
     }
     
     // MARK: - Methods

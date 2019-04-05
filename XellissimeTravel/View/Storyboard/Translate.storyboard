@@ -122,10 +122,10 @@
                                 </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWx-7h-hMN">
-                                <rect key="frame" x="369" y="157" width="25" height="25"/>
+                                <rect key="frame" x="374" y="157" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="bik-DW-syt"/>
-                                    <constraint firstAttribute="width" constant="25" id="zDe-Rm-Xhh"/>
+                                    <constraint firstAttribute="height" constant="20" id="bik-DW-syt"/>
+                                    <constraint firstAttribute="width" constant="20" id="zDe-Rm-Xhh"/>
                                 </constraints>
                                 <state key="normal" image="clearWhite"/>
                                 <connections>

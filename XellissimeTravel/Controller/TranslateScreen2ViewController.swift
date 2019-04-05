@@ -10,6 +10,8 @@ import UIKit
 
 class TranslateScreen2ViewController: UIViewController {
     
+    
+    
     @IBOutlet weak var translateOutlet: UIButton!
     var textToTranslate = ""
     

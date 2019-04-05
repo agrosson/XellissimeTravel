@@ -18,10 +18,31 @@ class XellissimeTravelTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    // Test to check if all currencies have a country code
+    func testGivenAllCurrency_WhenTestIfThereIsACountryCode_ThenNoNil() {
+        var counter = 0
+        for item in CurrencyDataBase.dB{
+            if CurrencyDataBase.currencyCountryCode[item] == nil {
+                counter += 1
+            }
+        }
+        XCTAssert(counter==0)
+    }
+    // Test to check if all currencies have a country flag
+    func testGivenAllCurrency_WhenTestIfThereIsAFlag_ThenNoNil() {
+        var counter = 0
+        for item in CurrencyDataBase.dB{
+            let flagId = CurrencyDataBase.currencyCountryCode[item]![0]
+            let imageTest =  UIImage(named: flagId)
+            if imageTest == nil {
+                counter += 1
+            }
+            }
+        XCTAssert(counter==0)
+    }
+    
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+      
     }
 
     func testPerformanceExample() {

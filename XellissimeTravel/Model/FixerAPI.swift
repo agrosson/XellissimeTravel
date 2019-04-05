@@ -12,7 +12,7 @@ import UIKit
 class FixerAPI {
     private let endPoint = "http://data.fixer.io/api/latest"
     let httpMethod = "GET"
-    private let keyAPI = "123"
+    private let keyAPI = "a01"
     var symbol: String
     lazy var fixerFullUrl:URL? = createFullUrl()
     init(symbol: String){
@@ -47,7 +47,6 @@ struct CurrencyDataBase {
                      "AOA",
                      "ARS",
                      "AUD",
-                     "AWG",
                      "AZN",
                      "BAM",
                      "BBD",
@@ -86,7 +85,6 @@ struct CurrencyDataBase {
                      "FKP",
                      "GBP",
                      "GEL",
-                     "GHS",
                      "GIP",
                      "GMD",
                      "GNF",
@@ -152,7 +150,6 @@ struct CurrencyDataBase {
                      "SDG",
                      "SEK",
                      "SGD",
-                     "SHP",
                      "SLL",
                      "SOS",
                      "SRD",
