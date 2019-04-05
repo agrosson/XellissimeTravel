@@ -118,6 +118,8 @@ extension NetworkManager {
                 var testArrayResponse = [WeatherResponse]()
                 for  i in dayArray {
                     let weatherResponse = WeatherResponse(temp: (responseJson.list![i].main?.temp)!,
+                                                          tempMin: (responseJson.list![i].main?.tempMin)!,
+                                                          tempMax: (responseJson.list![i].main?.tempMax)!,
                                                           pressure: (responseJson.list![i].main?.pressure)!,
                                                           humidity: (responseJson.list![i].main?.humidity)!,
                                                           description: (responseJson.list![i].weather![0].description)!,

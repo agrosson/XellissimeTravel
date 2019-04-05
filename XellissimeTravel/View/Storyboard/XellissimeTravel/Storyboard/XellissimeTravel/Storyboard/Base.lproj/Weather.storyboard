@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -72,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pw1-SW-en8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="1436"/>
+            <point key="canvasLocation" x="-542" y="1434"/>
         </scene>
         <!--Weather-->
         <scene sceneID="Slb-UY-a8M">
@@ -125,6 +126,56 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="h7n-W9-x7b">
+                                <rect key="frame" x="20" y="202" width="374" height="90"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="CTm-GK-q6N">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="vyn-6p-nxq"/>
+                                            <constraint firstAttribute="height" constant="90" id="xfP-cE-ZdP"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="F7W-PE-VcR" userLabel="currentTempSV">
+                                        <rect key="frame" x="110" y="0.0" width="80" height="90"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Fnw-yb-d27">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="ekV-pD-1hW"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gag-4i-DMI">
+                                                <rect key="frame" x="0.0" y="58" width="80" height="32"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="80" id="0GC-yU-v2U"/>
+                                            <constraint firstAttribute="height" constant="90" id="Rac-qW-LD5"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gbt-A7-aw3">
+                                        <rect key="frame" x="210" y="0.0" width="164" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="3lV-Kc-wl1"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="80" id="VuA-R2-Jau"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Gbt-A7-aw3" secondAttribute="trailing" id="KcE-mO-Dsd"/>
+                                    <constraint firstItem="CTm-GK-q6N" firstAttribute="leading" secondItem="h7n-W9-x7b" secondAttribute="leading" id="q8G-rf-ffI"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.61960784310000006" green="0.59215686270000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -132,24 +183,31 @@
                             <constraint firstItem="WKC-7k-xfv" firstAttribute="centerX" secondItem="Hxm-Or-ZYy" secondAttribute="centerX" id="1mG-KB-3Pj"/>
                             <constraint firstItem="OgU-Ai-qcC" firstAttribute="trailing" secondItem="MEH-0m-jtB" secondAttribute="trailing" constant="20" id="8GR-bp-ncn"/>
                             <constraint firstItem="MEH-0m-jtB" firstAttribute="leading" secondItem="OgU-Ai-qcC" secondAttribute="leading" constant="20" id="BlW-Aa-HIy"/>
+                            <constraint firstItem="OgU-Ai-qcC" firstAttribute="trailing" secondItem="h7n-W9-x7b" secondAttribute="trailing" constant="20" id="D85-LI-Eez"/>
                             <constraint firstItem="MEH-0m-jtB" firstAttribute="top" secondItem="OgU-Ai-qcC" secondAttribute="top" constant="20" id="P50-X4-KrL"/>
                             <constraint firstItem="OgU-Ai-qcC" firstAttribute="trailing" secondItem="i1o-Oc-Vsz" secondAttribute="trailing" constant="20" id="TcI-zH-Jwt"/>
                             <constraint firstItem="9kO-rg-TMS" firstAttribute="centerX" secondItem="Hxm-Or-ZYy" secondAttribute="centerX" id="WzJ-lM-u8C"/>
                             <constraint firstItem="9kO-rg-TMS" firstAttribute="top" secondItem="WKC-7k-xfv" secondAttribute="bottom" constant="20" id="eyL-Yd-aK1"/>
                             <constraint firstItem="i1o-Oc-Vsz" firstAttribute="leading" secondItem="OgU-Ai-qcC" secondAttribute="leading" constant="20" id="lNi-N6-C4E"/>
+                            <constraint firstItem="h7n-W9-x7b" firstAttribute="top" secondItem="i1o-Oc-Vsz" secondAttribute="bottom" constant="20" id="nd7-JK-Tta"/>
                             <constraint firstItem="9kO-rg-TMS" firstAttribute="centerY" secondItem="Hxm-Or-ZYy" secondAttribute="centerY" id="pUL-iP-sJW"/>
+                            <constraint firstItem="h7n-W9-x7b" firstAttribute="leading" secondItem="OgU-Ai-qcC" secondAttribute="leading" constant="20" id="yUi-LP-lRa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OgU-Ai-qcC"/>
                     </view>
                     <connections>
                         <outlet property="cityTextField" destination="Fs1-nG-C3i" id="viM-1q-mgB"/>
                         <outlet property="countryTextField" destination="haA-9m-SVS" id="vLC-Hu-9uL"/>
+                        <outlet property="currentDetailsLabel" destination="Gbt-A7-aw3" id="X11-r4-64M"/>
+                        <outlet property="currentMinMax" destination="Gag-4i-DMI" id="Idp-4v-Dhx"/>
+                        <outlet property="currentTempLabel" destination="Fnw-yb-d27" id="qMk-If-cY3"/>
+                        <outlet property="currentWeatherIcon" destination="CTm-GK-q6N" id="iQb-sl-rWW"/>
                         <outlet property="iconeWeatherImageView" destination="WKC-7k-xfv" id="qIU-jI-ahL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKl-jP-SEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886.95652173913049" y="1435.7142857142856"/>
+            <point key="canvasLocation" x="220" y="1442"/>
         </scene>
     </scenes>
     <resources>
