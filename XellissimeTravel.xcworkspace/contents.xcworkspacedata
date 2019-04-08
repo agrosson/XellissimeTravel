@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/alexandregrosson/OPENCLASSROOMS/PARCOURS DEVELOPPEUR APPLICATION IOS/PROJET9/XellissimeTravel/XellissimeTravel/Model/ExtensionNotificationName.swift">
+   </FileRef>
+   <FileRef
       location = "group:XellissimeTravel.xcodeproj">
    </FileRef>
    <FileRef

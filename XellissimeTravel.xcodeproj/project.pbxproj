@@ -12,6 +12,8 @@
 		C12D0D89224BEF20001B8525 /* TranslateScreen1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */; };
 		C18CFD2D22524059002BA15A /* TranslateScreen2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18CFD2C22524059002BA15A /* TranslateScreen2ViewController.swift */; };
 		C1901B4D225B22F6009356FB /* ParamtersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1901B4C225B22F6009356FB /* ParamtersViewController.swift */; };
+		C1901B51225B2509009356FB /* ExtensionNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1901B50225B2509009356FB /* ExtensionNotificationName.swift */; };
+		C1901B53225B2597009356FB /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1901B52225B2597009356FB /* ExtensionUIColor.swift */; };
 		C19592C52254DFCD0055909C /* WeatherScreen2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19592C42254DFCC0055909C /* WeatherScreen2ViewController.swift */; };
 		C1AFB913224D5290009593C2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C1AFB90D224D5290009593C2 /* LICENSE */; };
 		C1AFB914224D5290009593C2 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AFB90F224D5290009593C2 /* UIImage.swift */; };
@@ -58,6 +60,8 @@
 		C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreen1ViewController.swift; sourceTree = "<group>"; };
 		C18CFD2C22524059002BA15A /* TranslateScreen2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreen2ViewController.swift; sourceTree = "<group>"; };
 		C1901B4C225B22F6009356FB /* ParamtersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamtersViewController.swift; sourceTree = "<group>"; };
+		C1901B50225B2509009356FB /* ExtensionNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExtensionNotificationName.swift; path = "/Users/alexandregrosson/OPENCLASSROOMS/PARCOURS DEVELOPPEUR APPLICATION IOS/PROJET9/XellissimeTravel/XellissimeTravel/Model/ExtensionNotificationName.swift"; sourceTree = "<absolute>"; };
+		C1901B52225B2597009356FB /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
 		C19592C42254DFCC0055909C /* WeatherScreen2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherScreen2ViewController.swift; sourceTree = "<group>"; };
 		C1AFB90D224D5290009593C2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C1AFB90F224D5290009593C2 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 		C1E82239224A7A2B00CE07F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C1901B50225B2509009356FB /* ExtensionNotificationName.swift */,
+				C1901B52225B2597009356FB /* ExtensionUIColor.swift */,
 				C1BCA8A7224B67B100EB9BEA /* APIManager.swift */,
 				C1BCA8AD224B74A800EB9BEA /* OpenweathermapAPI.swift */,
 				C1BCA8A9224B733A00EB9BEA /* FixerAPI.swift */,
@@ -439,6 +445,7 @@
 				C1AFB915224D5290009593C2 /* FlagKit.swift in Sources */,
 				C1E82215224A6A7D00CE07F4 /* ViewController.swift in Sources */,
 				C1E82237224A79E900CE07F4 /* InitialScreenViewController.swift in Sources */,
+				C1901B53225B2597009356FB /* ExtensionUIColor.swift in Sources */,
 				C1901B4D225B22F6009356FB /* ParamtersViewController.swift in Sources */,
 				C12D0D89224BEF20001B8525 /* TranslateScreen1ViewController.swift in Sources */,
 				C1BCA8AA224B733A00EB9BEA /* FixerAPI.swift in Sources */,
@@ -448,6 +455,7 @@
 				C1BCA8AE224B74A800EB9BEA /* OpenweathermapAPI.swift in Sources */,
 				C1E82213224A6A7D00CE07F4 /* AppDelegate.swift in Sources */,
 				C1B4A8BB224D205D002CD0A6 /* ChangeScreen2ViewController.swift in Sources */,
+				C1901B51225B2509009356FB /* ExtensionNotificationName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
