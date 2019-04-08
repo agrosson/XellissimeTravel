@@ -36,7 +36,7 @@
         <!--WeatherScreen1-->
         <scene sceneID="HI4-eX-599">
             <objects>
-                <viewController title="WeatherScreen1" id="u39-ZK-tnR" sceneMemberID="viewController">
+                <viewController title="WeatherScreen1" id="u39-ZK-tnR" customClass="WeatherScreen1ViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b7E-EU-xO3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,10 +70,14 @@
                         <viewLayoutGuide key="safeArea" id="YR4-a5-0KD"/>
                     </view>
                     <navigationItem key="navigationItem" id="3NH-VR-vji"/>
+                    <connections>
+                        <outlet property="goLabel" destination="Zmx-hU-dfK" id="p5e-bl-aIu"/>
+                        <outlet property="introLabel" destination="ytb-7f-jEB" id="NB0-hz-tUW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pw1-SW-en8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-542" y="1434"/>
+            <point key="canvasLocation" x="-474" y="1444"/>
         </scene>
         <!--Weather-->
         <scene sceneID="Slb-UY-a8M">
@@ -414,6 +418,7 @@
                         <viewLayoutGuide key="safeArea" id="OgU-Ai-qcC"/>
                     </view>
                     <connections>
+                        <outlet property="chooseCityLabel" destination="BLa-zd-25s" id="zJt-5g-Lta"/>
                         <outlet property="cityTextField" destination="Fs1-nG-C3i" id="viM-1q-mgB"/>
                         <outlet property="countryTextField" destination="haA-9m-SVS" id="vLC-Hu-9uL"/>
                         <outlet property="currentDetailsLabel" destination="Gbt-A7-aw3" id="X11-r4-64M"/>
@@ -447,6 +452,8 @@
                         <outlet property="minTempDate3" destination="M6W-r6-tav" id="b2C-c7-4CS"/>
                         <outlet property="minTempDate4" destination="wC0-CO-QHZ" id="mV2-af-O8i"/>
                         <outlet property="nextDaysLabel" destination="XhB-IW-sC2" id="A7P-VT-qtK"/>
+                        <outlet property="nyTitleLabel" destination="MEH-0m-jtB" id="gwj-XT-Qyu"/>
+                        <outlet property="searchButtonLabel" destination="9kO-rg-TMS" id="dbb-HH-fhB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKl-jP-SEg" userLabel="First Responder" sceneMemberID="firstResponder"/>

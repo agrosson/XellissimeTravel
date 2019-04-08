@@ -51,11 +51,34 @@ class TranslateScreen2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = color1
+        self.translateOutlet.setTitleColor(.white, for: .normal)
+         UINavigationBar.appearance().barTintColor = color5
+        UINavigationBar.appearance().tintColor = color6
+        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
         gestureTapCreation()
        
         // listen to keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
+//        
+//    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
+    }
+    @objc func updateColor(notification : Notification){
+       // let vc  = notification.object as? ParamtersViewController
+        self.view.backgroundColor = color1
+        self.translateOutlet.setTitleColor(.white, for: .normal)
+         UINavigationBar.appearance().barTintColor = color5
+        UINavigationBar.appearance().tintColor = color6
     }
     // stop listening
     deinit {
@@ -89,6 +112,8 @@ class TranslateScreen2ViewController: UIViewController {
             self.translateOutlet.transform = CGAffineTransform(translationX: 0, y: -keyboardHeight)
         }, completion: nil)
         }
+    
+    
 }
 extension TranslateScreen2ViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {

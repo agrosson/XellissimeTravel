@@ -70,6 +70,10 @@
                         <viewLayoutGuide key="safeArea" id="Rfb-7l-9pj"/>
                     </view>
                     <navigationItem key="navigationItem" id="43u-oW-4Sa"/>
+                    <connections>
+                        <outlet property="goLabel" destination="sSF-7e-JVc" id="pnY-X8-eND"/>
+                        <outlet property="translateScreen1Label" destination="qWX-F0-omw" id="dH2-Mn-GfJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZPJ-Wu-L1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

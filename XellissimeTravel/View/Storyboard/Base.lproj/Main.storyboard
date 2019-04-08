@@ -59,11 +59,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="LZ1-Nn-jnu" kind="relationship" relationship="viewControllers" id="bLe-BL-CPR"/>
                         <segue destination="6GE-se-kze" kind="relationship" relationship="viewControllers" id="Px0-2v-Wdh"/>
                         <segue destination="DzT-4n-Qpk" kind="relationship" relationship="viewControllers" id="GuR-UB-iZM"/>
                         <segue destination="5XS-js-K14" kind="relationship" relationship="viewControllers" id="mSB-FX-4u2"/>
                         <segue destination="mUC-8O-xf3" kind="relationship" relationship="viewControllers" id="RI3-Wf-kCd"/>
-                        <segue destination="LZ1-Nn-jnu" kind="relationship" relationship="viewControllers" id="bLe-BL-CPR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TUt-lf-0Ct" userLabel="First Responder" sceneMemberID="firstResponder"/>

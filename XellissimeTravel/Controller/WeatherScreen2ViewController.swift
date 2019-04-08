@@ -10,6 +10,10 @@ import UIKit
 
 class WeatherScreen2ViewController: UIViewController {
     
+    @IBOutlet weak var nyTitleLabel: UILabel!
+    @IBOutlet weak var chooseCityLabel: UILabel!
+    
+    @IBOutlet weak var searchButtonLabel: UIButton!
     
     @IBOutlet weak var currentSV: UIStackView!
     @IBOutlet weak var detailsSV: UIStackView!
@@ -53,7 +57,6 @@ class WeatherScreen2ViewController: UIViewController {
     @IBOutlet weak var currentDetailsLabel: UILabel!
     @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var cityTextField: UITextField!
-    @IBOutlet weak var iconeWeatherImageView: UIImageView!
     @IBAction func getWeatherButtonPressed(_ sender: UIButton) {
         let city = cityTextField.text
         let countryCode = countryTextField.text
@@ -141,9 +144,32 @@ class WeatherScreen2ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = color3
+        self.nyTitleLabel.textColor = .white
+        self.chooseCityLabel.textColor = .white
+        self.nextDaysLabel.textColor = .white
+        self.searchButtonLabel.setTitleColor(.white, for: .normal)
+        UINavigationBar.appearance().barTintColor = color5
+        UINavigationBar.appearance().tintColor = color6
         setNYWeather()
         
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
+        
+    }
+    @objc func updateColor(notification : Notification){
+        
+        view.backgroundColor = color3
+        self.view.backgroundColor = color3
+        self.nyTitleLabel.textColor = .white
+        self.chooseCityLabel.textColor = .white
+        self.nextDaysLabel.textColor = .white
+        self.searchButtonLabel.setTitleColor(.white, for: .normal)
+        UINavigationBar.appearance().barTintColor = color5
+        UINavigationBar.appearance().tintColor = color6
     }
     
     private func presentAlertWeather() {

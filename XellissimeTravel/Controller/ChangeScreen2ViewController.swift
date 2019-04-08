@@ -49,7 +49,8 @@ class ChangeScreen2ViewController: UIViewController {
     @IBOutlet weak var amountConvertedLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var currencyLabel: UILabel!
-    
+    // MARK: - Outlets - Button
+    @IBOutlet weak var goOutlet: UIButton!
     // MARK: - Outlets - PickerView
     @IBOutlet weak var currencyPicker: UIPickerView!
     
@@ -104,11 +105,36 @@ class ChangeScreen2ViewController: UIViewController {
     // MARK: - Methods - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = color2
+        goOutlet.setTitleColor(.white, for: .normal)
+        textFieldFX.backgroundColor = .clear
+         UINavigationBar.appearance().barTintColor = color5
+        UINavigationBar.appearance().tintColor = color6
         getUsdWhenLoad()
         textFieldFX.delegate = self
         gestureTapCreation()
         flagLeft.image = flagImageOne
         flagRight.image = flagImageTwo
+        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
+    }
+    
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
+//        
+//    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
+    }
+    @objc func updateColor(notification : Notification){
+        
+        view.backgroundColor = color2
+        self.goOutlet.setTitleColor(.white, for: .normal)
+        self.textFieldFX.backgroundColor = .clear
+        UINavigationBar.appearance().barTintColor = color5
+        UINavigationBar.appearance().tintColor = color6
     }
     private func getUsdWhenLoad(){
         let api = FixerAPI(symbol: currencySymbol)

@@ -75,6 +75,10 @@
                         <viewLayoutGuide key="safeArea" id="4Xr-Vz-9MQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="bVZ-Mi-ldF"/>
+                    <connections>
+                        <outlet property="goLabel" destination="NGn-UA-ky0" id="Eoq-0B-R4u"/>
+                        <outlet property="introLabel" destination="T1d-cb-Q6w" id="aJB-va-rq5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yyb-oj-DCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -221,6 +225,7 @@
                         <outlet property="currencyPicker" destination="ATk-rD-IrT" id="gKN-We-arc"/>
                         <outlet property="flagLeft" destination="8ge-dy-rwU" id="f9t-qe-8Ul"/>
                         <outlet property="flagRight" destination="8tV-Rf-4Zb" id="iEu-cw-n5I"/>
+                        <outlet property="goOutlet" destination="T8H-rS-aw7" id="1yw-wD-UAy"/>
                         <outlet property="rateLabel" destination="mgr-aH-eU6" id="v6W-Pa-VHE"/>
                         <outlet property="textFieldFX" destination="ceE-UH-HPu" id="dMt-IZ-rA8"/>
                     </connections>

@@ -52,9 +52,22 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5wT-EM-j4R">
                                                 <rect key="frame" x="25" y="25" width="50" height="50"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AU0-70-d9b">
+                                                        <rect key="frame" x="12.5" y="12.5" width="25" height="25"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="jBk-Cj-qmf"/>
+                                                            <constraint firstAttribute="width" constant="25" id="kY4-Kp-3pX"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.039215686270000001" green="0.37647058820000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
+                                                    <constraint firstItem="AU0-70-d9b" firstAttribute="centerY" secondItem="5wT-EM-j4R" secondAttribute="centerY" id="F4b-oe-Da4"/>
                                                     <constraint firstAttribute="height" constant="50" id="Ggj-Wq-7Dr"/>
+                                                    <constraint firstItem="AU0-70-d9b" firstAttribute="centerX" secondItem="5wT-EM-j4R" secondAttribute="centerX" id="IaK-eL-9nt"/>
                                                     <constraint firstAttribute="width" constant="50" id="dkA-ru-ZKN"/>
                                                 </constraints>
                                             </view>
@@ -80,18 +93,20 @@
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="U5D-gI-E0r">
                                 <rect key="frame" x="20" y="735" width="374" height="29"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                    <segment title=""/>
-                                    <segment title=""/>
+                                    <segment title="Pink"/>
+                                    <segment title="Blue"/>
+                                    <segment title="Modern"/>
+                                    <segment title="Green"/>
                                 </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="paramtersSegmentedSelected:" destination="yvM-zc-jPd" eventType="valueChanged" id="EMI-IU-mJ1"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" red="0.62714248900000003" green="0.32853841779999998" blue="0.53334838149999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zeK-7u-zJh" firstAttribute="centerY" secondItem="xrk-P0-RjO" secondAttribute="centerY" id="0Td-ig-dm5"/>
                             <constraint firstItem="zeK-7u-zJh" firstAttribute="centerX" secondItem="xrk-P0-RjO" secondAttribute="centerX" id="7Y7-pf-Qdi"/>
@@ -107,6 +122,7 @@
                         <outlet property="parametersView2" destination="hlh-Y6-CcD" id="B4p-zm-4Xy"/>
                         <outlet property="parametersView3" destination="Qxm-LZ-4BQ" id="QDk-aR-XvZ"/>
                         <outlet property="parametersView4" destination="5wT-EM-j4R" id="gt5-cc-rPg"/>
+                        <outlet property="parametersView5" destination="AU0-70-d9b" id="36q-iT-rK9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiG-ZV-pOD" userLabel="First Responder" sceneMemberID="firstResponder"/>
