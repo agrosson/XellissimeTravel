@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="-555" y="960"/>
         </scene>
-        <!--View Controller-->
+        <!--Paramters View Controller-->
         <scene sceneID="5Sz-wX-5aQ">
             <objects>
-                <viewController id="yvM-zc-jPd" sceneMemberID="viewController">
+                <viewController id="yvM-zc-jPd" customClass="ParamtersViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xrk-P0-RjO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,15 +78,36 @@
                                     <constraint firstAttribute="width" constant="200" id="zW0-gc-ff4"/>
                                 </constraints>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="U5D-gI-E0r">
+                                <rect key="frame" x="20" y="735" width="374" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                </segments>
+                                <connections>
+                                    <action selector="paramtersSegmentedSelected:" destination="yvM-zc-jPd" eventType="valueChanged" id="EMI-IU-mJ1"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.62714248900000003" green="0.32853841779999998" blue="0.53334838149999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="zeK-7u-zJh" firstAttribute="centerY" secondItem="xrk-P0-RjO" secondAttribute="centerY" id="0Td-ig-dm5"/>
                             <constraint firstItem="zeK-7u-zJh" firstAttribute="centerX" secondItem="xrk-P0-RjO" secondAttribute="centerX" id="7Y7-pf-Qdi"/>
+                            <constraint firstItem="U5D-gI-E0r" firstAttribute="leading" secondItem="ggV-hR-SOF" secondAttribute="leading" constant="20" id="Ubh-wR-ghI"/>
+                            <constraint firstItem="ggV-hR-SOF" firstAttribute="trailing" secondItem="U5D-gI-E0r" secondAttribute="trailing" constant="20" id="abF-XS-6nT"/>
+                            <constraint firstItem="ggV-hR-SOF" firstAttribute="bottom" secondItem="U5D-gI-E0r" secondAttribute="bottom" constant="50" id="lfn-ge-Qw0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ggV-hR-SOF"/>
                     </view>
                     <navigationItem key="navigationItem" id="gug-Fa-FF2"/>
+                    <connections>
+                        <outlet property="parametersView1" destination="zeK-7u-zJh" id="qMZ-UK-e2Y"/>
+                        <outlet property="parametersView2" destination="hlh-Y6-CcD" id="B4p-zm-4Xy"/>
+                        <outlet property="parametersView3" destination="Qxm-LZ-4BQ" id="QDk-aR-XvZ"/>
+                        <outlet property="parametersView4" destination="5wT-EM-j4R" id="gt5-cc-rPg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiG-ZV-pOD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
