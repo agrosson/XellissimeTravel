@@ -77,22 +77,14 @@ class WeatherScreen2ViewController: UIViewController {
         myWeatherCall.getWeather(fullUrl: url!, method: method, body: body, dayArray: allDays) { (success, weatherObject) in
             if weatherObject != nil {
                 for i in 0..<targetDays.count {
-                    print("Nous sommes à \(api.city) avec un essai à \(targetDays[i]), le \(String(describing: weatherObject![targetDays[i]].date)) il fait \(String(describing: weatherObject![targetDays[i]].description))")
-                    print("la température est \(String(describing: weatherObject![targetDays[i]].temp)) degrés")
                     var tempMinDay: Double = weatherObject![targetDays[i]].tempMax
                     var tempMaxDay: Double = weatherObject![targetDays[i]].tempMin
                     for test in targetDays[i]...targetDays[i]+7{
                         tempMaxDay = max(tempMaxDay,weatherObject![test].tempMax)
                         tempMinDay = min(tempMinDay, weatherObject![test].tempMin)
                     }
-                    print("la température minimale du jour est \(String(describing: tempMinDay)) degrés")
-                    print("la température maximale du jour est \(String(describing: tempMaxDay)) degrés")
-                    print("l'humidité est \(String(describing: weatherObject![targetDays[i]].humidity)) %")
-                    print("la pression est \(String(describing: weatherObject![targetDays[i]].pressure)) hpa")
-                    print("la vitesse du vent est \(String(describing: weatherObject![targetDays[i]].windSpeed*3.6)) km/h")
                     if targetDays[i] == 0 {
                         self.currentWeatherIcon.image = UIImage(named: weatherObject![targetDays[i]].iconString)
-                        // self.currentWeatherIcon.sizeToFit()
                         self.currentTempLabel.text = String(format: "%.1f", weatherObject![targetDays[i]].temp)+"°C"
                         self.currentDetailsLabel.text = "Humidity: \(String(format: "%.1f", weatherObject![targetDays[i]].humidity)) %\nPressure: \(String(format: "%.0f", weatherObject![targetDays[i]].pressure)) hpa\nWind: \(String(format: "%.1f", weatherObject![targetDays[i]].windSpeed*3.6)) km/h"
                         self.currentMinMaxLabel.text = "Temp Max: \(String(format: "%.1f",tempMaxDay))°C\nTemp Min: \(String(format: "%.1f",tempMinDay))°C"
