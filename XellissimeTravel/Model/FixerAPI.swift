@@ -12,7 +12,7 @@ import UIKit
 class FixerAPI {
     private let endPoint = "http://data.fixer.io/api/latest"
     let httpMethod = "GET"
-    private let keyAPI = "a01"
+    private let keyAPI = valueForAPIKey(named: "APIFixerKey")
     var symbol: String
     lazy var fixerFullUrl:URL? = createFullUrl()
     init(symbol: String){

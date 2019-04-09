@@ -10,6 +10,8 @@
 		590FA15BF769258C70FA3051 /* Pods_XellissimeTravelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C754669E6161F038E74209 /* Pods_XellissimeTravelTests.framework */; };
 		C12D0D87224BB484001B8525 /* ChangeScreen1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D0D86224BB484001B8525 /* ChangeScreen1ViewController.swift */; };
 		C12D0D89224BEF20001B8525 /* TranslateScreen1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */; };
+		C184803C225C7407001C5A0D /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C184803B225C7407001C5A0D /* APIKeys.plist */; };
+		C184803E225C74F0001C5A0D /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C184803D225C74F0001C5A0D /* APIKeys.swift */; };
 		C18CFD2D22524059002BA15A /* TranslateScreen2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18CFD2C22524059002BA15A /* TranslateScreen2ViewController.swift */; };
 		C1901B4D225B22F6009356FB /* ParamtersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1901B4C225B22F6009356FB /* ParamtersViewController.swift */; };
 		C1901B51225B2509009356FB /* ExtensionNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1901B50225B2509009356FB /* ExtensionNotificationName.swift */; };
@@ -59,6 +61,8 @@
 		A16B82D0B8FB27B6001B1317 /* Pods-XellissimeTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XellissimeTravel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XellissimeTravel/Pods-XellissimeTravel.debug.xcconfig"; sourceTree = "<group>"; };
 		C12D0D86224BB484001B8525 /* ChangeScreen1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeScreen1ViewController.swift; sourceTree = "<group>"; };
 		C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreen1ViewController.swift; sourceTree = "<group>"; };
+		C184803B225C7407001C5A0D /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
+		C184803D225C74F0001C5A0D /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		C18CFD2C22524059002BA15A /* TranslateScreen2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreen2ViewController.swift; sourceTree = "<group>"; };
 		C1901B4C225B22F6009356FB /* ParamtersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamtersViewController.swift; sourceTree = "<group>"; };
 		C1901B50225B2509009356FB /* ExtensionNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExtensionNotificationName.swift; path = "/Users/alexandregrosson/OPENCLASSROOMS/PARCOURS DEVELOPPEUR APPLICATION IOS/PROJET9/XellissimeTravel/XellissimeTravel/Model/ExtensionNotificationName.swift"; sourceTree = "<absolute>"; };
@@ -254,6 +258,8 @@
 		C1E8223C224A7A8600CE07F4 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				C184803D225C74F0001C5A0D /* APIKeys.swift */,
+				C184803B225C7407001C5A0D /* APIKeys.plist */,
 				C1E82212224A6A7D00CE07F4 /* AppDelegate.swift */,
 				C1E82219224A6A8000CE07F4 /* Assets.xcassets */,
 			);
@@ -352,6 +358,7 @@
 				C1AFB913224D5290009593C2 /* LICENSE in Resources */,
 				C1E82242224A8C8100CE07F4 /* Weather.storyboard in Resources */,
 				C1E8223F224A84CA00CE07F4 /* Change.storyboard in Resources */,
+				C184803C225C7407001C5A0D /* APIKeys.plist in Resources */,
 				C1E82235224A72B000CE07F4 /* APITest.plist in Resources */,
 				C1E8221A224A6A8000CE07F4 /* Assets.xcassets in Resources */,
 				C1AFB916224D5290009593C2 /* README.md in Resources */,
@@ -451,6 +458,7 @@
 				C1901B53225B2597009356FB /* ExtensionUIColor.swift in Sources */,
 				C1901B4D225B22F6009356FB /* ParamtersViewController.swift in Sources */,
 				C12D0D89224BEF20001B8525 /* TranslateScreen1ViewController.swift in Sources */,
+				C184803E225C74F0001C5A0D /* APIKeys.swift in Sources */,
 				C1BCA8AA224B733A00EB9BEA /* FixerAPI.swift in Sources */,
 				C18CFD2D22524059002BA15A /* TranslateScreen2ViewController.swift in Sources */,
 				C12D0D87224BB484001B8525 /* ChangeScreen1ViewController.swift in Sources */,
