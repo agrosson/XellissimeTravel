@@ -9,9 +9,9 @@
 import UIKit
 
 class TranslateScreen1ViewController: UIViewController {
-    
+    // MARK: - Outlets - Label
     @IBOutlet weak var translateScreen1Label: UILabel!
-    
+    // MARK: - Outlets - Button
     @IBOutlet weak var goLabel: UIButton!
     
     @IBAction func translateGoButton(_ sender: Any) {
