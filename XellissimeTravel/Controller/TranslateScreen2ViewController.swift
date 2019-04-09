@@ -10,27 +10,34 @@ import UIKit
 
 class TranslateScreen2ViewController: UIViewController {
     
-    
-    
-    @IBOutlet weak var translateOutlet: UIButton!
+    // MARK: - Properties
+    /// Empty text as initial value for textToTranslate
     var textToTranslate = ""
-    
+    // MARK: - Outlets - Labels
+    @IBOutlet weak var translatedTextLabel: UILabel!
+    // MARK: - Outlets - Button
+    @IBOutlet weak var translateOutlet: UIButton!
     @IBOutlet weak var clearButton: UIButton!
+    // MARK: - Outlets - TextView
+    @IBOutlet weak var textTotranslateTextView: UITextView!
+    // MARK: - Actions
+    /**
+     Action that clears text in UITextView
+     */
     @IBAction func clearButtonPressed(_ sender: UIButton) {
         textTotranslateTextView.text = ""
         clearButton.isHidden = true
     }
-    
-    @IBOutlet weak var textTotranslateTextView: UITextView!
-    @IBOutlet weak var translatedTextLabel: UILabel!
+    /**
+     Action that launches resquet to translate text
+     */
     @IBAction func translateButton(_ sender: UIButton) {
-       
         if textTotranslateTextView.text != "" {
             textToTranslate = textTotranslateTextView.text!
         } else {
             alertText()
         }
-        
+        // Block to prepare request
         let testLangOut = "en"
         let testLangIn = "fr"
         let api = GoogleTranslateAPI(textInput: textToTranslate, targetLanguage: testLangOut, sourceLanguage: testLangIn)
@@ -40,15 +47,13 @@ class TranslateScreen2ViewController: UIViewController {
         let url = api.createFullUrl()
         myTranslateCall.translate(fullUrl: url!, method: method, body: body) { (success, translation) in
             if translation != nil{
-                print(translation!)
                 self.translatedTextLabel.text = translation//.uppercased()
-                
             } else {
-                print("une erreur de traduction")
+                self.alertTranslationRequest()
             }
         }
     }
-    
+    // MARK: - Methods - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = color1
@@ -61,17 +66,14 @@ class TranslateScreen2ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
-//        
-//    }
-    
-    
+    // MARK: - Methods - ViewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
     }
+    /**
+     Function to update colors of screen, listening to Notification sent from parameters options
+     */
     @objc func updateColor(notification : Notification){
        // let vc  = notification.object as? ParamtersViewController
         self.view.backgroundColor = color1
@@ -84,12 +86,20 @@ class TranslateScreen2ViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidShowNotification, object: nil)
     }
-    
+    /**
+     Function that presents an alert when no text to translate
+     */
     private func alertText(){
         let actionSheet = UIAlertController(title: "Warning", message: "Your text is empty", preferredStyle: .actionSheet)
-        
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
+        self.present(actionSheet, animated: true, completion : nil)
+    }
+    /**
+     Function that presents an alert when problem of translation request
+     */
+    private func alertTranslationRequest(){
+        let actionSheet = UIAlertController(title: "Warning", message: "Request for translation has failed. Please try again", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(actionSheet, animated: true, completion : nil)
     }
     
@@ -104,21 +114,20 @@ class TranslateScreen2ViewController: UIViewController {
     @objc func myTap(){
          textTotranslateTextView.resignFirstResponder()
     }
-    
+    /**
+     Function that creates an animation to move view up when showing keyboard
+     */
     func animUp(keyboardHeight: CGFloat){
         UIView.animate(withDuration: 0.5, animations: {
             self.translateOutlet.transform = CGAffineTransform(translationX: 0, y: -keyboardHeight)
         }, completion: nil)
         }
-    
-    
 }
 extension TranslateScreen2ViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         clearButton.isHidden = textTotranslateTextView.text.isEmpty
         //textTotranslateTextView.text =  textTotranslateTextView.text.uppercased()
     }
-    
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textTotranslateTextView.text == "YOUR TEXT HERE" {
             textTotranslateTextView.text = ""
@@ -138,11 +147,7 @@ extension  TranslateScreen2ViewController {
         animUp(keyboardHeight: keyBoardSize.height-view.safeAreaInsets.bottom)
            // clearButton.frame.origin.y = -keyBoardSize.height
     }
-    
     @objc func keyboardWillChangeHide(notification: Notification){
         translateOutlet.transform = .identity
     }
-
-
-
 }

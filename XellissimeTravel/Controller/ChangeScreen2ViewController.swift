@@ -136,8 +136,6 @@ class ChangeScreen2ViewController: UIViewController {
             }
         }
     }
-
-    
     /**
      Function to update colors of screen, listening to Notification sent from parameters options
      */
@@ -149,7 +147,6 @@ class ChangeScreen2ViewController: UIViewController {
     /**
      Function to get USD/EUR rate
      */
-    
     private func getUsdWhenLoad(){
         let api = FixerAPI(symbol: currencySymbol)
         let fullUrl = api.createFullUrl()
@@ -175,7 +172,6 @@ class ChangeScreen2ViewController: UIViewController {
         flagRight.image = flagImageTwo
         currencyLabel.text = currencyName
     }
-    
     /**
      Function that switches amount to convert and converted amount. It calculates also the new rate to use
      */
@@ -184,7 +180,6 @@ class ChangeScreen2ViewController: UIViewController {
         rateLabel.text = String(format: "%.4f", myRateResult)
         self.amountConvertedLabel.text = String(format: "%.2f", (amountToConvert*myRateResult))
     }
-    
     /**
      Function that switches flag images
      */
@@ -195,7 +190,6 @@ class ChangeScreen2ViewController: UIViewController {
         flagLeft.image = flagImageOne
         flagRight.image = flagImageTwo
     }
-    
     /**
      Function that creates a tapGestureRecognizer
      */
@@ -227,16 +221,13 @@ class ChangeScreen2ViewController: UIViewController {
         present(alertVC, animated: true, completion: nil)
     }
 }
-
 // MARK: - Extension - TextfieldDelegate
-
 extension ChangeScreen2ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         resignFirstResponder()
         return true
     }
-    
-    // Function that checks numeric character in the textField
+    /// Function that checks numeric character in the textField
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string.isEmpty { return true }
         let currentText = textField.text ?? ""
