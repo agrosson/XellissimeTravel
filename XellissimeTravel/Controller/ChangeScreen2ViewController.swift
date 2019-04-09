@@ -224,7 +224,7 @@ class ChangeScreen2ViewController: UIViewController {
 // MARK: - Extension - TextfieldDelegate
 extension ChangeScreen2ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        resignFirstResponder()
+        textFieldFX.resignFirstResponder()
         return true
     }
     /// Function that checks numeric character in the textField

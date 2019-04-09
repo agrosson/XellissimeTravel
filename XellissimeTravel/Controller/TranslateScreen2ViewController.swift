@@ -122,6 +122,7 @@ class TranslateScreen2ViewController: UIViewController {
             self.translateOutlet.transform = CGAffineTransform(translationX: 0, y: -keyboardHeight)
         }, completion: nil)
         }
+    
 }
 extension TranslateScreen2ViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
@@ -133,6 +134,14 @@ extension TranslateScreen2ViewController: UITextViewDelegate {
             textTotranslateTextView.text = ""
             clearButton.isHidden = true
         }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
 }
 
