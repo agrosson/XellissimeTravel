@@ -49,7 +49,7 @@ class ParamtersViewController: UIViewController {
         
     }
     
-    @IBAction func paramtersSegmentedSelected(_ sender: UISegmentedControl) {
+    @IBAction func parametersSegmentedControlSelected(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
             case 0: style = .style1
             case 1: style = .style2

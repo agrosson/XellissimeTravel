@@ -6,16 +6,6 @@
 //  Copyright © 2019 GROSSON. All rights reserved.
 //
 
-/**
- Function that adds a digit when user types a number for the calculation
- - Parameter newNumber: The digit chosen by user on screen
- - Returns: The string to be displayed on screen
- 
- # Important Notes #
- 0 as first character of the number is not displayed on screen
- */
-
-
 import UIKit
 
 class ChangeScreen2ViewController: UIViewController {
@@ -62,15 +52,20 @@ class ChangeScreen2ViewController: UIViewController {
     @IBOutlet weak var flagRight: UIImageView!
     
     // MARK: - Actions
-    
+    /**
+     Action that launches request to get weather from a given city
+     */
     @IBAction func goFXButton(_ sender: Any) {
         flagImageOne = flagOneInitial
         flagImageTwo = flagTwoInitial
+        // Get currency info from Picker
         let pickerIndex = currencyPicker.selectedRow(inComponent: 0)
         currencySymbol = CurrencyDataBase.dB[pickerIndex]
         currencyTwo = CurrencyDataBase.currencyCountryCode[currencySymbol]![0]
         currencyName = CurrencyDataBase.currencyCountryCode[currencySymbol]![1]
+        // Set flag from currency choosen
         flagImageTwo = UIImage.init(named: currencyTwo, in: bundle, compatibleWith: nil)!
+        // Prepare and send request
         let api = FixerAPI(symbol: currencySymbol)
         let fullUrl = api.createFullUrl()
         let method = api.httpMethod
@@ -84,6 +79,11 @@ class ChangeScreen2ViewController: UIViewController {
                 amountToConvert = Float(1)
                 textFieldFX.text = "1"
             }
+            if amountToConvert > Float(100000) {
+                amountToConvert = Float(1)
+                presentAlertBigAmount()
+                textFieldFX.text = "1"
+            }
         }
         myFXCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in
             if textresult != nil {
@@ -93,7 +93,7 @@ class ChangeScreen2ViewController: UIViewController {
                 self.amountConvertedLabel.text = String(format: "%.2f", (self.amountToConvert*self.myRateResult))
                 self.updateFlagImages()
             } else {
-                print("Sorry there is an error somewhere")
+                self.presentAlertChange()
             }
         }
     }
@@ -105,36 +105,39 @@ class ChangeScreen2ViewController: UIViewController {
     // MARK: - Methods - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Setup colors for the screen
         view.backgroundColor = color2
         goOutlet.setTitleColor(.white, for: .normal)
         textFieldFX.backgroundColor = .clear
-         UINavigationBar.appearance().barTintColor = color5
+        UINavigationBar.appearance().barTintColor = color5
         UINavigationBar.appearance().tintColor = color6
+        // Launch function to display weather in New Yorr City, USA
         getUsdWhenLoad()
+        // Textfield Delegate
         textFieldFX.delegate = self
+        // Creation of tapGestureRecognizer
         gestureTapCreation()
+        // Setup flags
         flagLeft.image = flagImageOne
         flagRight.image = flagImageTwo
+        // Add Notification Observer
         NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
     }
-    
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
-//        
-//    }
+    // MARK: - Methods - ViewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
     }
+    // MARK: - Methods
+    /**
+     Function that Update colors of screen, listening to Notification sent from parameters options
+     */
     @objc func updateColor(notification : Notification){
-        
         view.backgroundColor = color2
         self.goOutlet.setTitleColor(.white, for: .normal)
         self.textFieldFX.backgroundColor = .clear
-        UINavigationBar.appearance().barTintColor = color5
-        UINavigationBar.appearance().tintColor = color6
+    //      UINavigationBar.appearance().barTintColor = color5
+//        UINavigationBar.appearance().tintColor = color6
     }
     private func getUsdWhenLoad(){
         let api = FixerAPI(symbol: currencySymbol)
@@ -149,12 +152,10 @@ class ChangeScreen2ViewController: UIViewController {
                 self.amountConvertedLabel.text = String(format: "%.2f", (self.amountToConvert*self.myRateResult))
                 self.updateFlagImages()
             } else {
-                print("Sorry there is an error at start")
+                self.presentAlertChange()
             }
         }
     }
-    
-    // MARK: - Methods
     /**
      Function that Update screen with flagImage
      */
@@ -197,6 +198,20 @@ class ChangeScreen2ViewController: UIViewController {
      */
     @objc func myTap(){
         textFieldFX.resignFirstResponder()
+    }
+    /**
+     Function that presents an alert when request has failed
+     */
+    private func presentAlertChange() {
+        let alertVC = UIAlertController(title: "Sorry", message: "The request has failed. Check your data", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertVC, animated: true, completion: nil)
+    }
+    
+    private func presentAlertBigAmount() {
+        let alertVC = UIAlertController(title: "Sorry", message: "The amount to change is to big. Change your data", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertVC, animated: true, completion: nil)
     }
 }
 

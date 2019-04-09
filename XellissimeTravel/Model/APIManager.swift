@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-// MARK: API EndPoint :  variable to switch from one API to another
-
 
 // MARK: Networking class
 class NetworkManager {
