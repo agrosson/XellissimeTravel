@@ -149,8 +149,7 @@ class WeatherScreen2ViewController: UIViewController {
         self.chooseCityLabel.textColor = .white
         self.nextDaysLabel.textColor = .white
         self.searchButtonLabel.setTitleColor(.white, for: .normal)
-        UINavigationBar.appearance().barTintColor = color5
-        UINavigationBar.appearance().tintColor = color6
+        navigationBarColor()
         setNYWeather()
         
         // Do any additional setup after loading the view.
@@ -168,8 +167,7 @@ class WeatherScreen2ViewController: UIViewController {
         self.chooseCityLabel.textColor = .white
         self.nextDaysLabel.textColor = .white
         self.searchButtonLabel.setTitleColor(.white, for: .normal)
-        UINavigationBar.appearance().barTintColor = color5
-        UINavigationBar.appearance().tintColor = color6
+        navigationBarColor()
     }
     
     private func presentAlertWeather() {

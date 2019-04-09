@@ -53,8 +53,7 @@ class TranslateScreen2ViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = color1
         self.translateOutlet.setTitleColor(.white, for: .normal)
-         UINavigationBar.appearance().barTintColor = color5
-        UINavigationBar.appearance().tintColor = color6
+        navigationBarColor()
         NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
         gestureTapCreation()
        
@@ -77,8 +76,7 @@ class TranslateScreen2ViewController: UIViewController {
        // let vc  = notification.object as? ParamtersViewController
         self.view.backgroundColor = color1
         self.translateOutlet.setTitleColor(.white, for: .normal)
-         UINavigationBar.appearance().barTintColor = color5
-        UINavigationBar.appearance().tintColor = color6
+        navigationBarColor()
     }
     // stop listening
     deinit {

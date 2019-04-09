@@ -70,21 +70,9 @@ class ChangeScreen2ViewController: UIViewController {
         let fullUrl = api.createFullUrl()
         let method = api.httpMethod
         let myFXCall = NetworkManager.shared
-        if textFieldFX.text == "" || textFieldFX.text == "0" {
-            amountToConvert = 1
-            textFieldFX.text = "1"
-        } else {
-            amountToConvert = (textFieldFX.text! as NSString).floatValue
-            if amountToConvert == 0 {
-                amountToConvert = Float(1)
-                textFieldFX.text = "1"
-            }
-            if amountToConvert > Float(100000) {
-                amountToConvert = Float(1)
-                presentAlertBigAmount()
-                textFieldFX.text = "1"
-            }
-        }
+        // Block of code to check amount to convert
+        checkAmountToConvert()
+        //
         myFXCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in
             if textresult != nil {
                 self.rateLabel.text = String(format: "%.4f", textresult!)
@@ -109,8 +97,7 @@ class ChangeScreen2ViewController: UIViewController {
         view.backgroundColor = color2
         goOutlet.setTitleColor(.white, for: .normal)
         textFieldFX.backgroundColor = .clear
-        UINavigationBar.appearance().barTintColor = color5
-        UINavigationBar.appearance().tintColor = color6
+        navigationBarColor()
         // Launch function to display weather in New Yorr City, USA
         getUsdWhenLoad()
         // Textfield Delegate
@@ -130,15 +117,39 @@ class ChangeScreen2ViewController: UIViewController {
     }
     // MARK: - Methods
     /**
-     Function that Update colors of screen, listening to Notification sent from parameters options
+     Function to check amount to convert
+     */
+    private func checkAmountToConvert(){
+        if textFieldFX.text == "" || textFieldFX.text == "0" {
+            amountToConvert = 1
+            textFieldFX.text = "1"
+        } else {
+            amountToConvert = (textFieldFX.text! as NSString).floatValue
+            if amountToConvert == 0 {
+                amountToConvert = Float(1)
+                textFieldFX.text = "1"
+            }
+            if amountToConvert > Float(100000) {
+                amountToConvert = Float(1)
+                presentAlertBigAmount()
+                textFieldFX.text = "1"
+            }
+        }
+    }
+
+    
+    /**
+     Function to update colors of screen, listening to Notification sent from parameters options
      */
     @objc func updateColor(notification : Notification){
         view.backgroundColor = color2
         self.goOutlet.setTitleColor(.white, for: .normal)
         self.textFieldFX.backgroundColor = .clear
-    //      UINavigationBar.appearance().barTintColor = color5
-//        UINavigationBar.appearance().tintColor = color6
     }
+    /**
+     Function to get USD/EUR rate
+     */
+    
     private func getUsdWhenLoad(){
         let api = FixerAPI(symbol: currencySymbol)
         let fullUrl = api.createFullUrl()
@@ -207,7 +218,9 @@ class ChangeScreen2ViewController: UIViewController {
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         present(alertVC, animated: true, completion: nil)
     }
-    
+    /**
+     Function that presents an alert when amount to convert is too big
+     */
     private func presentAlertBigAmount() {
         let alertVC = UIAlertController(title: "Sorry", message: "The amount to change is to big. Change your data", preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))

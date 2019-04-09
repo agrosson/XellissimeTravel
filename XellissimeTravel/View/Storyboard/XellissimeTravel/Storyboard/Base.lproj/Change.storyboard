@@ -16,7 +16,7 @@
                 <navigationController id="9Nw-0t-v0i" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="change" image="dollarblue" id="gsX-2k-nee"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="wSN-sH-dIH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wSN-sH-dIH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

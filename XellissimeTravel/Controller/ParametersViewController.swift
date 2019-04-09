@@ -12,8 +12,13 @@ var color1: UIColor?
 var color2: UIColor?
 var color3: UIColor?
 var color4: UIColor?
-var color5: UIColor?
+var color5: UIColor? = UIColor(hexString: "FAFBF8")
 var color6 = UIColor(hexString: "5A616D")
+
+func  navigationBarColor() {
+    UINavigationBar.appearance().barTintColor = color5
+    UINavigationBar.appearance().tintColor = color6
+}
 
 class ParamtersViewController: UIViewController {
     
@@ -62,6 +67,7 @@ class ParamtersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationBarColor()
         view.backgroundColor = .black
         style = .style1
         getColors()
@@ -72,12 +78,7 @@ class ParamtersViewController: UIViewController {
         super.viewWillDisappear(animated)
          NotificationCenter.default.post(name: .setNewColor1, object: self)
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-          NotificationCenter.default.post(name: .setNewColor1, object: self)
-    }
-    
+        
     private func blueMood() {
        // view.backgroundColor = .black
         parametersView1.backgroundColor = UIColor(hexString: "4B8AEF")

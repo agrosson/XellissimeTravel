@@ -21,8 +21,7 @@ class ChangeScreen1ViewController: UIViewController {
         view.backgroundColor = color2
         self.introLabel.textColor = .white
         goLabel.setTitleColor(.white, for: .normal)
-         UINavigationBar.appearance().barTintColor = color5
-        UINavigationBar.appearance().tintColor = color6
+        navigationBarColor()
         NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
     }
     
@@ -35,8 +34,7 @@ class ChangeScreen1ViewController: UIViewController {
         view.backgroundColor = color2
         self.introLabel.textColor = .white
         goLabel.setTitleColor(.white, for: .normal)
-         UINavigationBar.appearance().barTintColor = color5
-        UINavigationBar.appearance().tintColor = color6
+        navigationBarColor()
         
     }
 }
