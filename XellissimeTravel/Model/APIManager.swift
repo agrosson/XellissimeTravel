@@ -50,19 +50,16 @@ extension NetworkManager {
 }
 
 extension NetworkManager {
-    
     func translate(fullUrl : URL,method : String,body: String, callBack : @escaping (Bool,String?) -> ()) {
         var request = URLRequest(url: fullUrl)
         print(fullUrl)
         request.httpMethod = method
-        // request.httpMethod = body
         print(body)
         let session = URLSession(configuration: .default)
         task?.cancel()
         let task = session.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
-                    print("l'erreur ici")
                     print(error as Any)
                     callBack(false,nil)
                     return
@@ -71,26 +68,20 @@ extension NetworkManager {
                     callBack(false,nil)
                     return
                 }
-                print("so far 1")
                 guard let responseJson = try? JSONDecoder().decode([String:DataClass].self, from: data),
                     let translationResultData = responseJson["data"]
                     else {
                         callBack(false, nil)
                         return
                 }
-                
-                print("so far 2")
                 let translation = translationResultData.translations![0].translatedText
-                print(translation as Any)
                 callBack(true,translation)
             }
         }
         task.resume()
     }
 }
-
 extension NetworkManager {
-    
     func getWeather(fullUrl : URL,method : String,body: String, dayArray: [Int], callBack : @escaping (Bool,[WeatherResponse]?) -> ()) {
         var request = URLRequest(url: fullUrl)
         request.httpMethod = method
@@ -112,7 +103,6 @@ extension NetworkManager {
                         callBack(false, nil)
                         return
                 }
-                  print("passage là")
                 var testArrayResponse = [WeatherResponse]()
                 for  i in dayArray {
                     let weatherResponse = WeatherResponse(temp: (responseJson.list![i].main?.temp)!,
@@ -127,8 +117,7 @@ extension NetworkManager {
                     )
                     testArrayResponse.append(weatherResponse)
                 }
- 
-                    callBack(true,testArrayResponse)
+                callBack(true,testArrayResponse)
             }
         }
         task.resume()
@@ -136,23 +125,21 @@ extension NetworkManager {
 }
 extension NetworkManager {
     func getImage(pictureURL : URL,completionHandler: @escaping (Data?) -> Void) {
-    let session = URLSession(configuration: .default)
-    task?.cancel()
+        let session = URLSession(configuration: .default)
+        task?.cancel()
         task = session.dataTask(with: pictureURL) { (data, response, error) in
-        DispatchQueue.main.async {
-            guard let data = data, error == nil else {
-                completionHandler(nil)
-                return
+            DispatchQueue.main.async {
+                guard let data = data, error == nil else {
+                    completionHandler(nil)
+                    return
+                }
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    completionHandler(nil)
+                    return
+                }
+                completionHandler(data)
             }
-            //check if response has a code 200 (ok)
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                completionHandler(nil)
-                return
-            }
-            print("passage ici")
-            completionHandler(data)
         }
+        task?.resume()
     }
-    task?.resume()
-}
 }

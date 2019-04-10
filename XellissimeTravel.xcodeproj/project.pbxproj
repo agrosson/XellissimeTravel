@@ -215,13 +215,6 @@
 				C1F1764F225DC8880030208A /* Translate */,
 				C1F1764E225DC87C0030208A /* Change */,
 				C1F1764D225DC86E0030208A /* Weather */,
-				C1901B4C225B22F6009356FB /* ParametersViewController.swift */,
-				C1901B54225B563A009356FB /* WeatherScreen1ViewController.swift */,
-				C19592C42254DFCC0055909C /* WeatherScreen2ViewController.swift */,
-				C12D0D86224BB484001B8525 /* ChangeScreen1ViewController.swift */,
-				C1B4A8BA224D205D002CD0A6 /* ChangeScreen2ViewController.swift */,
-				C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */,
-				C18CFD2C22524059002BA15A /* TranslateScreen2ViewController.swift */,
 				C1E82214224A6A7D00CE07F4 /* ViewController.swift */,
 				C1E82236224A79E900CE07F4 /* InitialScreenViewController.swift */,
 			);
@@ -245,7 +238,6 @@
 			isa = PBXGroup;
 			children = (
 				C1E8223B224A7A6200CE07F4 /* Storyboard */,
-				C1E8221B224A6A8000CE07F4 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -253,6 +245,7 @@
 		C1E8223B224A7A6200CE07F4 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				C1E8221B224A6A8000CE07F4 /* LaunchScreen.storyboard */,
 				C1BCA8A4224B63C500EB9BEA /* Photos.storyboard */,
 				C1BCA8A1224B624E00EB9BEA /* Parameters.storyboard */,
 				C1BCA89F224B5C0300EB9BEA /* Translate.storyboard */,
@@ -279,6 +272,8 @@
 		C1F1764D225DC86E0030208A /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				C1901B54225B563A009356FB /* WeatherScreen1ViewController.swift */,
+				C19592C42254DFCC0055909C /* WeatherScreen2ViewController.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -286,6 +281,8 @@
 		C1F1764E225DC87C0030208A /* Change */ = {
 			isa = PBXGroup;
 			children = (
+				C12D0D86224BB484001B8525 /* ChangeScreen1ViewController.swift */,
+				C1B4A8BA224D205D002CD0A6 /* ChangeScreen2ViewController.swift */,
 			);
 			path = Change;
 			sourceTree = "<group>";
@@ -293,6 +290,8 @@
 		C1F1764F225DC8880030208A /* Translate */ = {
 			isa = PBXGroup;
 			children = (
+				C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */,
+				C18CFD2C22524059002BA15A /* TranslateScreen2ViewController.swift */,
 			);
 			path = Translate;
 			sourceTree = "<group>";
@@ -300,6 +299,7 @@
 		C1F17650225DC8970030208A /* Parameters */ = {
 			isa = PBXGroup;
 			children = (
+				C1901B4C225B22F6009356FB /* ParametersViewController.swift */,
 			);
 			path = Parameters;
 			sourceTree = "<group>";
