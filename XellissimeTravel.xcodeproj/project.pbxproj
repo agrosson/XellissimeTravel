@@ -42,6 +42,7 @@
 		C1E8223F224A84CA00CE07F4 /* Change.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E8223D224A84CA00CE07F4 /* Change.storyboard */; };
 		C1E82242224A8C8100CE07F4 /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E82240224A8C8100CE07F4 /* Weather.storyboard */; };
 		C1F17652225DC93E0030208A /* alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F17651225DC93E0030208A /* alert.swift */; };
+		C1F17654225DFAD90030208A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F17653225DFAD90030208A /* Settings.swift */; };
 		E880925B2CB36DAB104F1CC6 /* Pods_XellissimeTravel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034716EB3553D55E611F7A9D /* Pods_XellissimeTravel.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		C1E8223E224A84CA00CE07F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = XellissimeTravel/Storyboard/Base.lproj/Change.storyboard; sourceTree = "<group>"; };
 		C1E82241224A8C8100CE07F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = XellissimeTravel/Storyboard/XellissimeTravel/Storyboard/Base.lproj/Weather.storyboard; sourceTree = "<group>"; };
 		C1F17651225DC93E0030208A /* alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alert.swift; sourceTree = "<group>"; };
+		C1F17653225DFAD90030208A /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		D3602D5B98C5DCF403F90C66 /* Pods-XellissimeTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XellissimeTravel.release.xcconfig"; path = "Pods/Target Support Files/Pods-XellissimeTravel/Pods-XellissimeTravel.release.xcconfig"; sourceTree = "<group>"; };
 		E764098A0C3852E294D7EA07 /* Pods-XellissimeTravelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XellissimeTravelTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XellissimeTravelTests/Pods-XellissimeTravelTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -264,6 +266,7 @@
 		C1E8223C224A7A8600CE07F4 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				C1F17653225DFAD90030208A /* Settings.swift */,
 				C184803D225C74F0001C5A0D /* APIKeys.swift */,
 				C184803B225C7407001C5A0D /* APIKeys.plist */,
 				C1E82212224A6A7D00CE07F4 /* AppDelegate.swift */,
@@ -502,6 +505,7 @@
 				C1E82213224A6A7D00CE07F4 /* AppDelegate.swift in Sources */,
 				C1901B55225B563A009356FB /* WeatherScreen1ViewController.swift in Sources */,
 				C1B4A8BB224D205D002CD0A6 /* ChangeScreen2ViewController.swift in Sources */,
+				C1F17654225DFAD90030208A /* Settings.swift in Sources */,
 				C1F17652225DC93E0030208A /* alert.swift in Sources */,
 				C1901B51225B2509009356FB /* ExtensionNotificationName.swift in Sources */,
 			);

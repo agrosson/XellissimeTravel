@@ -9,10 +9,7 @@
 import UIKit
 
 class TranslateScreen2ViewController: UIViewController {
-    
-    // MARK: - Properties
-    /// Empty text as initial value for textToTranslate
-    var textToTranslate = ""
+
     // MARK: - Outlets - Labels
     @IBOutlet weak var translatedTextLabel: UILabel!
     // MARK: - Outlets - Button
@@ -107,7 +104,6 @@ class TranslateScreen2ViewController: UIViewController {
             self.translateOutlet.transform = CGAffineTransform(translationX: 0, y: -keyboardHeight)
         }, completion: nil)
     }
-    
 }
 extension TranslateScreen2ViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
@@ -120,7 +116,6 @@ extension TranslateScreen2ViewController: UITextViewDelegate {
             clearButton.isHidden = true
         }
     }
-    
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n") {
             textView.resignFirstResponder()
@@ -129,7 +124,6 @@ extension TranslateScreen2ViewController: UITextViewDelegate {
         return true
     }
 }
-
 // Notification protocole for keyboard behavior
 extension  TranslateScreen2ViewController {
     @objc func keyboardWillChange(notification: Notification){

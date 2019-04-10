@@ -10,12 +10,12 @@ import UIKit
 
 class WeatherScreen2ViewController: UIViewController {
     // MARK: - Outlets - Labels
-    // Label for NY block
+    // Labels for NY block
     @IBOutlet weak var nyTitleLabel: UILabel!
     @IBOutlet weak var currentTempLabelNY: UILabel!
     @IBOutlet weak var currentMinMaxLabelNY: UILabel!
     @IBOutlet weak var currentDetailsLabelNY: UILabel!
-    // Label for research city block
+    // Labels for research city block
     @IBOutlet weak var chooseCityLabel: UILabel!
     @IBOutlet weak var currentTempLabel: UILabel!
     @IBOutlet weak var currentMinMaxLabel: UILabel!
@@ -44,7 +44,7 @@ class WeatherScreen2ViewController: UIViewController {
     @IBOutlet weak var currentWeatherIconNY: UIImageView!
     // Image for current city Block
     @IBOutlet weak var currentWeatherIcon: UIImageView!
-    // Image for details
+    // Images for details
     @IBOutlet weak var iconDate1: UIImageView!
     @IBOutlet weak var iconDate2: UIImageView!
     @IBOutlet weak var iconDate3: UIImageView!
@@ -56,7 +56,7 @@ class WeatherScreen2ViewController: UIViewController {
     // MARK: - Outlets - TextFields
     @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var cityTextField: UITextField!
-    // MARK: - Outlets - Buttons
+    // MARK: - Outlets - Button
     @IBOutlet weak var searchButtonLabel: UIButton!
     
     // MARK: - Actions

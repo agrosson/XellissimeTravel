@@ -11,16 +11,8 @@ import UIKit
 class ChangeScreen2ViewController: UIViewController {
     
     // MARK: - Properties
-    /// Initial exchange rate set at 1
-    var myRateResult: Float = 1
-    /// Currency for flag: default EUR
-    var currencyOne = "EU"
-    /// Currency Symbol
-    var currencySymbol = "USD"
-    /// Currency name
-    var currencyName = ""
     /// Currency target for flag: default US
-    lazy var currencyTwo = CurrencyDataBase.currencyCountryCode[currencySymbol]![0]//"US" //currency symbol
+    lazy var currencyTwo = CurrencyDataBase.currencyCountryCode[currencySymbol]![0]
     /// Bundle where Flags images are stored
     let bundle = FlagKit.assetBundle
     /// Image one for flag, initial with currencyOne
@@ -76,9 +68,9 @@ class ChangeScreen2ViewController: UIViewController {
         myFXCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in
             if textresult != nil {
                 self.rateLabel.text = String(format: "%.4f", textresult!)
-                self.myRateResult = textresult!
+                myRateResult = textresult!
                 self.amountToConvertLabel.text = String(format: "%.2f", self.amountToConvert)
-                self.amountConvertedLabel.text = String(format: "%.2f", (self.amountToConvert*self.myRateResult))
+                self.amountConvertedLabel.text = String(format: "%.2f", (self.amountToConvert*myRateResult))
                 self.updateFlagImages()
             } else {
                 Alert.shared.controller = self
@@ -157,9 +149,9 @@ class ChangeScreen2ViewController: UIViewController {
         myFXCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in
             if textresult != nil {
                 self.rateLabel.text = String(format: "%.4f", textresult!)
-                self.myRateResult = textresult!
+                myRateResult = textresult!
                 self.amountToConvertLabel.text = String(format: "%.2f", self.amountToConvert)
-                self.amountConvertedLabel.text = String(format: "%.2f", (self.amountToConvert*self.myRateResult))
+                self.amountConvertedLabel.text = String(format: "%.2f", (self.amountToConvert*myRateResult))
                 self.updateFlagImages()
             } else {
                 Alert.shared.controller = self
