@@ -178,9 +178,8 @@ class WeatherScreen2ViewController: UIViewController {
     
     private func presentAlertWeather() {
         hideLabelAtLaunch(hide: true)
-        let alertVC = UIAlertController(title: "Sorry", message: "The request to get weather forecast failed.", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertVC, animated: true, completion: nil)
+        Alert.shared.controller = self
+        Alert.shared.alertDisplay = .weatherRequestFailed
     }
     
     private func hideLabelAtLaunch(hide: Bool) {

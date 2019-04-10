@@ -35,7 +35,8 @@ class TranslateScreen2ViewController: UIViewController {
         if textTotranslateTextView.text != "" {
             textToTranslate = textTotranslateTextView.text!
         } else {
-            alertText()
+            Alert.shared.controller = self
+            Alert.shared.alertDisplay = .emptyText
         }
         // Block to prepare request
         let testLangOut = "en"
@@ -49,7 +50,8 @@ class TranslateScreen2ViewController: UIViewController {
             if translation != nil{
                 self.translatedTextLabel.text = translation//.uppercased()
             } else {
-                self.alertTranslationRequest()
+                Alert.shared.controller = self
+                Alert.shared.alertDisplay = .translationRequestFailed
             }
         }
     }
@@ -61,7 +63,7 @@ class TranslateScreen2ViewController: UIViewController {
         navigationBarColor()
         NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
         gestureTapCreation()
-       
+        
         // listen to keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -75,7 +77,7 @@ class TranslateScreen2ViewController: UIViewController {
      Function to update colors of screen, listening to Notification sent from parameters options
      */
     @objc func updateColor(notification : Notification){
-       // let vc  = notification.object as? ParamtersViewController
+        // let vc  = notification.object as? ParamtersViewController
         self.view.backgroundColor = color1
         self.translateOutlet.setTitleColor(.white, for: .normal)
         navigationBarColor()
@@ -86,23 +88,6 @@ class TranslateScreen2ViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidShowNotification, object: nil)
     }
-    /**
-     Function that presents an alert when no text to translate
-     */
-    private func alertText(){
-        let actionSheet = UIAlertController(title: "Warning", message: "Your text is empty", preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        self.present(actionSheet, animated: true, completion : nil)
-    }
-    /**
-     Function that presents an alert when problem of translation request
-     */
-    private func alertTranslationRequest(){
-        let actionSheet = UIAlertController(title: "Warning", message: "Request for translation has failed. Please try again", preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        self.present(actionSheet, animated: true, completion : nil)
-    }
-    
     /**
      Function that creates a tapGestureRecognizer
      */
@@ -121,7 +106,7 @@ class TranslateScreen2ViewController: UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.translateOutlet.transform = CGAffineTransform(translationX: 0, y: -keyboardHeight)
         }, completion: nil)
-        }
+    }
     
 }
 extension TranslateScreen2ViewController: UITextViewDelegate {
@@ -154,7 +139,7 @@ extension  TranslateScreen2ViewController {
         }
         // Move the view up with keyboard height
         animUp(keyboardHeight: keyBoardSize.height-view.safeAreaInsets.bottom)
-           // clearButton.frame.origin.y = -keyBoardSize.height
+        // clearButton.frame.origin.y = -keyBoardSize.height
     }
     @objc func keyboardWillChangeHide(notification: Notification){
         translateOutlet.transform = .identity

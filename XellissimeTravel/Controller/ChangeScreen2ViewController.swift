@@ -81,7 +81,8 @@ class ChangeScreen2ViewController: UIViewController {
                 self.amountConvertedLabel.text = String(format: "%.2f", (self.amountToConvert*self.myRateResult))
                 self.updateFlagImages()
             } else {
-                self.presentAlertChange()
+                Alert.shared.controller = self
+                Alert.shared.alertDisplay = .changeRequestFailed
             }
         }
     }
@@ -131,7 +132,8 @@ class ChangeScreen2ViewController: UIViewController {
             }
             if amountToConvert > Float(100000) {
                 amountToConvert = Float(1)
-                presentAlertBigAmount()
+                Alert.shared.controller = self
+                Alert.shared.alertDisplay = .bigAmount
                 textFieldFX.text = "1"
             }
         }
@@ -160,7 +162,8 @@ class ChangeScreen2ViewController: UIViewController {
                 self.amountConvertedLabel.text = String(format: "%.2f", (self.amountToConvert*self.myRateResult))
                 self.updateFlagImages()
             } else {
-                self.presentAlertChange()
+                Alert.shared.controller = self
+                Alert.shared.alertDisplay = .changeRequestFailed
             }
         }
     }
@@ -203,22 +206,6 @@ class ChangeScreen2ViewController: UIViewController {
      */
     @objc func myTap(){
         textFieldFX.resignFirstResponder()
-    }
-    /**
-     Function that presents an alert when request has failed
-     */
-    private func presentAlertChange() {
-        let alertVC = UIAlertController(title: "Sorry", message: "The request has failed. Check your data", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertVC, animated: true, completion: nil)
-    }
-    /**
-     Function that presents an alert when amount to convert is too big
-     */
-    private func presentAlertBigAmount() {
-        let alertVC = UIAlertController(title: "Sorry", message: "The amount to change is to big. Change your data", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertVC, animated: true, completion: nil)
     }
 }
 // MARK: - Extension - TextfieldDelegate
