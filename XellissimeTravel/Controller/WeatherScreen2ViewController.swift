@@ -59,15 +59,22 @@ class WeatherScreen2ViewController: UIViewController {
     // MARK: - Outlets - Buttons
     @IBOutlet weak var searchButtonLabel: UIButton!
     
-
+    // MARK: - Actions
+    /**
+     Action that launches request to get weather from a given city
+     */
     @IBAction func getWeatherButtonPressed(_ sender: UIButton) {
+        // get city from textField
         let city = cityTextField.text
+        // get country from textField
         let countryCode = countryTextField.text
+        // Prepare request
         let api = OpenweathermapAPI(city: city!, country: countryCode!)
         let method = api.httpMethod
         let body  = api.body
         let myWeatherCall = NetworkManager.shared
         let url = api.createFullUrl()
+        /// Create an array to retrieve items in json dictionary
         var allDays: [Int] {
             var array = [Int]()
             for i in 0...39{
@@ -75,23 +82,29 @@ class WeatherScreen2ViewController: UIViewController {
             }
             return array
         }
+        /// Array that sets the targeted days : each day has 8 weatherObject items
         let targetDays = [0,8,16,24,32]
-        
+        // Send request
         myWeatherCall.getWeather(fullUrl: url!, method: method, body: body, dayArray: allDays) { (success, weatherObject) in
             if weatherObject != nil {
+                // for each day...
                 for i in 0..<targetDays.count {
+                    // ... we create 2 variables...
                     var tempMinDay: Double = weatherObject![targetDays[i]].tempMax
                     var tempMaxDay: Double = weatherObject![targetDays[i]].tempMin
+                    // ... and get the max et min value in the range of 8 weatherObject items of the selected day
                     for test in targetDays[i]...targetDays[i]+7{
                         tempMaxDay = max(tempMaxDay,weatherObject![test].tempMax)
                         tempMinDay = min(tempMinDay, weatherObject![test].tempMin)
                     }
+                    // For current Day, information are displayed in first block
                     if targetDays[i] == 0 {
                         self.currentWeatherIcon.image = UIImage(named: weatherObject![targetDays[i]].iconString)
                         self.currentTempLabel.text = String(format: "%.1f", weatherObject![targetDays[i]].temp)+"°C"
                         self.currentDetailsLabel.text = "Humidity: \(String(format: "%.1f", weatherObject![targetDays[i]].humidity)) %\nPressure: \(String(format: "%.0f", weatherObject![targetDays[i]].pressure)) hpa\nWind: \(String(format: "%.1f", weatherObject![targetDays[i]].windSpeed*3.6)) km/h"
                         self.currentMinMaxLabel.text = "Temp Max: \(String(format: "%.1f",tempMaxDay))°C\nTemp Min: \(String(format: "%.1f",tempMinDay))°C"
                     }
+                    // for next 4 days ( i = 8 or 16 or 24 or 32), info displayed in details block
                     if targetDays[i] == 8 {
                         var dateToDisplay = weatherObject![targetDays[i]].date
                         self.date1Label.text = dateToDisplay.dateReformat()
@@ -99,7 +112,6 @@ class WeatherScreen2ViewController: UIViewController {
                         self.iconDate1.sizeToFit()
                         self.maxTempDate1.text = "\(String(format: "%.1f",tempMaxDay))°C"
                         self.minTempDate1.text = "\(String(format: "%.1f",tempMinDay))°C"
-                    
                     }
                     if targetDays[i] == 16 {
                         var dateToDisplay = weatherObject![targetDays[i]].date
@@ -108,7 +120,6 @@ class WeatherScreen2ViewController: UIViewController {
                         self.iconDate2.sizeToFit()
                         self.maxTempDate2.text = "\(String(format: "%.1f",tempMaxDay))°C"
                         self.minTempDate2.text = "\(String(format: "%.1f",tempMinDay))°C"
-                        
                     }
                     if targetDays[i] == 24 {
                         var dateToDisplay = weatherObject![targetDays[i]].date
@@ -117,7 +128,6 @@ class WeatherScreen2ViewController: UIViewController {
                         self.iconDate3.sizeToFit()
                         self.maxTempDate3.text = "\(String(format: "%.1f",tempMaxDay))°C"
                         self.minTempDate3.text = "\(String(format: "%.1f",tempMinDay))°C"
-                        
                     }
                     if targetDays[i] == 32 {
                         var dateToDisplay = weatherObject![targetDays[i]].date
@@ -126,15 +136,17 @@ class WeatherScreen2ViewController: UIViewController {
                         self.iconDate4.sizeToFit()
                         self.maxTempDate4.text = "\(String(format: "%.1f",tempMaxDay))°C"
                         self.minTempDate4.text = "\(String(format: "%.1f",tempMinDay))°C"
-                        
                     }
                 }
-                        self.hideLabelAtLaunch(hide: false)
+                    self.hideLabelAtLaunch(hide: false)
             } else {
-                self.presentAlertWeather()
+                self.hideLabelAtLaunch(hide: true)
+                Alert.shared.controller = self
+                Alert.shared.alertDisplay = .weatherRequestFailed
             }
         }
     }
+    // MARK: - Methods - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = color3
@@ -145,16 +157,18 @@ class WeatherScreen2ViewController: UIViewController {
         gestureTapCreation()
         navigationBarColor()
         setNYWeather()
-        
-        // Do any additional setup after loading the view.
     }
+    // MARK: - Methods - ViewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
         
     }
+    // MARK: - Methods
+    /**
+     Function to get USD/EUR rate
+     */
     @objc func updateColor(notification : Notification){
-        
         view.backgroundColor = color3
         self.view.backgroundColor = color3
         self.nyTitleLabel.textColor = .white
@@ -178,19 +192,17 @@ class WeatherScreen2ViewController: UIViewController {
         countryTextField.resignFirstResponder()
         cityTextField.resignFirstResponder()
     }
-    
-    private func presentAlertWeather() {
-        hideLabelAtLaunch(hide: true)
-        Alert.shared.controller = self
-        Alert.shared.alertDisplay = .weatherRequestFailed
-    }
-    
+    /**
+     Function that hides or displays labels and stackviews
+     */
     private func hideLabelAtLaunch(hide: Bool) {
         self.nextDaysLabel.isHidden = hide
         self.currentSV.isHidden = hide
         self.detailsSV.isHidden = hide
     }
-
+    /**
+     Function that sends a request to get NY Weather when viewDidLoad
+     */
     private func setNYWeather(){
         hideLabelAtLaunch(hide: true)
         let api = OpenweathermapAPI(city: "New York", country: "us")
@@ -224,12 +236,18 @@ class WeatherScreen2ViewController: UIViewController {
                     }
                 }
             } else {
-                self.presentAlertWeather()
+                self.hideLabelAtLaunch(hide: true)
+                Alert.shared.controller = self
+                Alert.shared.alertDisplay = .weatherRequestFailed
             }
         }
     }}
+// MARK: - Extension
 
 extension String {
+    /**
+     Function that reformat date from JSON file and return a shorter date format as a string
+     */
     mutating func dateReformat() -> String{
         for _ in 1...5 {
             self = String(self.dropFirst())

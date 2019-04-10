@@ -53,7 +53,7 @@ class ChangeScreen2ViewController: UIViewController {
     
     // MARK: - Actions
     /**
-     Action that launches request to get weather from a given city
+     Action that launches request to get FX
      */
     @IBAction func goFXButton(_ sender: Any) {
         flagImageOne = flagOneInitial
