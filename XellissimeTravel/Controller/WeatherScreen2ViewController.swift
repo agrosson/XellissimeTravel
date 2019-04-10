@@ -9,54 +9,57 @@
 import UIKit
 
 class WeatherScreen2ViewController: UIViewController {
-    
+    // MARK: - Outlets - Labels
+    // Label for NY block
     @IBOutlet weak var nyTitleLabel: UILabel!
+    @IBOutlet weak var currentTempLabelNY: UILabel!
+    @IBOutlet weak var currentMinMaxLabelNY: UILabel!
+    @IBOutlet weak var currentDetailsLabelNY: UILabel!
+    // Label for research city block
     @IBOutlet weak var chooseCityLabel: UILabel!
-    
-    @IBOutlet weak var searchButtonLabel: UIButton!
-    
-    @IBOutlet weak var currentSV: UIStackView!
-    @IBOutlet weak var detailsSV: UIStackView!
-    
+    @IBOutlet weak var currentTempLabel: UILabel!
+    @IBOutlet weak var currentMinMaxLabel: UILabel!
+    @IBOutlet weak var currentDetailsLabel: UILabel!
+    @IBOutlet weak var nextDaysLabel: UILabel!
+    // Labels details date
     @IBOutlet weak var date1Label: UILabel!
     @IBOutlet weak var date2Label: UILabel!
     @IBOutlet weak var date3Label: UILabel!
     @IBOutlet weak var date4Label: UILabel!
-    
-    @IBOutlet weak var iconDate1: UIImageView!
-    @IBOutlet weak var iconDate2: UIImageView!
-    @IBOutlet weak var iconDate3: UIImageView!
-    @IBOutlet weak var iconDate4: UIImageView!
-    
-    
+    // Labels details maxTemp
     @IBOutlet weak var maxTempDate1: UILabel!
     @IBOutlet weak var maxTempDate2: UILabel!
     @IBOutlet weak var maxTempDate3: UILabel!
     @IBOutlet weak var maxTempDate4: UILabel!
-    
-    @IBOutlet weak var nextDaysLabel: UILabel!
+    @IBOutlet weak var minTempDate1: UILabel!
+    // Labels details minTemp
+    @IBOutlet weak var minTempDate2: UILabel!
+    @IBOutlet weak var minTempDate3: UILabel!
+    @IBOutlet weak var minTempDate4: UILabel!
+    // MARK: - Outlets - StackViews
+    @IBOutlet weak var currentSV: UIStackView!
+    @IBOutlet weak var detailsSV: UIStackView!
+    // MARK: - Outlets - ImageViews
+    // Image for NY Block
+    @IBOutlet weak var currentWeatherIconNY: UIImageView!
+    // Image for current city Block
+    @IBOutlet weak var currentWeatherIcon: UIImageView!
+    // Image for details
+    @IBOutlet weak var iconDate1: UIImageView!
+    @IBOutlet weak var iconDate2: UIImageView!
+    @IBOutlet weak var iconDate3: UIImageView!
+    @IBOutlet weak var iconDate4: UIImageView!
     @IBOutlet weak var lineDate1: UIImageView!
     @IBOutlet weak var lineDate2: UIImageView!
     @IBOutlet weak var lineDate3: UIImageView!
     @IBOutlet weak var lineDate4: UIImageView!
-    
-    @IBOutlet weak var minTempDate1: UILabel!
-    @IBOutlet weak var minTempDate2: UILabel!
-    @IBOutlet weak var minTempDate3: UILabel!
-    @IBOutlet weak var minTempDate4: UILabel!
-    
-    
-    @IBOutlet weak var currentWeatherIconNY: UIImageView!
-    @IBOutlet weak var currentTempLabelNY: UILabel!
-    @IBOutlet weak var currentMinMaxLabelNY: UILabel!
-    @IBOutlet weak var currentDetailsLabelNY: UILabel!
-    
-    @IBOutlet weak var currentWeatherIcon: UIImageView!
-    @IBOutlet weak var currentTempLabel: UILabel!
-    @IBOutlet weak var currentMinMaxLabel: UILabel!
-    @IBOutlet weak var currentDetailsLabel: UILabel!
+    // MARK: - Outlets - TextFields
     @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var cityTextField: UITextField!
+    // MARK: - Outlets - Buttons
+    @IBOutlet weak var searchButtonLabel: UIButton!
+    
+
     @IBAction func getWeatherButtonPressed(_ sender: UIButton) {
         let city = cityTextField.text
         let countryCode = countryTextField.text
