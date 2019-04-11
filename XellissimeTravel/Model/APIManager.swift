@@ -9,18 +9,17 @@
 import Foundation
 import UIKit
 
-
 // MARK: Networking class
 class NetworkManager {
     // MARK: Networking properties
     static var shared = NetworkManager()
-    private init(){}
+    private init() {}
     // Task creation
     private var task: URLSessionDataTask?
 }
 
 extension NetworkManager {
-    func getChange(fullUrl : URL,method : String,ToCurrency: String, callBack : @escaping (Bool,Float?) -> ()) {
+    func getChange(fullUrl: URL, method: String, ToCurrency: String, callBack: @escaping (Bool, Float?) -> ()) {
         var request = URLRequest(url: fullUrl)
         request.httpMethod = method
         let session = URLSession(configuration: .default)
@@ -28,11 +27,11 @@ extension NetworkManager {
         let task = session.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
-                    callBack(false,nil)
+                    callBack(false, nil)
                     return
                 }
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                    callBack(false,nil)
+                    callBack(false, nil)
                     return
                 }
                 guard let responseJson = try? JSONDecoder().decode(ExchangeAnswer.self, from: data),
@@ -42,7 +41,7 @@ extension NetworkManager {
                         return
                 }
                 let test = changeResult[ToCurrency]
-                callBack(true,test)
+                callBack(true, test)
             }
         }
         task.resume()
@@ -50,7 +49,7 @@ extension NetworkManager {
 }
 
 extension NetworkManager {
-    func translate(fullUrl : URL,method : String,body: String, callBack : @escaping (Bool,String?) -> ()) {
+    func translate(fullUrl: URL, method: String, body: String, callBack: @escaping (Bool, String?) -> ()) {
         var request = URLRequest(url: fullUrl)
         print(fullUrl)
         request.httpMethod = method
@@ -61,11 +60,11 @@ extension NetworkManager {
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
                     print(error as Any)
-                    callBack(false,nil)
+                    callBack(false, nil)
                     return
                 }
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                    callBack(false,nil)
+                    callBack(false, nil)
                     return
                 }
                 guard let responseJson = try? JSONDecoder().decode([String:DataClass].self, from: data),
@@ -75,7 +74,7 @@ extension NetworkManager {
                         return
                 }
                 let translation = translationResultData.translations![0].translatedText
-                callBack(true,translation)
+                callBack(true, translation)
             }
         }
         task.resume()
@@ -91,7 +90,7 @@ extension NetworkManager {
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
                     print(error as Any)
-                    callBack(false,nil)
+                    callBack(false, nil)
                     return
                 }
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
@@ -104,27 +103,27 @@ extension NetworkManager {
                         return
                 }
                 var testArrayResponse = [WeatherResponse]()
-                for  i in dayArray {
-                    let weatherResponse = WeatherResponse(temp: (responseJson.list![i].main?.temp)!,
-                                                          tempMin: (responseJson.list![i].main?.tempMin)!,
-                                                          tempMax: (responseJson.list![i].main?.tempMax)!,
-                                                          pressure: (responseJson.list![i].main?.pressure)!,
-                                                          humidity: (responseJson.list![i].main?.humidity)!,
-                                                          description: (responseJson.list![i].weather![0].description)!,
-                                                          iconString: (responseJson.list![i].weather![0].icon)!,
-                                                          windSpeed: (responseJson.list![i].wind?.speed)!,
-                                                          date: (responseJson.list![i].dtTxt)!
+                for  iDay in dayArray {
+                    let weatherResponse = WeatherResponse(temp: (responseJson.list![iDay].main?.temp)!,
+                                                          tempMin: (responseJson.list![iDay].main?.tempMin)!,
+                                                          tempMax: (responseJson.list![iDay].main?.tempMax)!,
+                                                          pressure: (responseJson.list![iDay].main?.pressure)!,
+                                                          humidity: (responseJson.list![iDay].main?.humidity)!,
+                                                          description: (responseJson.list![iDay].weather![0].description)!,
+                                                          iconString: (responseJson.list![iDay].weather![0].icon)!,
+                                                          windSpeed: (responseJson.list![iDay].wind?.speed)!,
+                                                          date: (responseJson.list![iDay].dtTxt)!
                     )
                     testArrayResponse.append(weatherResponse)
                 }
-                callBack(true,testArrayResponse)
+                callBack(true, testArrayResponse)
             }
         }
         task.resume()
     }
 }
 extension NetworkManager {
-    func getImage(pictureURL : URL,completionHandler: @escaping (Data?) -> Void) {
+    func getImage(pictureURL: URL, completionHandler: @escaping (Data?) -> Void) {
         let session = URLSession(configuration: .default)
         task?.cancel()
         task = session.dataTask(with: pictureURL) { (data, response, error) in

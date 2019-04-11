@@ -19,21 +19,21 @@ extension UIColor {
         var color: UInt32 = 0
         scanner.scanHexInt32(&color)
         let mask = 0x000000FF
-        let r = Int(color >> 16) & mask
-        let g = Int(color >> 8) & mask
-        let b = Int(color) & mask
-        let red   = CGFloat(r) / 255.0
-        let green = CGFloat(g) / 255.0
-        let blue  = CGFloat(b) / 255.0
-        self.init(red:red, green:green, blue:blue, alpha:alpha)
+        let rrr = Int(color >> 16) & mask
+        let ggg = Int(color >> 8) & mask
+        let bbb = Int(color) & mask
+        let red   = CGFloat(rrr) / 255.0
+        let green = CGFloat(ggg) / 255.0
+        let blue  = CGFloat(bbb) / 255.0
+        self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
     func toHexString() -> String {
-        var r:CGFloat = 0
-        var g:CGFloat = 0
-        var b:CGFloat = 0
-        var a:CGFloat = 0
-        getRed(&r, green: &g, blue: &b, alpha: &a)
-        let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
+        var rrr: CGFloat = 0
+        var ggg: CGFloat = 0
+        var bbb: CGFloat = 0
+        var alph: CGFloat = 0
+        getRed(&rrr, green: &ggg, blue: &bbb, alpha: &alph)
+        let rgb: Int = (Int)(rrr*255)<<16 | (Int)(ggg*255)<<8 | (Int)(bbb*255)<<0
         return String(format:"#%06x", rgb)
     }
 }

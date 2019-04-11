@@ -10,6 +10,11 @@
 		590FA15BF769258C70FA3051 /* Pods_XellissimeTravelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C754669E6161F038E74209 /* Pods_XellissimeTravelTests.framework */; };
 		C12D0D87224BB484001B8525 /* ChangeScreen1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D0D86224BB484001B8525 /* ChangeScreen1ViewController.swift */; };
 		C12D0D89224BEF20001B8525 /* TranslateScreen1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */; };
+		C17634E2225F28CF0017A73F /* NetworkManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17634E1225F28CF0017A73F /* NetworkManagerTestCase.swift */; };
+		C17634E4225F2A190017A73F /* Weather.json in Resources */ = {isa = PBXBuildFile; fileRef = C17634E3225F2A190017A73F /* Weather.json */; };
+		C17634E8225F3BC80017A73F /* FakeNetworkResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17634E7225F3BC80017A73F /* FakeNetworkResponseData.swift */; };
+		C17634EA225F3D800017A73F /* Change.json in Resources */ = {isa = PBXBuildFile; fileRef = C17634E9225F3D800017A73F /* Change.json */; };
+		C17634EC225F3DF00017A73F /* Translate.json in Resources */ = {isa = PBXBuildFile; fileRef = C17634EB225F3DF00017A73F /* Translate.json */; };
 		C184803C225C7407001C5A0D /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C184803B225C7407001C5A0D /* APIKeys.plist */; };
 		C184803E225C74F0001C5A0D /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C184803D225C74F0001C5A0D /* APIKeys.swift */; };
 		C18CFD2D22524059002BA15A /* TranslateScreen2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18CFD2C22524059002BA15A /* TranslateScreen2ViewController.swift */; };
@@ -63,6 +68,11 @@
 		A16B82D0B8FB27B6001B1317 /* Pods-XellissimeTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XellissimeTravel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XellissimeTravel/Pods-XellissimeTravel.debug.xcconfig"; sourceTree = "<group>"; };
 		C12D0D86224BB484001B8525 /* ChangeScreen1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeScreen1ViewController.swift; sourceTree = "<group>"; };
 		C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreen1ViewController.swift; sourceTree = "<group>"; };
+		C17634E1225F28CF0017A73F /* NetworkManagerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTestCase.swift; sourceTree = "<group>"; };
+		C17634E3225F2A190017A73F /* Weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Weather.json; sourceTree = "<group>"; };
+		C17634E7225F3BC80017A73F /* FakeNetworkResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeNetworkResponseData.swift; sourceTree = "<group>"; };
+		C17634E9225F3D800017A73F /* Change.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Change.json; sourceTree = "<group>"; };
+		C17634EB225F3DF00017A73F /* Translate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate.json; sourceTree = "<group>"; };
 		C184803B225C7407001C5A0D /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
 		C184803D225C74F0001C5A0D /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		C18CFD2C22524059002BA15A /* TranslateScreen2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreen2ViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +214,11 @@
 			children = (
 				C1E82227224A6A8000CE07F4 /* XellissimeTravelTests.swift */,
 				C1E82229224A6A8000CE07F4 /* Info.plist */,
+				C17634E1225F28CF0017A73F /* NetworkManagerTestCase.swift */,
+				C17634E3225F2A190017A73F /* Weather.json */,
+				C17634E7225F3BC80017A73F /* FakeNetworkResponseData.swift */,
+				C17634E9225F3D800017A73F /* Change.json */,
+				C17634EB225F3DF00017A73F /* Translate.json */,
 			);
 			path = XellissimeTravelTests;
 			sourceTree = "<group>";
@@ -315,6 +330,7 @@
 				C1E8220B224A6A7D00CE07F4 /* Sources */,
 				C1E8220C224A6A7D00CE07F4 /* Frameworks */,
 				C1E8220D224A6A7D00CE07F4 /* Resources */,
+				C17634E0225F17B40017A73F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -408,6 +424,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C17634E4225F2A190017A73F /* Weather.json in Resources */,
+				C17634EC225F3DF00017A73F /* Translate.json in Resources */,
+				C17634EA225F3D800017A73F /* Change.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +476,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		C17634E0225F17B40017A73F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n";
 		};
 		E22B316DA5A6AC70741BB142 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -515,6 +551,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C17634E2225F28CF0017A73F /* NetworkManagerTestCase.swift in Sources */,
+				C17634E8225F3BC80017A73F /* FakeNetworkResponseData.swift in Sources */,
 				C1E82228224A6A8000CE07F4 /* XellissimeTravelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

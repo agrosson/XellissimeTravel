@@ -77,62 +77,62 @@ class WeatherScreen2ViewController: UIViewController {
         /// Create an array to retrieve items in json dictionary
         var allDays: [Int] {
             var array = [Int]()
-            for i in 0...39{
-                array.append(i)
+            for item in 0...39{
+                array.append(item)
             }
             return array
         }
         /// Array that sets the targeted days : each day has 8 weatherObject items
-        let targetDays = [0,8,16,24,32]
+        let targetDays = [0, 8, 16, 24, 32]
         // Send request
         myWeatherCall.getWeather(fullUrl: url!, method: method, body: body, dayArray: allDays) { (success, weatherObject) in
             if weatherObject != nil {
                 // for each day...
-                for i in 0..<targetDays.count {
+                for element in 0..<targetDays.count {
                     // ... we create 2 variables...
-                    var tempMinDay: Double = weatherObject![targetDays[i]].tempMax
-                    var tempMaxDay: Double = weatherObject![targetDays[i]].tempMin
+                    var tempMinDay: Double = weatherObject![targetDays[element]].tempMax
+                    var tempMaxDay: Double = weatherObject![targetDays[element]].tempMin
                     // ... and get the max et min value in the range of 8 weatherObject items of the selected day
-                    for test in targetDays[i]...targetDays[i]+7{
+                    for test in targetDays[element]...targetDays[element]+7{
                         tempMaxDay = max(tempMaxDay,weatherObject![test].tempMax)
                         tempMinDay = min(tempMinDay, weatherObject![test].tempMin)
                     }
                     // For current Day, information are displayed in first block
-                    if targetDays[i] == 0 {
-                        self.currentWeatherIcon.image = UIImage(named: weatherObject![targetDays[i]].iconString)
-                        self.currentTempLabel.text = String(format: "%.1f", weatherObject![targetDays[i]].temp)+"°C"
-                        self.currentDetailsLabel.text = "Humidity: \(String(format: "%.1f", weatherObject![targetDays[i]].humidity)) %\nPressure: \(String(format: "%.0f", weatherObject![targetDays[i]].pressure)) hpa\nWind: \(String(format: "%.1f", weatherObject![targetDays[i]].windSpeed*3.6)) km/h"
-                        self.currentMinMaxLabel.text = "Temp Max: \(String(format: "%.1f",tempMaxDay))°C\nTemp Min: \(String(format: "%.1f",tempMinDay))°C"
+                    if targetDays[element] == 0 {
+                        self.currentWeatherIcon.image = UIImage(named: weatherObject![targetDays[element]].iconString)
+                        self.currentTempLabel.text = String(format: "%.1f", weatherObject![targetDays[element]].temp)+"°C"
+                        self.currentDetailsLabel.text = "Humidity: \(String(format: "%.1f", weatherObject![targetDays[element]].humidity)) %\nPressure: \(String(format: "%.0f", weatherObject![targetDays[element]].pressure)) hpa\nWind: \(String(format: "%.1f", weatherObject![targetDays[element]].windSpeed*3.6)) km/h"
+                        self.currentMinMaxLabel.text = "Temp Max: \(String(format: "%.1f", tempMaxDay))°C\nTemp Min: \(String(format: "%.1f",tempMinDay))°C"
                     }
                     // for next 4 days ( i = 8 or 16 or 24 or 32), info displayed in details block
-                    if targetDays[i] == 8 {
-                        var dateToDisplay = weatherObject![targetDays[i]].date
+                    if targetDays[element] == 8 {
+                        var dateToDisplay = weatherObject![targetDays[element]].date
                         self.date1Label.text = dateToDisplay.dateReformat()
-                        self.iconDate1.image = UIImage(named: weatherObject![targetDays[i]].iconString)
+                        self.iconDate1.image = UIImage(named: weatherObject![targetDays[element]].iconString)
                         self.iconDate1.sizeToFit()
-                        self.maxTempDate1.text = "\(String(format: "%.1f",tempMaxDay))°C"
-                        self.minTempDate1.text = "\(String(format: "%.1f",tempMinDay))°C"
+                        self.maxTempDate1.text = "\(String(format: "%.1f", tempMaxDay))°C"
+                        self.minTempDate1.text = "\(String(format: "%.1f", tempMinDay))°C"
                     }
-                    if targetDays[i] == 16 {
-                        var dateToDisplay = weatherObject![targetDays[i]].date
+                    if targetDays[element] == 16 {
+                        var dateToDisplay = weatherObject![targetDays[element]].date
                         self.date2Label.text = dateToDisplay.dateReformat()
-                        self.iconDate2.image = UIImage(named: weatherObject![targetDays[i]].iconString)
+                        self.iconDate2.image = UIImage(named: weatherObject![targetDays[element]].iconString)
                         self.iconDate2.sizeToFit()
                         self.maxTempDate2.text = "\(String(format: "%.1f",tempMaxDay))°C"
                         self.minTempDate2.text = "\(String(format: "%.1f",tempMinDay))°C"
                     }
-                    if targetDays[i] == 24 {
-                        var dateToDisplay = weatherObject![targetDays[i]].date
+                    if targetDays[element] == 24 {
+                        var dateToDisplay = weatherObject![targetDays[element]].date
                         self.date3Label.text = dateToDisplay.dateReformat()
-                        self.iconDate3.image = UIImage(named: weatherObject![targetDays[i]].iconString)
+                        self.iconDate3.image = UIImage(named: weatherObject![targetDays[element]].iconString)
                         self.iconDate3.sizeToFit()
                         self.maxTempDate3.text = "\(String(format: "%.1f",tempMaxDay))°C"
                         self.minTempDate3.text = "\(String(format: "%.1f",tempMinDay))°C"
                     }
-                    if targetDays[i] == 32 {
-                        var dateToDisplay = weatherObject![targetDays[i]].date
+                    if targetDays[element] == 32 {
+                        var dateToDisplay = weatherObject![targetDays[element]].date
                         self.date4Label.text = dateToDisplay.dateReformat()
-                        self.iconDate4.image = UIImage(named: weatherObject![targetDays[i]].iconString)
+                        self.iconDate4.image = UIImage(named: weatherObject![targetDays[element]].iconString)
                         self.iconDate4.sizeToFit()
                         self.maxTempDate4.text = "\(String(format: "%.1f",tempMaxDay))°C"
                         self.minTempDate4.text = "\(String(format: "%.1f",tempMinDay))°C"
@@ -203,7 +203,7 @@ class WeatherScreen2ViewController: UIViewController {
     /**
      Function that sends a request to get NY Weather when viewDidLoad
      */
-    private func setNYWeather(){
+    private func setNYWeather() {
         hideLabelAtLaunch(hide: true)
         let api = OpenweathermapAPI(city: "New York", country: "us")
         let method = api.httpMethod
@@ -212,26 +212,26 @@ class WeatherScreen2ViewController: UIViewController {
         let url = api.createFullUrl()
         var allDays: [Int] {
             var array = [Int]()
-            for i in 0...7{
-                array.append(i)
+            for item in 0...7 {
+                array.append(item)
             }
             return array
         }
         let targetDays = [0]
         myWeatherCall.getWeather(fullUrl: url!, method: method, body: body, dayArray: allDays) { (success, weatherObject) in
             if weatherObject != nil {
-                for i in 0..<targetDays.count {
-                    var tempMinDay: Double = weatherObject![targetDays[i]].tempMax
-                    var tempMaxDay: Double = weatherObject![targetDays[i]].tempMin
-                    for test in targetDays[i]...targetDays[i]+7{
+                for item in 0..<targetDays.count {
+                    var tempMinDay: Double = weatherObject![targetDays[item]].tempMax
+                    var tempMaxDay: Double = weatherObject![targetDays[item]].tempMin
+                    for test in targetDays[item]...targetDays[item]+7 {
                         tempMaxDay = max(tempMaxDay,weatherObject![test].tempMax)
                         tempMinDay = min(tempMinDay, weatherObject![test].tempMin)
                     }
-                    if targetDays[i] == 0 {
-                        self.currentWeatherIconNY.image = UIImage(named: weatherObject![targetDays[i]].iconString)
+                    if targetDays[item] == 0 {
+                        self.currentWeatherIconNY.image = UIImage(named: weatherObject![targetDays[item]].iconString)
                         // self.currentWeatherIcon.sizeToFit()
-                        self.currentTempLabelNY.text = String(format: "%.1f", weatherObject![targetDays[i]].temp)+"°C"
-                        self.currentDetailsLabelNY.text = "Humidity: \(String(format: "%.1f", weatherObject![targetDays[i]].humidity)) %\nPressure: \(String(format: "%.0f", weatherObject![targetDays[i]].pressure)) hpa\nWind: \(String(format: "%.1f", weatherObject![targetDays[i]].windSpeed*3.6)) km/h"
+                        self.currentTempLabelNY.text = String(format: "%.1f", weatherObject![targetDays[item]].temp)+"°C"
+                        self.currentDetailsLabelNY.text = "Humidity: \(String(format: "%.1f", weatherObject![targetDays[item]].humidity)) %\nPressure: \(String(format: "%.0f", weatherObject![targetDays[item]].pressure)) hpa\nWind: \(String(format: "%.1f", weatherObject![targetDays[item]].windSpeed*3.6)) km/h"
                         self.currentMinMaxLabelNY.text = "Temp Max: \(String(format: "%.1f",tempMaxDay))°C\nTemp Min: \(String(format: "%.1f",tempMinDay))°C"
                     }
                 }
