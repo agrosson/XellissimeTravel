@@ -53,7 +53,7 @@ class NetworkManagerTestCase: XCTestCase {
     func testTranslateShouldPostFailedCallbackIfResponseKO() {
         // Given
         let networkManager = NetworkManager(changeSession: URLSessionFake(data: nil, response: nil, error: nil),
-                                            translateSession: URLSessionFake(data: nil, response: FakeNetworkResponseData.responseKO, error: nil ),
+                                            translateSession: URLSessionFake(data: FakeNetworkResponseData.translateCorrectData, response: FakeNetworkResponseData.responseKO, error: nil ),
                                             weatherSession: URLSessionFake(data: nil, response: nil, error: nil))
         
         // When
@@ -139,7 +139,7 @@ class NetworkManagerTestCase: XCTestCase {
     
     func testChangeShouldPostFailedCallbackIfResponseKO() {
         // Given
-        let networkManager = NetworkManager(changeSession: URLSessionFake(data: nil, response: FakeNetworkResponseData.responseKO, error: nil),
+        let networkManager = NetworkManager(changeSession: URLSessionFake(data: FakeNetworkResponseData.changeCorrectData, response: FakeNetworkResponseData.responseKO, error: nil),
                                             translateSession: URLSessionFake(data: nil, response: nil, error: nil),
                                             weatherSession: URLSessionFake(data: nil, response: nil, error: nil))
         
@@ -185,6 +185,150 @@ class NetworkManagerTestCase: XCTestCase {
             // Then
             XCTAssertTrue(success)
             XCTAssertEqual(rate, rateToGet)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 0.01)
+    }
+    
+    // Code for testing Weather
+    func testWeatherShouldPostFailedCallbackIfError() {
+        // Given
+        let networkManager = NetworkManager(changeSession: URLSessionFake(data: nil, response: nil, error: nil ),
+                                            translateSession: URLSessionFake(data: nil, response: nil, error: nil),
+                                            weatherSession: URLSessionFake(data: nil, response: nil, error: FakeNetworkResponseData.error))
+        
+        // When
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        var allDays: [Int] {
+            var array = [Int]()
+            for item in 0...39{
+                array.append(item)
+            }
+            return array
+        }
+        networkManager.getWeather(fullUrl: URL(string: "nill")!, method: "nill", body: "nill", dayArray: allDays, callBack:  { (success, weatherResponse) in
+            // Then
+            XCTAssertFalse(success)
+            XCTAssertNil(weatherResponse)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 0.01)
+    }
+    
+    func testWeatherShouldPostFailedCallbackIfNodata() {
+        // Given
+        let networkManager = NetworkManager(changeSession: URLSessionFake(data: nil, response: nil, error: nil ),
+                                            translateSession: URLSessionFake(data: nil, response: nil, error: nil),
+                                            weatherSession: URLSessionFake(data: nil, response: nil, error: nil))
+        
+        // When
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        var allDays: [Int] {
+            var array = [Int]()
+            for item in 0...39{
+                array.append(item)
+            }
+            return array
+        }
+        networkManager.getWeather(fullUrl: URL(string: "nill")!, method: "nill", body: "nill", dayArray: allDays, callBack:  { (success, weatherResponse) in
+            // Then
+            XCTAssertFalse(success)
+            XCTAssertNil(weatherResponse)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 0.01)
+    }
+    
+    func testWeatherShouldPostFailedCallbackIfResponseKO() {
+        // Given
+        let networkManager = NetworkManager(changeSession: URLSessionFake(data: nil, response: nil, error: nil ),
+                                            translateSession: URLSessionFake(data: nil, response: nil, error: nil),
+                                            weatherSession: URLSessionFake(data: FakeNetworkResponseData.weatherCorrectData, response: FakeNetworkResponseData.responseKO, error: nil))
+        
+        // When
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        var allDays: [Int] {
+            var array = [Int]()
+            for item in 0...39{
+                array.append(item)
+            }
+            return array
+        }
+        networkManager.getWeather(fullUrl: URL(string: "nill")!, method: "nill", body: "nill", dayArray: allDays, callBack:  { (success, weatherResponse) in
+            // Then
+            XCTAssertFalse(success)
+            XCTAssertNil(weatherResponse)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 0.01)
+    }
+    func testWeatherShouldPostFailedCallbackIfResponseOKbutNoData() {
+        // Given
+        let networkManager = NetworkManager(changeSession: URLSessionFake(data: nil, response: nil, error: nil ),
+                                            translateSession: URLSessionFake(data: nil, response: nil, error: nil),
+                                            weatherSession: URLSessionFake(data: nil, response: FakeNetworkResponseData.responseOK, error: nil))
+        
+        // When
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        var allDays: [Int] {
+            var array = [Int]()
+            for item in 0...39{
+                array.append(item)
+            }
+            return array
+        }
+        networkManager.getWeather(fullUrl: URL(string: "nill")!, method: "nill", body: "nill", dayArray: allDays, callBack:  { (success, weatherResponse) in
+            // Then
+            XCTAssertFalse(success)
+            XCTAssertNil(weatherResponse)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 0.01)
+    }
+    
+    func testWeatherShouldPostFailedCallbackIfResponseOKbutIncorrectData() {
+        // Given
+        let networkManager = NetworkManager(changeSession: URLSessionFake(data: nil, response: nil, error: nil ),
+                                            translateSession: URLSessionFake(data: nil, response: nil, error: nil),
+                                            weatherSession: URLSessionFake(data: FakeNetworkResponseData.weatherIncorrectData, response: FakeNetworkResponseData.responseOK, error: nil))
+        
+        // When
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        var allDays: [Int] {
+            var array = [Int]()
+            for item in 0...39{
+                array.append(item)
+            }
+            return array
+        }
+        networkManager.getWeather(fullUrl: URL(string: "nill")!, method: "nill", body: "nill", dayArray: allDays, callBack:  { (success, weatherResponse) in
+            // Then
+            XCTAssertFalse(success)
+            XCTAssertNil(weatherResponse)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 0.01)
+    }
+    
+    func testWeatherShouldPostPassCallbackIfResponseOKNoErrorAndCorrectData() {
+        // Given
+        let networkManager = NetworkManager(changeSession: URLSessionFake(data: nil, response: nil, error: nil ),
+                                            translateSession: URLSessionFake(data: nil, response: nil, error: nil),
+                                            weatherSession: URLSessionFake(data: FakeNetworkResponseData.weatherCorrectData, response: FakeNetworkResponseData.responseOK, error: nil))
+        
+        // When
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        var allDays: [Int] {
+            var array = [Int]()
+            for item in 0...39{
+                array.append(item)
+            }
+            return array
+        }
+        networkManager.getWeather(fullUrl: URL(string: "nill")!, method: "nill", body: "nill", dayArray: allDays, callBack:  { (success, weatherResponse) in
+            // Then
+            XCTAssertTrue(success)
+            XCTAssertEqual(allDays.count, weatherResponse?.count)
             expectation.fulfill()
         })
         wait(for: [expectation], timeout: 0.01)

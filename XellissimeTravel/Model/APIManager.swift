@@ -129,23 +129,23 @@ extension NetworkManager {
         task.resume()
     }
 }
-extension NetworkManager {
-    func getImage(pictureURL: URL, completionHandler: @escaping (Data?) -> Void) {
-        let session = URLSession(configuration: .default)
-        task?.cancel()
-        task = session.dataTask(with: pictureURL) { (data, response, error) in
-            DispatchQueue.main.async {
-                guard let data = data, error == nil else {
-                    completionHandler(nil)
-                    return
-                }
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                    completionHandler(nil)
-                    return
-                }
-                completionHandler(data)
-            }
-        }
-        task?.resume()
-    }
-}
+//extension NetworkManager {
+//    func getImage(pictureURL: URL, completionHandler: @escaping (Data?) -> Void) {
+//        let session = URLSession(configuration: .default)
+//        task?.cancel()
+//        task = session.dataTask(with: pictureURL) { (data, response, error) in
+//            DispatchQueue.main.async {
+//                guard let data = data, error == nil else {
+//                    completionHandler(nil)
+//                    return
+//                }
+//                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+//                    completionHandler(nil)
+//                    return
+//                }
+//                completionHandler(data)
+//            }
+//        }
+//        task?.resume()
+//    }
+//}

@@ -24,7 +24,7 @@ class GoogleTranslateAPI {
         self.targetLanguage = targetLanguage
         self.sourceLanguage = sourceLanguage
     }
-    func createBody() -> String {
+    private func createBody() -> String {
         // Transform text (string) to be used in URL(String)
         let text = textInput.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         let body = "q=\(text!)&target=\(targetLanguage)&format=\(format)&source=\(sourceLanguage)&key=\(keyAPI)"

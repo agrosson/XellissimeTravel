@@ -15,7 +15,6 @@ class OpenweathermapAPI {
     lazy var urlEndPoint = URL(string: endPoint)
     let httpMethod = "GET"
     private let keyAPI = valueForAPIKey(named: "APIOpenWeatherMapKey")
-                                                
     var city: String
     var country: String
     lazy var body:String = createBody()
