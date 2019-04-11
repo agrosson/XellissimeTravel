@@ -111,12 +111,82 @@ class NetworkManagerTestCase: XCTestCase {
         
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        networkManager.getChange(fullUrl: URL(string: "nill")!, method: "nill", ToCurrency: "nill", callBack: { (success, rate) in
+        networkManager.getChange(fullUrl: URL(string: "nill")!, method: "nill", ToCurrency: "USD", callBack: { (success, rate) in
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(rate)
             expectation.fulfill()
         })
             wait(for: [expectation], timeout: 0.01)
+    }
+    
+    func testChangeShouldPostFailedCallbackIfNoData() {
+        // Given
+        let networkManager = NetworkManager(changeSession: URLSessionFake(data: nil, response: nil, error: nil),
+                                            translateSession: URLSessionFake(data: nil, response: nil, error: nil),
+                                            weatherSession: URLSessionFake(data: nil, response: nil, error: nil))
+        
+        // When
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        networkManager.getChange(fullUrl: URL(string: "nill")!, method: "nill", ToCurrency: "USD", callBack: { (success, rate) in
+            // Then
+            XCTAssertFalse(success)
+            XCTAssertNil(rate)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 0.01)
+    }
+    
+    func testChangeShouldPostFailedCallbackIfResponseKO() {
+        // Given
+        let networkManager = NetworkManager(changeSession: URLSessionFake(data: nil, response: FakeNetworkResponseData.responseKO, error: nil),
+                                            translateSession: URLSessionFake(data: nil, response: nil, error: nil),
+                                            weatherSession: URLSessionFake(data: nil, response: nil, error: nil))
+        
+        // When
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        networkManager.getChange(fullUrl: URL(string: "nill")!, method: "nill", ToCurrency: "USD", callBack: { (success, rate) in
+            // Then
+            XCTAssertFalse(success)
+            XCTAssertNil(rate)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 0.01)
+    }
+    
+    
+    func testChangeShouldPostFailedCallbackIfResponseOKButIncorrectData() {
+        // Given
+        let networkManager = NetworkManager(changeSession: URLSessionFake(data: FakeNetworkResponseData.fxIncorrectData, response: FakeNetworkResponseData.responseOK, error: nil),
+                                            translateSession: URLSessionFake(data: nil, response: nil, error: nil),
+                                            weatherSession: URLSessionFake(data: nil, response: nil, error: nil))
+        
+        // When
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        networkManager.getChange(fullUrl: URL(string: "nill")!, method: "nill", ToCurrency: "USD", callBack: { (success, rate) in
+            // Then
+            XCTAssertFalse(success)
+            XCTAssertNil(rate)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 0.01)
+    }
+    
+    func testChangeShouldPostPassCallbackIfResponseOKNoErrorAndCorrectData() {
+        // Given
+        let networkManager = NetworkManager(changeSession: URLSessionFake(data: FakeNetworkResponseData.changeCorrectData, response: FakeNetworkResponseData.responseOK, error: nil),
+                                            translateSession: URLSessionFake(data: nil, response: nil, error: nil),
+                                            weatherSession: URLSessionFake(data: nil, response: nil, error: nil))
+        
+        // When
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        let rateToGet:Float = 1.127942
+        networkManager.getChange(fullUrl: URL(string: "nill")!, method: "nill", ToCurrency: "USD", callBack: { (success, rate) in
+            // Then
+            XCTAssertTrue(success)
+            XCTAssertEqual(rate, rateToGet)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 0.01)
     }
 }
