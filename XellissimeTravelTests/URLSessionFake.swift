@@ -46,7 +46,9 @@ class URLSessionDataTaskFake: URLSessionDataTask {
     var responseError: Error?
     
     override func resume() {
+        // we only test the result of the call , we call the block of response
         completionHandler?(data, urlResponse, responseError)
     }
+    // In test, no need to cancel a task because a task is made instantly
     override func cancel() {}
 }

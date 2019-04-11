@@ -35,7 +35,7 @@ class FakeNetworkResponseData {
         return try! Data(contentsOf: url)
     }
     // Creation of an incorrect datas
-    let weatherIncorrectData = "It's a weather error".data(using: .utf8)!
-    let translateIncorrectData = "It's a translate error".data(using: .utf8)!
-    let fxIncorrectData = "It's a FX error".data(using: .utf8)!
+    static let weatherIncorrectData = "It's a weather error".data(using: .utf8)!
+    static let translateIncorrectData = "It's a translate error".data(using: .utf8)!
+    static let fxIncorrectData = "It's a FX error".data(using: .utf8)!
 }

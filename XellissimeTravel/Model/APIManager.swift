@@ -17,9 +17,15 @@ class NetworkManager {
     // Task creation
     private var task: URLSessionDataTask?
     
-    let changeSession = URLSession(configuration: .default)
-    let translateSession = URLSession(configuration: .default)
-    let weatherSession = URLSession(configuration: .default)
+    private var changeSession = URLSession(configuration: .default)
+    private var translateSession = URLSession(configuration: .default)
+    private var weatherSession = URLSession(configuration: .default)
+    
+    init(changeSession: URLSession, translateSession: URLSession, weatherSession: URLSession){
+        self.changeSession = changeSession
+        self.translateSession = translateSession
+        self.weatherSession = weatherSession
+    }
 }
 
 extension NetworkManager {
