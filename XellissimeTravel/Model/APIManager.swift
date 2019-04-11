@@ -16,15 +16,18 @@ class NetworkManager {
     private init() {}
     // Task creation
     private var task: URLSessionDataTask?
+    
+    let changeSession = URLSession(configuration: .default)
+    let translateSession = URLSession(configuration: .default)
+    let weatherSession = URLSession(configuration: .default)
 }
 
 extension NetworkManager {
     func getChange(fullUrl: URL, method: String, ToCurrency: String, callBack: @escaping (Bool, Float?) -> ()) {
         var request = URLRequest(url: fullUrl)
         request.httpMethod = method
-        let session = URLSession(configuration: .default)
         task?.cancel()
-        let task = session.dataTask(with: request) { (data, response, error) in
+        let task = changeSession.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
                     callBack(false, nil)
@@ -54,9 +57,8 @@ extension NetworkManager {
         print(fullUrl)
         request.httpMethod = method
         print(body)
-        let session = URLSession(configuration: .default)
         task?.cancel()
-        let task = session.dataTask(with: request) { (data, response, error) in
+        let task = translateSession.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
                     print(error as Any)
@@ -84,9 +86,8 @@ extension NetworkManager {
     func getWeather(fullUrl : URL,method : String,body: String, dayArray: [Int], callBack : @escaping (Bool,[WeatherResponse]?) -> ()) {
         var request = URLRequest(url: fullUrl)
         request.httpMethod = method
-        let session = URLSession(configuration: .default)
         task?.cancel()
-        let task = session.dataTask(with: request) { (data, response, error) in
+        let task = weatherSession.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
                     print(error as Any)
