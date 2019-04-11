@@ -21,6 +21,16 @@ class NetworkManager {
     private var translateSession = URLSession(configuration: .default)
     private var weatherSession = URLSession(configuration: .default)
     
+    private var allDays: [Int] {
+        var array = [Int]()
+        for item in 0...39{
+            array.append(item)
+        }
+        return array
+    }
+    /// Array that sets the targeted days : each day has 8 weatherObject items
+    private var targetDays = [0, 8, 16, 24, 32]
+    
     init(changeSession: URLSession, translateSession: URLSession, weatherSession: URLSession){
         self.changeSession = changeSession
         self.translateSession = translateSession
@@ -89,6 +99,7 @@ extension NetworkManager {
     }
 }
 extension NetworkManager {
+
     func getWeather(fullUrl : URL,method : String,body: String, dayArray: [Int], callBack : @escaping (Bool,[WeatherResponse]?) -> ()) {
         var request = URLRequest(url: fullUrl)
         request.httpMethod = method

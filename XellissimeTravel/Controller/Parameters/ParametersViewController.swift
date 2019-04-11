@@ -8,18 +8,6 @@
 
 import UIKit
 
-var color1: UIColor?
-var color2: UIColor?
-var color3: UIColor?
-var color4: UIColor?
-var color5: UIColor? = UIColor(hexString: "FAFBF8")
-var color6 = UIColor(hexString: "5A616D")
-
-func  navigationBarColor() {
-    UINavigationBar.appearance().barTintColor = color5
-    UINavigationBar.appearance().tintColor = color6
-}
-
 class ParamtersViewController: UIViewController {
     
     @IBOutlet weak var parametersView1: UIView!

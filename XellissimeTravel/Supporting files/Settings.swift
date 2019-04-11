@@ -19,15 +19,7 @@ var currencySymbol = "USD"
 var currencyName = ""
 /// Empty text as initial value for textToTranslate
 var textToTranslate = ""
-var allDays: [Int] {
-    var array = [Int]()
-    for item in 0...39{
-        array.append(item)
-    }
-    return array
-}
-/// Array that sets the targeted days : each day has 8 weatherObject items
-let targetDays = [0, 8, 16, 24, 32]
+
 
 var color1: UIColor?
 var color2: UIColor?
@@ -40,3 +32,4 @@ func  navigationBarColor() {
     UINavigationBar.appearance().barTintColor = color5
     UINavigationBar.appearance().tintColor = color6
 }
+
