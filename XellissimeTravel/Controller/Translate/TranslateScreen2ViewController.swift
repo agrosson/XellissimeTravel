@@ -23,6 +23,7 @@ class TranslateScreen2ViewController: UIViewController {
      */
     @IBAction func clearButtonPressed(_ sender: UIButton) {
         textTotranslateTextView.text = ""
+        translatedTextLabel.text = "YOUR TRANSLATION HERE"
         clearButton.isHidden = true
     }
     /**
@@ -107,8 +108,10 @@ class TranslateScreen2ViewController: UIViewController {
 }
 extension TranslateScreen2ViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        clearButton.isHidden = textTotranslateTextView.text.isEmpty
-        //textTotranslateTextView.text =  textTotranslateTextView.text.uppercased()
+                    clearButton.isHidden = textTotranslateTextView.text.isEmpty
+        if textTotranslateTextView.text.isEmpty {
+            translatedTextLabel.text = "YOUR TRANSLATION HERE"
+        }
     }
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textTotranslateTextView.text == "YOUR TEXT HERE" {

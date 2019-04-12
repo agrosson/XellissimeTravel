@@ -87,21 +87,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your text to translate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wz-lP-79F">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your text to translate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Wz-lP-79F">
                                 <rect key="frame" x="20" y="108" width="374" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="e0z-OE-iFW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR TRANSLATION HERE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nlj-Um-M32">
-                                <rect key="frame" x="20" y="378" width="374" height="345"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR TRANSLATION HERE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nlj-Um-M32">
+                                <rect key="frame" x="20" y="450.5" width="374" height="272.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="rul-P7-CvZ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="150" id="5QL-2p-bKc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -119,13 +119,13 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" text="YOUR TEXT HERE" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fm9-bB-a4L">
-                                <rect key="frame" x="20" y="158" width="374" height="200"/>
+                                <rect key="frame" x="20" y="158" width="374" height="272.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="5pL-nN-Int"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="150" id="5pL-nN-Int"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="gsX-8q-OCL" id="EuL-9s-sF4"/>
@@ -147,6 +147,7 @@
                         <constraints>
                             <constraint firstItem="nlj-Um-M32" firstAttribute="leading" secondItem="zcd-FA-964" secondAttribute="leading" constant="20" id="0LQ-QV-9db"/>
                             <constraint firstItem="zcd-FA-964" firstAttribute="trailing" secondItem="8Wz-lP-79F" secondAttribute="trailing" constant="20" id="0mx-v1-xgn"/>
+                            <constraint firstItem="nlj-Um-M32" firstAttribute="height" secondItem="fm9-bB-a4L" secondAttribute="height" id="58Q-PU-5PL"/>
                             <constraint firstItem="xas-nZ-cCF" firstAttribute="centerX" secondItem="7My-bS-R4I" secondAttribute="centerX" id="DUj-d9-RJi"/>
                             <constraint firstItem="zcd-FA-964" firstAttribute="trailing" secondItem="UWx-7h-hMN" secondAttribute="trailing" constant="20" id="Ig2-mG-3S7"/>
                             <constraint firstItem="xas-nZ-cCF" firstAttribute="leading" secondItem="zcd-FA-964" secondAttribute="leading" constant="20" id="IjY-Uq-pIe"/>
@@ -154,7 +155,7 @@
                             <constraint firstItem="8Wz-lP-79F" firstAttribute="top" secondItem="zcd-FA-964" secondAttribute="top" constant="20" id="PbC-12-d6m"/>
                             <constraint firstItem="zcd-FA-964" firstAttribute="trailing" secondItem="nlj-Um-M32" secondAttribute="trailing" constant="20" id="Qy2-Ew-BKN"/>
                             <constraint firstItem="fm9-bB-a4L" firstAttribute="top" secondItem="8Wz-lP-79F" secondAttribute="bottom" constant="20" id="UdR-db-QRP"/>
-                            <constraint firstItem="nlj-Um-M32" firstAttribute="top" secondItem="fm9-bB-a4L" secondAttribute="bottom" priority="750" constant="20" id="YNk-sm-gly"/>
+                            <constraint firstItem="nlj-Um-M32" firstAttribute="top" secondItem="fm9-bB-a4L" secondAttribute="bottom" constant="20" id="YNk-sm-gly"/>
                             <constraint firstItem="8Wz-lP-79F" firstAttribute="leading" secondItem="zcd-FA-964" secondAttribute="leading" constant="20" id="ax8-wY-vSM"/>
                             <constraint firstItem="zcd-FA-964" firstAttribute="trailing" secondItem="xas-nZ-cCF" secondAttribute="trailing" constant="20" id="eJV-iw-rDX"/>
                             <constraint firstItem="8Wz-lP-79F" firstAttribute="leading" secondItem="zcd-FA-964" secondAttribute="leading" constant="20" id="i6w-SB-Ckf"/>
