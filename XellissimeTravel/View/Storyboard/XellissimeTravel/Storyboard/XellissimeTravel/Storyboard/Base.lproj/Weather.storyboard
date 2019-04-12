@@ -138,6 +138,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="s52-Kw-9tC"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="101" translatesAutoresizingMaskIntoConstraints="NO" id="i1o-Oc-Vsz" userLabel="Input Stack View">
                                 <rect key="frame" x="20" y="306" width="374" height="30"/>
@@ -209,6 +212,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Gbt-A7-aw3" secondAttribute="trailing" id="KcE-mO-Dsd"/>
+                                    <constraint firstAttribute="height" constant="90" id="hk0-qG-Stw"/>
                                     <constraint firstItem="CTm-GK-q6N" firstAttribute="leading" secondItem="h7n-W9-x7b" secondAttribute="leading" id="q8G-rf-ffI"/>
                                 </constraints>
                             </stackView>
@@ -386,6 +390,9 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="mec-o5-g3g"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.61960784310000006" green="0.59215686270000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
