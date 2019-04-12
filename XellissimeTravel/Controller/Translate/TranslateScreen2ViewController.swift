@@ -75,7 +75,6 @@ class TranslateScreen2ViewController: UIViewController {
      Function to update colors of screen, listening to Notification sent from parameters options
      */
     @objc func updateColor(notification : Notification){
-        // let vc  = notification.object as? ParamtersViewController
         self.view.backgroundColor = color1
         self.translateOutlet.setTitleColor(.white, for: .normal)
         navigationBarColor()

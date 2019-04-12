@@ -105,11 +105,20 @@
                                     <action selector="parametersSegmentedControlSelected:" destination="yvM-zc-jPd" eventType="valueChanged" id="EMI-IU-mJ1"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOOSE YOUR MOOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eoD-T0-3z2">
+                                <rect key="frame" x="20" y="108" width="374" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zeK-7u-zJh" firstAttribute="centerY" secondItem="xrk-P0-RjO" secondAttribute="centerY" id="0Td-ig-dm5"/>
+                            <constraint firstItem="eoD-T0-3z2" firstAttribute="leading" secondItem="ggV-hR-SOF" secondAttribute="leading" constant="20" id="22S-gN-82X"/>
                             <constraint firstItem="zeK-7u-zJh" firstAttribute="centerX" secondItem="xrk-P0-RjO" secondAttribute="centerX" id="7Y7-pf-Qdi"/>
+                            <constraint firstAttribute="trailing" secondItem="eoD-T0-3z2" secondAttribute="trailing" constant="20" id="AJT-7X-pC7"/>
+                            <constraint firstItem="eoD-T0-3z2" firstAttribute="top" secondItem="ggV-hR-SOF" secondAttribute="top" constant="20" id="Pph-bp-tSB"/>
                             <constraint firstItem="U5D-gI-E0r" firstAttribute="leading" secondItem="ggV-hR-SOF" secondAttribute="leading" constant="20" id="Ubh-wR-ghI"/>
                             <constraint firstItem="ggV-hR-SOF" firstAttribute="trailing" secondItem="U5D-gI-E0r" secondAttribute="trailing" constant="20" id="abF-XS-6nT"/>
                             <constraint firstItem="ggV-hR-SOF" firstAttribute="bottom" secondItem="U5D-gI-E0r" secondAttribute="bottom" constant="50" id="lfn-ge-Qw0"/>

@@ -9,6 +9,29 @@
 import UIKit
 
 class WeatherScreen2ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var popoverCityLabel: UILabel!
+    @IBOutlet var popoverView: UIView!
+    
+    @IBAction func popoverButtonBackPressed(_ sender: Any) {
+        self.popoverView.removeFromSuperview()
+        hideViewWhenPopover(hide: false)
+
+
+    }
+    @IBOutlet weak var nextDayButton: UIButton!
+    @IBAction func nextDaysButtonPressed(_ sender: Any) {
+        self.popoverCityLabel.text = cityTextField.text?.uppercased()
+     //   hideViewWhenPopover(hide: true)
+        self.view.addSubview(popoverView)
+        popoverView.backgroundColor = color1
+        let test = self.tabBarController?.tabBar.frame.height
+        print(test! as Any)
+        popoverView.center = CGPoint(x: view.frame.width/2,
+                                     y: (view.frame.height-popoverView.frame.height/2)-test!-1)
+    }
+
     // MARK: - Outlets - Labels
     // Labels for NY block
     @IBOutlet weak var nyTitleLabel: UILabel!
@@ -20,7 +43,7 @@ class WeatherScreen2ViewController: UIViewController {
     @IBOutlet weak var currentTempLabel: UILabel!
     @IBOutlet weak var currentMinMaxLabel: UILabel!
     @IBOutlet weak var currentDetailsLabel: UILabel!
-    @IBOutlet weak var nextDaysLabel: UILabel!
+
     // Labels details date
     @IBOutlet weak var date1Label: UILabel!
     @IBOutlet weak var date2Label: UILabel!
@@ -39,6 +62,8 @@ class WeatherScreen2ViewController: UIViewController {
     // MARK: - Outlets - StackViews
     @IBOutlet weak var currentSV: UIStackView!
     @IBOutlet weak var detailsSV: UIStackView!
+    @IBOutlet weak var nySV: UIStackView!
+    @IBOutlet weak var inputSV: UIStackView!
     // MARK: - Outlets - ImageViews
     // Image for NY Block
     @IBOutlet weak var currentWeatherIconNY: UIImageView!
@@ -150,9 +175,10 @@ class WeatherScreen2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = color3
+        popoverView.layer.cornerRadius = 50
         self.nyTitleLabel.textColor = .white
         self.chooseCityLabel.textColor = .white
-        self.nextDaysLabel.textColor = .white
+        self.nextDayButton.tintColor = .white
         self.searchButtonLabel.setTitleColor(.white, for: .normal)
         gestureTapCreation()
         navigationBarColor()
@@ -171,9 +197,9 @@ class WeatherScreen2ViewController: UIViewController {
     @objc func updateColor(notification : Notification){
         view.backgroundColor = color3
         self.view.backgroundColor = color3
+        self.popoverView.backgroundColor = color1
         self.nyTitleLabel.textColor = .white
         self.chooseCityLabel.textColor = .white
-        self.nextDaysLabel.textColor = .white
         self.searchButtonLabel.setTitleColor(.white, for: .normal)
         navigationBarColor()
     }
@@ -191,15 +217,27 @@ class WeatherScreen2ViewController: UIViewController {
     @objc func myTap(){
         countryTextField.resignFirstResponder()
         cityTextField.resignFirstResponder()
+        popoverView.removeFromSuperview()
     }
     /**
      Function that hides or displays labels and stackviews
      */
     private func hideLabelAtLaunch(hide: Bool) {
-        self.nextDaysLabel.isHidden = hide
         self.currentSV.isHidden = hide
-        self.detailsSV.isHidden = hide
+        self.nextDayButton.isHidden = hide
     }
+    
+    private func hideViewWhenPopover(hide: Bool) {
+        self.nyTitleLabel.isHidden = hide
+        self.nySV.isHidden = hide
+        self.chooseCityLabel.isHidden = hide
+        self.inputSV.isHidden = hide
+        self.currentSV.isHidden = hide
+        self.nextDayButton.isHidden = hide
+        self.searchButtonLabel.isHidden = hide
+    }
+    
+    
     /**
      Function that sends a request to get NY Weather when viewDidLoad
      */
@@ -267,5 +305,8 @@ extension WeatherScreen2ViewController: UITextFieldDelegate {
         cityTextField.resignFirstResponder()
         countryTextField.resignFirstResponder()
         return true
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        popoverView.removeFromSuperview()
     }
 }
