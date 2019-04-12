@@ -10,6 +10,19 @@ import UIKit
 
 class ChangeScreen2ViewController: UIViewController {
     
+    lazy var rate:Float? = Float(self.rateLabel.text!)
+    
+    @IBOutlet var popViewFX: UIView!
+    
+    @IBAction func chooseCurrencyButtonPressed(_ sender: Any) {
+        self.view.addSubview(popViewFX)
+        popViewFX.backgroundColor = color1
+        let test = self.tabBarController?.tabBar.frame.height
+        print(test! as Any)
+        popViewFX.center = CGPoint(x: view.frame.width/2,
+                                     y: (view.frame.height-popViewFX.frame.height/2)-test!-1)
+    }
+    
     // MARK: - Properties
     /// Currency target for flag: default US
     lazy var currencyTwo = CurrencyDataBase.currencyCountryCode[currencySymbol]![0]
@@ -48,6 +61,7 @@ class ChangeScreen2ViewController: UIViewController {
      Action that launches request to get FX
      */
     @IBAction func goFXButton(_ sender: Any) {
+        popViewFX.removeFromSuperview()
         flagImageOne = flagOneInitial
         flagImageTwo = flagTwoInitial
         // Get currency info from Picker
@@ -66,6 +80,7 @@ class ChangeScreen2ViewController: UIViewController {
         checkAmountToConvert()
         //
         myFXCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in
+            self.rate = textresult
             if textresult != nil {
                 self.rateLabel.text = String(format: "%.4f", textresult!)
                 myRateResult = textresult!
@@ -91,6 +106,7 @@ class ChangeScreen2ViewController: UIViewController {
         goOutlet.setTitleColor(.white, for: .normal)
         textFieldFX.backgroundColor = .clear
         navigationBarColor()
+        popViewFX.layer.cornerRadius = 50
         // Launch function to display weather in New Yorr City, USA
         getUsdWhenLoad()
         // Textfield Delegate
@@ -203,8 +219,15 @@ class ChangeScreen2ViewController: UIViewController {
 // MARK: - Extension - TextfieldDelegate
 extension ChangeScreen2ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        checkAmountToConvert()
+        if rate != nil {
+            self.rateLabel.text = String(format: "%.4f", rate!)
+            myRateResult = rate!
+            self.amountToConvertLabel.text = String(format: "%.2f", self.amountToConvert)
+            self.amountConvertedLabel.text = String(format: "%.2f", (self.amountToConvert*myRateResult))}
         textFieldFX.resignFirstResponder()
         return true
+    
     }
     /// Function that checks numeric character in the textField
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -213,6 +236,7 @@ extension ChangeScreen2ViewController: UITextFieldDelegate {
         let replacementText = (currentText as NSString).replacingCharacters(in: range, with: string)
         return replacementText.isValidDouble(maxDecimalPlaces: 2)
     }
+
 }
 // MARK: - Extension - PickerView Delegate and DataSource
 extension ChangeScreen2ViewController: UIPickerViewDelegate, UIPickerViewDataSource{

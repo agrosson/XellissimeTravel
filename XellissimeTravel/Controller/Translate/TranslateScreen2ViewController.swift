@@ -36,6 +36,7 @@ class TranslateScreen2ViewController: UIViewController {
             Alert.shared.controller = self
             Alert.shared.alertDisplay = .emptyText
         }
+        textTotranslateTextView.resignFirstResponder()
         // Block to prepare request
         let testLangOut = "en"
         let testLangIn = "fr"
