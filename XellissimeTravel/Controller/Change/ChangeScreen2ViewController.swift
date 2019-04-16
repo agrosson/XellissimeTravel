@@ -46,6 +46,7 @@ class ChangeScreen2ViewController: UIViewController {
     @IBOutlet weak var currencyLabel: UILabel!
     // MARK: - Outlets - Button
     @IBOutlet weak var goOutlet: UIButton!
+    @IBOutlet weak var chooseCurrencyButton: UIButton!
     // MARK: - Outlets - PickerView
     @IBOutlet weak var currencyPicker: UIPickerView!
     
@@ -56,11 +57,14 @@ class ChangeScreen2ViewController: UIViewController {
     @IBOutlet weak var flagLeft: UIImageView!
     @IBOutlet weak var flagRight: UIImageView!
     
+    // MARK: - Outlets - ActivityIndicatorView
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     // MARK: - Actions
     /**
      Action that launches request to get FX
      */
     @IBAction func goFXButton(_ sender: Any) {
+        toggleActivityIndicator(shown: true)
         popViewFX.removeFromSuperview()
         flagImageOne = flagOneInitial
         flagImageTwo = flagTwoInitial
@@ -80,6 +84,7 @@ class ChangeScreen2ViewController: UIViewController {
         checkAmountToConvert()
         //
         myFXCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in
+            self.toggleActivityIndicator(shown: false)
             self.rate = textresult
             if textresult != nil {
                 self.rateLabel.text = String(format: "%.4f", textresult!)
@@ -102,6 +107,7 @@ class ChangeScreen2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Setup colors for the screen
+        activityIndicator.isHidden = true
         view.backgroundColor = color2
         goOutlet.setTitleColor(.white, for: .normal)
         textFieldFX.backgroundColor = .clear
@@ -125,6 +131,14 @@ class ChangeScreen2ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
     }
     // MARK: - Methods
+    /**
+     Function to hide/show indicator activity
+     */
+    private func toggleActivityIndicator(shown: Bool) {
+        activityIndicator.isHidden = !shown
+        chooseCurrencyButton.isHidden = shown
+    }
+    
     /**
      Function to check amount to convert
      */
