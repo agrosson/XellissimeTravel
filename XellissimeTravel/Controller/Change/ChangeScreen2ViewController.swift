@@ -129,6 +129,8 @@ class ChangeScreen2ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
+        getUsdWhenLoad()
+        updateFlagImages()
     }
     // MARK: - Methods
     /**
@@ -172,11 +174,15 @@ class ChangeScreen2ViewController: UIViewController {
      Function to get USD/EUR rate
      */
     private func getUsdWhenLoad(){
+        toggleActivityIndicator(shown: true)
+        currencySymbol = "USD"
+        currencyName = CurrencyDataBase.currencyCountryCode[currencySymbol]![1]
         let api = FixerAPI(symbol: currencySymbol)
         let fullUrl = api.createFullUrl()
         let method = api.httpMethod
         let myFXCall = NetworkManager.shared
         myFXCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in
+            self.toggleActivityIndicator(shown: false)
             if textresult != nil {
                 self.rateLabel.text = String(format: "%.4f", textresult!)
                 myRateResult = textresult!

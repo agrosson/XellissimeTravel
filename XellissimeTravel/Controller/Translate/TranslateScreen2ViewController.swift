@@ -17,6 +17,8 @@ class TranslateScreen2ViewController: UIViewController {
     @IBOutlet weak var clearButton: UIButton!
     // MARK: - Outlets - TextView
     @IBOutlet weak var textTotranslateTextView: UITextView!
+    // MARK: - Outlets - ActivityIndicatorView
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     // MARK: - Actions
     /**
      Action that clears text in UITextView
@@ -30,8 +32,12 @@ class TranslateScreen2ViewController: UIViewController {
      Action that launches resquet to translate text
      */
     @IBAction func translateButton(_ sender: UIButton) {
-        if textTotranslateTextView.text != "" {
-            textToTranslate = textTotranslateTextView.text!
+        toggleActivityIndicator(shown: true)
+        var tempText = textTotranslateTextView.text
+        tempText?.removeFirstAndLastAndDoubleWhitespace()
+        if tempText != "" {
+            textTotranslateTextView.text = tempText!
+            textToTranslate = tempText!
         } else {
             Alert.shared.controller = self
             Alert.shared.alertDisplay = .emptyText
@@ -46,6 +52,7 @@ class TranslateScreen2ViewController: UIViewController {
         let myTranslateCall = NetworkManager.shared
         let url = api.createFullUrl()
         myTranslateCall.translate(fullUrl: url!, method: method, body: body) { (success, translation) in
+            self.toggleActivityIndicator(shown: false)
             if translation != nil{
                 self.translatedTextLabel.text = translation//.uppercased()
             } else {
@@ -71,6 +78,14 @@ class TranslateScreen2ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
+    }
+    // MARK: - Methods
+    /**
+     Function to show/hide activity indicator
+     */
+    private func toggleActivityIndicator(shown: Bool){
+        activityIndicator.isHidden = !shown
+        translateOutlet.isHidden = shown
     }
     /**
      Function to update colors of screen, listening to Notification sent from parameters options
@@ -108,12 +123,15 @@ class TranslateScreen2ViewController: UIViewController {
 }
 extension TranslateScreen2ViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-                    clearButton.isHidden = textTotranslateTextView.text.isEmpty
+        clearButton.isHidden = textTotranslateTextView.text.isEmpty
         if textTotranslateTextView.text.isEmpty {
             translatedTextLabel.text = "YOUR TRANSLATION HERE"
         }
+        translatedTextLabel.isHidden = true
+        translatedTextLabel.text = "YOUR TRANSLATION HERE"
     }
     func textViewDidBeginEditing(_ textView: UITextView) {
+        translatedTextLabel.isHidden = true
         if textTotranslateTextView.text == "YOUR TEXT HERE" {
             textTotranslateTextView.text = ""
             clearButton.isHidden = true
@@ -122,6 +140,7 @@ extension TranslateScreen2ViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n") {
             textView.resignFirstResponder()
+            translatedTextLabel.isHidden = false
             return false
         }
         return true
@@ -140,5 +159,6 @@ extension  TranslateScreen2ViewController {
     }
     @objc func keyboardWillChangeHide(notification: Notification){
         translateOutlet.transform = .identity
+        translatedTextLabel.isHidden = false
     }
 }

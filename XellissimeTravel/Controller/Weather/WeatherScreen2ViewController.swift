@@ -83,12 +83,14 @@ class WeatherScreen2ViewController: UIViewController {
     @IBOutlet weak var cityTextField: UITextField!
     // MARK: - Outlets - Button
     @IBOutlet weak var searchButtonLabel: UIButton!
-    
+    // MARK: - Outlets - Activity indicator
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     // MARK: - Actions
     /**
      Action that launches request to get weather from a given city
      */
     @IBAction func getWeatherButtonPressed(_ sender: UIButton) {
+        toggleActivityIndicator(shown: true)
         // get city from textField
         let city = cityTextField.text
         // get country from textField
@@ -111,6 +113,7 @@ class WeatherScreen2ViewController: UIViewController {
         let targetDays = [0, 8, 16, 24, 32]
         // Send request
         myWeatherCall.getWeather(fullUrl: url!, method: method, body: body, dayArray: allDays) { (success, weatherObject) in
+            self.toggleActivityIndicator(shown: false)
             if weatherObject != nil {
                 // for each day...
                 for element in 0..<targetDays.count {
@@ -192,6 +195,13 @@ class WeatherScreen2ViewController: UIViewController {
     }
     // MARK: - Methods
     /**
+     Function to show/hide activity indicator
+     */
+    private func toggleActivityIndicator(shown: Bool){
+        activityIndicator.isHidden = !shown
+        searchButtonLabel.isHidden = shown
+    }
+    /**
      Function to get USD/EUR rate
      */
     @objc func updateColor(notification : Notification){
@@ -242,6 +252,7 @@ class WeatherScreen2ViewController: UIViewController {
      Function that sends a request to get NY Weather when viewDidLoad
      */
     private func setNYWeather() {
+        toggleActivityIndicator(shown: true)
         hideLabelAtLaunch(hide: true)
         let api = OpenweathermapAPI(city: "New York", country: "us")
         let method = api.httpMethod
@@ -257,6 +268,7 @@ class WeatherScreen2ViewController: UIViewController {
         }
         let targetDays = [0]
         myWeatherCall.getWeather(fullUrl: url!, method: method, body: body, dayArray: allDays) { (success, weatherObject) in
+            self.toggleActivityIndicator(shown: false)
             if weatherObject != nil {
                 for item in 0..<targetDays.count {
                     var tempMinDay: Double = weatherObject![targetDays[item]].tempMax

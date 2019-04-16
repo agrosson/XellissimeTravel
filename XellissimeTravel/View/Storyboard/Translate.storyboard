@@ -142,16 +142,25 @@
                                     <action selector="clearButtonPressed:" destination="gsX-8q-OCL" eventType="touchUpInside" id="R2k-Ws-Ggm"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="CcB-ba-sDs">
+                                <rect key="frame" x="187" y="748" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="98U-EJ-LdS"/>
+                                    <constraint firstAttribute="height" constant="40" id="kA8-X9-KD8"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.63921568630000003" green="0.71372549019999998" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="nlj-Um-M32" firstAttribute="leading" secondItem="zcd-FA-964" secondAttribute="leading" constant="20" id="0LQ-QV-9db"/>
                             <constraint firstItem="zcd-FA-964" firstAttribute="trailing" secondItem="8Wz-lP-79F" secondAttribute="trailing" constant="20" id="0mx-v1-xgn"/>
+                            <constraint firstItem="CcB-ba-sDs" firstAttribute="centerX" secondItem="xas-nZ-cCF" secondAttribute="centerX" id="30w-RK-x1v"/>
                             <constraint firstItem="nlj-Um-M32" firstAttribute="height" secondItem="fm9-bB-a4L" secondAttribute="height" id="58Q-PU-5PL"/>
                             <constraint firstItem="xas-nZ-cCF" firstAttribute="centerX" secondItem="7My-bS-R4I" secondAttribute="centerX" id="DUj-d9-RJi"/>
                             <constraint firstItem="zcd-FA-964" firstAttribute="trailing" secondItem="UWx-7h-hMN" secondAttribute="trailing" constant="20" id="Ig2-mG-3S7"/>
                             <constraint firstItem="xas-nZ-cCF" firstAttribute="leading" secondItem="zcd-FA-964" secondAttribute="leading" constant="20" id="IjY-Uq-pIe"/>
                             <constraint firstItem="zcd-FA-964" firstAttribute="bottom" secondItem="xas-nZ-cCF" secondAttribute="bottom" constant="20" id="Non-9h-yVs"/>
+                            <constraint firstItem="CcB-ba-sDs" firstAttribute="centerY" secondItem="xas-nZ-cCF" secondAttribute="centerY" id="Ohy-52-Y7V"/>
                             <constraint firstItem="8Wz-lP-79F" firstAttribute="top" secondItem="zcd-FA-964" secondAttribute="top" constant="20" id="PbC-12-d6m"/>
                             <constraint firstItem="zcd-FA-964" firstAttribute="trailing" secondItem="nlj-Um-M32" secondAttribute="trailing" constant="20" id="Qy2-Ew-BKN"/>
                             <constraint firstItem="fm9-bB-a4L" firstAttribute="top" secondItem="8Wz-lP-79F" secondAttribute="bottom" constant="20" id="UdR-db-QRP"/>
@@ -169,6 +178,7 @@
                         <viewLayoutGuide key="safeArea" id="zcd-FA-964"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="CcB-ba-sDs" id="Va6-V2-otT"/>
                         <outlet property="clearButton" destination="UWx-7h-hMN" id="FjV-HL-ffh"/>
                         <outlet property="textTotranslateTextView" destination="fm9-bB-a4L" id="8GC-8m-ISF"/>
                         <outlet property="translateOutlet" destination="xas-nZ-cCF" id="BCk-ye-Lzr"/>
