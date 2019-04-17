@@ -41,6 +41,9 @@ class TranslateScreen2ViewController: UIViewController {
         } else {
             Alert.shared.controller = self
             Alert.shared.alertDisplay = .emptyText
+            if textTotranslateTextView.text.isEmpty {
+                translatedTextLabel.text = "YOUR TRANSLATION HERE"
+            }
         }
         textTotranslateTextView.resignFirstResponder()
         // Block to prepare request
@@ -54,16 +57,26 @@ class TranslateScreen2ViewController: UIViewController {
         myTranslateCall.translate(fullUrl: url!, method: method, body: body) { (success, translation) in
             self.toggleActivityIndicator(shown: false)
             if translation != nil{
-                self.translatedTextLabel.text = translation//.uppercased()
+                self.translatedTextLabel.text = translation!.uppercased()
+                if self.textTotranslateTextView.text.isEmpty {
+                    self.translatedTextLabel.text = "YOUR TRANSLATION HERE"
+                }
             } else {
+                if self.textTotranslateTextView.text.isEmpty {
+                    self.translatedTextLabel.text = "YOUR TRANSLATION HERE"
+                }
                 Alert.shared.controller = self
                 Alert.shared.alertDisplay = .translationRequestFailed
             }
+        }
+        if textTotranslateTextView.text.isEmpty {
+            translatedTextLabel.text = "YOUR TRANSLATION HERE"
         }
     }
     // MARK: - Methods - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.isHidden = true
         self.view.backgroundColor = color1
         self.translateOutlet.setTitleColor(.white, for: .normal)
         navigationBarColor()
@@ -160,5 +173,8 @@ extension  TranslateScreen2ViewController {
     @objc func keyboardWillChangeHide(notification: Notification){
         translateOutlet.transform = .identity
         translatedTextLabel.isHidden = false
+        if textTotranslateTextView.text.isEmpty {
+            translatedTextLabel.text = "YOUR TRANSLATION HERE"
+        }
     }
 }

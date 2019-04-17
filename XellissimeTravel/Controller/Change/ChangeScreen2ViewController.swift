@@ -66,7 +66,7 @@ class ChangeScreen2ViewController: UIViewController {
     @IBAction func goFXButton(_ sender: Any) {
         toggleActivityIndicator(shown: true)
         popViewFX.removeFromSuperview()
-        flagImageOne = flagOneInitial
+        flagImageOne = UIImage.init(named: "EU", in: bundle, compatibleWith: nil)!
         flagImageTwo = flagTwoInitial
         // Get currency info from Picker
         let pickerIndex = currencyPicker.selectedRow(inComponent: 0)

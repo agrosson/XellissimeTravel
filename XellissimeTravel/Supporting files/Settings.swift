@@ -14,7 +14,7 @@ var myRateResult: Float = 1
 /// Currency for flag: default EUR
 var currencyOne = "EU"
 /// Currency Symbol
-var currencySymbol = "USD"
+var currencySymbol = "US"
 /// Currency name
 var currencyName = ""
 /// Empty text as initial value for textToTranslate
