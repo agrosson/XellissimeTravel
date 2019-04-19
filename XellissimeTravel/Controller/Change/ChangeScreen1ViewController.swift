@@ -20,7 +20,7 @@ class ChangeScreen1ViewController: UIViewController {
      // MARK: - Methods - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = color2
+        view.backgroundColor = Parameter.shared.colors[1]
         self.introLabel.textColor = .white
         goLabel.setTitleColor(.white, for: .normal)
         navigationBarColor()
@@ -36,7 +36,7 @@ class ChangeScreen1ViewController: UIViewController {
      Function to update colors of screen, listening to Notification sent from parameters options
      */
     @objc func updateColor(notification : Notification){
-        view.backgroundColor = color2
+        view.backgroundColor = Parameter.shared.colors[1]
         self.introLabel.textColor = .white
         goLabel.setTitleColor(.white, for: .normal)
         navigationBarColor()

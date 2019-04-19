@@ -25,19 +25,18 @@ class ParamtersViewController: UIViewController {
     var style : Style = .style1 {
         didSet{
             setStyle(style)
-            getColors()
         }
     }
     private func setStyle(_ style: Style) {
         switch style {
         case .style1:
-           pinkMood()
+            createMood(with: pinkColor)
         case .style2:
-            blueMood()
+            createMood(with: blueColor)
         case .style3:
-            modernMood()
+            createMood(with: modernColor)
         case .style4:
-           greenMood()
+           createMood(with: greenColor)
         }
         
     }
@@ -58,7 +57,6 @@ class ParamtersViewController: UIViewController {
         navigationBarColor()
         view.backgroundColor = .black
         style = .style1
-        getColors()
         NotificationCenter.default.post(name: .setNewColor1, object: self)
         // Do any additional setup after loading the view.
     }
@@ -66,47 +64,14 @@ class ParamtersViewController: UIViewController {
         super.viewWillDisappear(animated)
          NotificationCenter.default.post(name: .setNewColor1, object: self)
     }
-        
-    private func blueMood() {
-       // view.backgroundColor = .black
-        parametersView1.backgroundColor = UIColor(hexString: "4B8AEF")
-        parametersView2.backgroundColor = UIColor(hexString: "CCCFE8")
-        parametersView3.backgroundColor = UIColor(hexString: "99BAED")
-        parametersView4.backgroundColor = UIColor(hexString: "869DE1")
-        parametersView5.backgroundColor = UIColor(hexString: "FAFBF8")
-    }
-    private func modernMood() {
-     //   view.backgroundColor = .white
-        parametersView1.backgroundColor = UIColor(hexString: "142242")
-        parametersView2.backgroundColor = UIColor(hexString: "93A3B4")
-        parametersView3.backgroundColor = UIColor(hexString: "2278AB")
-        parametersView4.backgroundColor = UIColor(hexString: "B5613C")
-        parametersView5.backgroundColor = UIColor(hexString: "FAFBF8" )
-    }
-    private func greenMood() {
-       // view.backgroundColor = .lightGray
-        parametersView1.backgroundColor = UIColor(hexString: "263023")
-        parametersView2.backgroundColor = UIColor(hexString: "7D8861")
-        parametersView3.backgroundColor = UIColor(hexString: "ABCF3B")
-        parametersView4.backgroundColor = UIColor(hexString: "45821F")
-        parametersView5.backgroundColor = UIColor(hexString: "FAFBF8")
-    }
-    private func pinkMood() {
-    //    view.backgroundColor = .lightGray
-        parametersView1.backgroundColor = UIColor(hexString: "E63A5B")
-        parametersView5.backgroundColor = UIColor(hexString: "FAFBF8")
-        parametersView2.backgroundColor = UIColor(hexString: "E69CA9")
-        parametersView3.backgroundColor = UIColor(hexString: "AB4687")
-        parametersView4.backgroundColor = UIColor(hexString: "D89A58")
-        
-    }
     
-    private func getColors() {
-        color1 =  parametersView1.backgroundColor
-        color2 =  parametersView2.backgroundColor
-        color3 =  parametersView3.backgroundColor
-        color4 =  parametersView4.backgroundColor
-        color5 =  parametersView5.backgroundColor
+    private func createMood(with colorArray: [String]) {
+        var arrayColor : [UIColor] = []
+        for tagnumber in 1...5 {
+            self.view.viewWithTag(tagnumber)?.backgroundColor = UIColor(hexString: colorArray[tagnumber-1])
+            arrayColor.append(UIColor(hexString: colorArray[tagnumber-1]))
+        }
+        Parameter.shared.colors = arrayColor
     }
 }
 

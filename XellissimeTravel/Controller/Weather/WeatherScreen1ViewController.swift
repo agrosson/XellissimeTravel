@@ -16,7 +16,7 @@ class WeatherScreen1ViewController: UIViewController {
     // MARK: - Methods - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = color3
+        view.backgroundColor = Parameter.shared.colors[2]
         self.introLabel.textColor = .white
         self.goLabel.setTitleColor(.white, for: .normal)
         navigationBarColor()
@@ -32,7 +32,7 @@ class WeatherScreen1ViewController: UIViewController {
      Function to update colors of screen, listening to Notification sent from parameters options
      */
     @objc func updateColor(notification : Notification){
-        view.backgroundColor = color3
+        view.backgroundColor = Parameter.shared.colors[2]
         self.introLabel.textColor = .white
         self.goLabel.setTitleColor(.white, for: .normal)
         navigationBarColor()

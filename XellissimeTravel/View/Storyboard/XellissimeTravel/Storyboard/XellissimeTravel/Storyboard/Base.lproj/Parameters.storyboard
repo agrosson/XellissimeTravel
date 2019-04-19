@@ -26,7 +26,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m7L-ZF-Hrc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-555" y="960"/>
+            <point key="canvasLocation" x="-936" y="840"/>
         </scene>
         <!--Paramters View Controller-->
         <scene sceneID="5Sz-wX-5aQ">
@@ -36,10 +36,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeK-7u-zJh">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeK-7u-zJh">
                                 <rect key="frame" x="107" y="348" width="200" height="200"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlh-Y6-CcD">
+                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlh-Y6-CcD">
                                         <rect key="frame" x="25" y="25" width="150" height="150"/>
                                         <color key="backgroundColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -47,13 +47,13 @@
                                             <constraint firstAttribute="width" constant="150" id="ofY-cw-flR"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qxm-LZ-4BQ">
+                                    <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qxm-LZ-4BQ">
                                         <rect key="frame" x="50" y="50" width="100" height="100"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5wT-EM-j4R">
+                                            <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5wT-EM-j4R">
                                                 <rect key="frame" x="25" y="25" width="50" height="50"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AU0-70-d9b">
+                                                    <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AU0-70-d9b">
                                                         <rect key="frame" x="12.5" y="12.5" width="25" height="25"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -136,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiG-ZV-pOD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="500.00000000000006" y="958.92857142857133"/>
+            <point key="canvasLocation" x="168" y="860"/>
         </scene>
     </scenes>
     <resources>

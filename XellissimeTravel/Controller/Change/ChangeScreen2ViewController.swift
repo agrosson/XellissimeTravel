@@ -16,7 +16,7 @@ class ChangeScreen2ViewController: UIViewController {
     
     @IBAction func chooseCurrencyButtonPressed(_ sender: Any) {
         self.view.addSubview(popViewFX)
-        popViewFX.backgroundColor = color1
+        popViewFX.backgroundColor = Parameter.shared.colors[0]
         let test = self.tabBarController?.tabBar.frame.height
         print(test! as Any)
         popViewFX.center = CGPoint(x: view.frame.width/2,
@@ -108,7 +108,7 @@ class ChangeScreen2ViewController: UIViewController {
         super.viewDidLoad()
         // Setup colors for the screen
         activityIndicator.isHidden = true
-        view.backgroundColor = color2
+        view.backgroundColor = Parameter.shared.colors[1]
         goOutlet.setTitleColor(.white, for: .normal)
         textFieldFX.backgroundColor = .clear
         navigationBarColor()
@@ -166,7 +166,7 @@ class ChangeScreen2ViewController: UIViewController {
      Function to update colors of screen, listening to Notification sent from parameters options
      */
     @objc func updateColor(notification : Notification){
-        view.backgroundColor = color2
+        view.backgroundColor = Parameter.shared.colors[1]
         self.goOutlet.setTitleColor(.white, for: .normal)
         self.textFieldFX.backgroundColor = .clear
     }

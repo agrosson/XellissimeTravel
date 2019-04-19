@@ -77,7 +77,7 @@ class TranslateScreen2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.isHidden = true
-        self.view.backgroundColor = color1
+        self.view.backgroundColor = Parameter.shared.colors[0]
         self.translateOutlet.setTitleColor(.white, for: .normal)
         navigationBarColor()
         NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
@@ -104,7 +104,7 @@ class TranslateScreen2ViewController: UIViewController {
      Function to update colors of screen, listening to Notification sent from parameters options
      */
     @objc func updateColor(notification : Notification){
-        self.view.backgroundColor = color1
+        self.view.backgroundColor = Parameter.shared.colors[0]
         self.translateOutlet.setTitleColor(.white, for: .normal)
         navigationBarColor()
     }
