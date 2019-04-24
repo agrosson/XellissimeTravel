@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Nw-0t-v0i">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,7 +18,7 @@
                     <tabBarItem key="tabBarItem" title="change" image="dollarblue" id="gsX-2k-nee"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wSN-sH-dIH">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -43,17 +43,17 @@
             <objects>
                 <viewController title="ChangeScreen1" id="n2N-TW-yWI" customClass="ChangeScreen1ViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BZs-Lb-FJl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In the next screen, please enter your amount in euro to change. You can switch from one currency to another as you want " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1d-cb-Q6w">
-                                <rect key="frame" x="20" y="358.5" width="374" height="179.5"/>
+                                <rect key="frame" x="20" y="298.66666666666669" width="335" height="215.00000000000006"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <color key="textColor" red="0.90196078430000004" green="0.86274509799999999" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGn-UA-ky0">
-                                <rect key="frame" x="20" y="721" width="374" height="72"/>
+                                <rect key="frame" x="20" y="637" width="335" height="72"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
                                 <state key="normal" title="GO">
                                     <color key="titleColor" red="0.039215686270000001" green="0.37647058820000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -90,17 +90,17 @@
             <objects>
                 <viewController title="Change" modalTransitionStyle="flipHorizontal" id="YSi-Eq-Ean" customClass="ChangeScreen2ViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3PY-mQ-hx0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your amount to change..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CI-Ah-oEX">
-                                <rect key="frame" x="20" y="108" width="374" height="24"/>
+                                <rect key="frame" x="20" y="108" width="335" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="Enter your amount here" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ceE-UH-HPu">
-                                <rect key="frame" x="20" y="152" width="374" height="30"/>
+                                <rect key="frame" x="20" y="152" width="335" height="30"/>
                                 <color key="backgroundColor" red="0.49623023040000003" green="0.69865077730000003" blue="0.61791028290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -110,7 +110,7 @@
                                 </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fda-S1-JeL">
-                                <rect key="frame" x="20" y="202" width="374" height="50"/>
+                                <rect key="frame" x="20" y="202" width="335" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="8ge-dy-rwU">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -120,13 +120,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Your rate " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mgr-aH-eU6">
-                                        <rect key="frame" x="58" y="0.0" width="258" height="50"/>
+                                        <rect key="frame" x="58" y="0.0" width="219" height="50"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="8tV-Rf-4Zb">
-                                        <rect key="frame" x="324" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="285" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="HDA-6g-HBP"/>
                                             <constraint firstAttribute="height" constant="50" id="oKv-T8-lbc"/>
@@ -139,30 +139,30 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleAspectFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="YLr-wp-1wp">
-                                <rect key="frame" x="20" y="272" width="374" height="50"/>
+                                <rect key="frame" x="20" y="272" width="335" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zy0-YG-gKN">
-                                        <rect key="frame" x="0.0" y="0.0" width="19" height="50"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zy0-YG-gKN">
+                                        <rect key="frame" x="0.0" y="0.0" width="16.333333333333332" height="50"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bmr-kZ-I8N">
-                                        <rect key="frame" x="33" y="0.0" width="308" height="50"/>
+                                        <rect key="frame" x="30.333333333333343" y="0.0" width="274.33333333333326" height="50"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cGT-To-8un">
-                                        <rect key="frame" x="355" y="0.0" width="19" height="50"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cGT-To-8un">
+                                        <rect key="frame" x="318.66666666666669" y="0.0" width="16.333333333333314" height="50"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZX-ha-Fn7">
-                                <rect key="frame" x="123" y="695" width="168" height="36"/>
+                                <rect key="frame" x="103.66666666666669" y="611" width="168" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <state key="normal" title="Switch Currencies">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -172,7 +172,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wte-kV-CFN">
-                                <rect key="frame" x="20" y="751" width="374" height="42"/>
+                                <rect key="frame" x="20" y="667" width="335" height="42"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
                                 <state key="normal" title="Choose currency">
                                     <color key="titleColor" red="0.039215686270000001" green="0.37647058820000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -182,7 +182,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="A4a-j3-yDD">
-                                <rect key="frame" x="197" y="762" width="20" height="20"/>
+                                <rect key="frame" x="177.66666666666666" y="678" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="30" id="EEk-0E-ty5"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="qjl-Uh-R11"/>

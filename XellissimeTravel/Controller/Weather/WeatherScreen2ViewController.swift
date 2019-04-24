@@ -17,13 +17,12 @@ class WeatherScreen2ViewController: UIViewController {
     @IBAction func popoverButtonBackPressed(_ sender: Any) {
         self.popoverView.removeFromSuperview()
         hideViewWhenPopover(hide: false)
-
-
     }
     @IBOutlet weak var nextDayButton: UIButton!
     @IBAction func nextDaysButtonPressed(_ sender: Any) {
         if chooseCityLabel.text == weatherLabelChooseCityText {
-            presentAlertDetails(title: "Careful", message: "Press Search first", titleButton: "OK")
+            Alert.shared.controller = self
+            Alert.shared.alertDisplay = .pressSearchFirst
         } else {
             
             self.popoverCityLabel.text = cityTextField.text?.uppercased()

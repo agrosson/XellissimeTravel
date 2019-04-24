@@ -22,6 +22,8 @@ var textToTranslate = ""
 
 let weatherLabelChooseCityText = "Choose your city and country"
 
+var decimalMaxToConvert = 2
+var decimalMaxConverted = 2
 // Array of colors
 let blueColor = ["4B8AEF","CCCFE8","99BAED","869DE1","FAFBF8"]
 let modernColor = ["142242","93A3B4","2278AB","B5613C","FAFBF8"]

@@ -20,7 +20,7 @@ class ChangeScreen2ViewController: UIViewController {
         let test = self.tabBarController?.tabBar.frame.height
         print(test! as Any)
         popViewFX.center = CGPoint(x: view.frame.width/2,
-                                     y: (view.frame.height-popViewFX.frame.height/2)-test!-1)
+                                   y: (view.frame.height-popViewFX.frame.height/2)-test!-1)
     }
     
     // MARK: - Properties
@@ -87,10 +87,11 @@ class ChangeScreen2ViewController: UIViewController {
             self.toggleActivityIndicator(shown: false)
             self.rate = textresult
             if textresult != nil {
+                self.adaptDecimalDisplay()
                 self.rateLabel.text = String(format: "%.4f", textresult!)
                 myRateResult = textresult!
-                self.amountToConvertLabel.text = String(format: "%.2f", self.amountToConvert)
-                self.amountConvertedLabel.text = String(format: "%.2f", (self.amountToConvert*myRateResult))
+                self.amountToConvertLabel.text = String(format: "%.\(decimalMaxToConvert)f", self.amountToConvert)
+                self.amountConvertedLabel.text = String(format: "%.\(decimalMaxConverted)f", (self.amountToConvert*myRateResult))
                 self.updateFlagImages()
             } else {
                 Alert.shared.controller = self
@@ -155,14 +156,31 @@ class ChangeScreen2ViewController: UIViewController {
                 amountToConvert = Float(1)
                 textFieldFX.text = "1"
             }
-            if amountToConvert > Float(100000) {
+            if amountToConvert > Float(9999) {
                 amountToConvert = Float(1)
                 Alert.shared.controller = self
                 Alert.shared.alertDisplay = .bigAmount
                 textFieldFX.text = "1"
             }
         }
+        adaptDecimalDisplay()
     }
+    /**
+     Function to adapt decimal
+    */
+    private func adaptDecimalDisplay() {
+        if self.amountToConvert > 499 || self.amountToConvert.truncatingRemainder(dividingBy: 1) == 0 {
+            decimalMaxToConvert = 0
+        } else {
+            decimalMaxToConvert = 2
+        }
+        if self.amountToConvert*myRateResult > 499 || self.amountToConvert*myRateResult.truncatingRemainder(dividingBy: 1) == 0 {
+            decimalMaxConverted = 0
+        } else {
+            decimalMaxConverted = 2
+        }
+    }
+    
     /**
      Function to update colors of screen, listening to Notification sent from parameters options
      */
@@ -177,6 +195,7 @@ class ChangeScreen2ViewController: UIViewController {
     private func getUsdWhenLoad(){
         toggleActivityIndicator(shown: true)
         currencySymbol = "USD"
+        decimalMaxToConvert = 2
         currencyName = CurrencyDataBase.currencyCountryCode[currencySymbol]![1]
         let api = FixerAPI(symbol: currencySymbol)
         let fullUrl = api.createFullUrl()
@@ -185,10 +204,11 @@ class ChangeScreen2ViewController: UIViewController {
         myFXCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in
             self.toggleActivityIndicator(shown: false)
             if textresult != nil {
+                self.adaptDecimalDisplay()
                 self.rateLabel.text = String(format: "%.4f", textresult!)
                 myRateResult = textresult!
-                self.amountToConvertLabel.text = String(format: "%.2f", self.amountToConvert)
-                self.amountConvertedLabel.text = String(format: "%.2f", (self.amountToConvert*myRateResult))
+                self.amountToConvertLabel.text =  String(format: "%.\(decimalMaxToConvert)f", self.amountToConvert)
+                self.amountConvertedLabel.text = String(format: "%.\(decimalMaxConverted)f", (self.amountToConvert*myRateResult))
                 self.updateFlagImages()
             } else {
                 Alert.shared.controller = self
@@ -210,7 +230,8 @@ class ChangeScreen2ViewController: UIViewController {
     private func switchAmount(){
         myRateResult = 1/myRateResult
         rateLabel.text = String(format: "%.4f", myRateResult)
-        self.amountConvertedLabel.text = String(format: "%.2f", (amountToConvert*myRateResult))
+        self.adaptDecimalDisplay()
+        self.amountConvertedLabel.text = String(format: "%.\(decimalMaxConverted)f", (amountToConvert*myRateResult))
     }
     /**
      Function that switches flag images
@@ -243,11 +264,12 @@ class ChangeScreen2ViewController: UIViewController {
     private func updateAmountConversion(){
         checkAmountToConvert()
         if rate != nil {
-    self.rateLabel.text = String(format: "%.4f", rate!)
-    myRateResult = rate!
-    self.amountToConvertLabel.text = String(format: "%.2f", self.amountToConvert)
-    self.amountConvertedLabel.text = String(format: "%.2f", (self.amountToConvert*myRateResult))
-    }
+            self.rateLabel.text = String(format: "%.4f", rate!)
+            myRateResult = rate!
+            self.adaptDecimalDisplay()
+            self.amountToConvertLabel.text = String(format: "%.\(decimalMaxToConvert)f", self.amountToConvert)
+            self.amountConvertedLabel.text = String(format: "%.\(decimalMaxConverted)f", (self.amountToConvert*myRateResult))
+        }
         textFieldFX.resignFirstResponder()
     }
     
@@ -262,9 +284,7 @@ class ChangeScreen2ViewController: UIViewController {
 extension ChangeScreen2ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         updateAmountConversion()
-        
         return true
-    
     }
     /// Function that checks numeric character in the textField
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -273,7 +293,7 @@ extension ChangeScreen2ViewController: UITextFieldDelegate {
         let replacementText = (currentText as NSString).replacingCharacters(in: range, with: string)
         return replacementText.isValidDouble(maxDecimalPlaces: 2)
     }
-
+    
 }
 // MARK: - Extension - PickerView Delegate and DataSource
 extension ChangeScreen2ViewController: UIPickerViewDelegate, UIPickerViewDataSource{

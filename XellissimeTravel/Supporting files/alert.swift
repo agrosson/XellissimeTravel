@@ -13,7 +13,7 @@ class Alert{
     static var shared = Alert() 
     init() {}
     enum ListCase {
-        case weatherRequestFailed, changeRequestFailed, translationRequestFailed, bigAmount, emptyText
+        case weatherRequestFailed, changeRequestFailed, translationRequestFailed, bigAmount, emptyText, pressSearchFirst
     }
     var controller: UIViewController?
     var alertDisplay :  ListCase = .changeRequestFailed {
@@ -42,6 +42,11 @@ class Alert{
         case .emptyText:
             controller?.presentAlertDetails(title: "Sorry",
                                             message: "Your text is empty",
+                                            titleButton: "OK")
+            
+        case . pressSearchFirst:
+            controller?.presentAlertDetails(title: "Sorry",
+                                            message: "Press Search first",
                                             titleButton: "OK")
         }
     }
