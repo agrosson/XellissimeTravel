@@ -172,7 +172,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="h7n-W9-x7b" userLabel="Current Stack View">
-                                <rect key="frame" x="20" y="356" width="374" height="90"/>
+                                <rect key="frame" x="20" y="351" width="374" height="90"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="CTm-GK-q6N">
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
@@ -222,7 +222,7 @@
                                     <constraint firstItem="CTm-GK-q6N" firstAttribute="leading" secondItem="h7n-W9-x7b" secondAttribute="leading" id="q8G-rf-ffI"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kO-rg-TMS">
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kO-rg-TMS">
                                 <rect key="frame" x="20" y="721" width="374" height="72"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
                                 <state key="normal" title="SEARCH">
@@ -232,8 +232,8 @@
                                     <action selector="getWeatherButtonPressed:" destination="wB7-hD-YIF" eventType="touchUpInside" id="Kbc-qz-nTz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpg-Pd-oUW">
-                                <rect key="frame" x="100" y="665" width="214" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpg-Pd-oUW">
+                                <rect key="frame" x="100" y="670" width="214" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <state key="normal" title="Next Days">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -260,21 +260,21 @@
                             <constraint firstItem="BLa-zd-25s" firstAttribute="leading" secondItem="OgU-Ai-qcC" secondAttribute="leading" constant="20" id="CWA-2l-x4N"/>
                             <constraint firstItem="h7n-W9-x7b" firstAttribute="leading" secondItem="OgU-Ai-qcC" secondAttribute="leading" constant="20" id="D2W-xg-lcx"/>
                             <constraint firstItem="OgU-Ai-qcC" firstAttribute="trailing" secondItem="aft-1K-rrF" secondAttribute="trailing" constant="20" id="Eaa-sf-NlA"/>
-                            <constraint firstItem="i1o-Oc-Vsz" firstAttribute="top" secondItem="BLa-zd-25s" secondAttribute="bottom" constant="20" id="G7U-wA-ZTI"/>
+                            <constraint firstItem="i1o-Oc-Vsz" firstAttribute="top" secondItem="BLa-zd-25s" secondAttribute="bottom" priority="999" constant="20" id="G7U-wA-ZTI"/>
                             <constraint firstItem="OgU-Ai-qcC" firstAttribute="trailing" secondItem="BLa-zd-25s" secondAttribute="trailing" constant="20" id="Hu4-cS-kyv"/>
                             <constraint firstItem="pXt-FP-dZ7" firstAttribute="centerY" secondItem="9kO-rg-TMS" secondAttribute="centerY" id="IeR-pE-2JM"/>
                             <constraint firstItem="MEH-0m-jtB" firstAttribute="top" secondItem="OgU-Ai-qcC" secondAttribute="top" constant="20" id="K1i-lc-8EG"/>
-                            <constraint firstItem="aft-1K-rrF" firstAttribute="top" secondItem="MEH-0m-jtB" secondAttribute="bottom" constant="20" id="Les-qQ-kGe"/>
-                            <constraint firstItem="BLa-zd-25s" firstAttribute="top" secondItem="aft-1K-rrF" secondAttribute="bottom" constant="20" id="Pmq-Ru-oAi"/>
+                            <constraint firstItem="aft-1K-rrF" firstAttribute="top" secondItem="MEH-0m-jtB" secondAttribute="bottom" priority="999" constant="20" id="Les-qQ-kGe"/>
+                            <constraint firstItem="BLa-zd-25s" firstAttribute="top" secondItem="aft-1K-rrF" secondAttribute="bottom" priority="999" constant="20" id="Pmq-Ru-oAi"/>
                             <constraint firstItem="aft-1K-rrF" firstAttribute="leading" secondItem="OgU-Ai-qcC" secondAttribute="leading" constant="20" id="Q41-ye-ZT3"/>
-                            <constraint firstItem="Gpg-Pd-oUW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="h7n-W9-x7b" secondAttribute="bottom" constant="25" id="UAs-Ad-Zew"/>
+                            <constraint firstItem="Gpg-Pd-oUW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="h7n-W9-x7b" secondAttribute="bottom" constant="15" id="UAs-Ad-Zew"/>
                             <constraint firstItem="Gpg-Pd-oUW" firstAttribute="leading" secondItem="OgU-Ai-qcC" secondAttribute="leading" constant="100" id="UN9-Nw-4tA"/>
                             <constraint firstItem="9kO-rg-TMS" firstAttribute="leading" secondItem="OgU-Ai-qcC" secondAttribute="leading" constant="20" id="XgJ-ct-YMB"/>
-                            <constraint firstItem="9kO-rg-TMS" firstAttribute="top" secondItem="Gpg-Pd-oUW" secondAttribute="bottom" constant="20" id="b6B-Jp-RAI"/>
-                            <constraint firstItem="BLa-zd-25s" firstAttribute="top" secondItem="aft-1K-rrF" secondAttribute="bottom" constant="20" id="cWp-yS-TeW"/>
-                            <constraint firstItem="i1o-Oc-Vsz" firstAttribute="top" secondItem="BLa-zd-25s" secondAttribute="bottom" constant="20" id="e9z-cZ-J5K"/>
-                            <constraint firstItem="OgU-Ai-qcC" firstAttribute="bottom" secondItem="9kO-rg-TMS" secondAttribute="bottom" constant="20" id="hnY-a0-rJE"/>
-                            <constraint firstItem="h7n-W9-x7b" firstAttribute="top" secondItem="i1o-Oc-Vsz" secondAttribute="bottom" constant="20" id="iGl-uj-eMg"/>
+                            <constraint firstItem="9kO-rg-TMS" firstAttribute="top" secondItem="Gpg-Pd-oUW" secondAttribute="bottom" constant="15" id="b6B-Jp-RAI"/>
+                            <constraint firstItem="BLa-zd-25s" firstAttribute="top" secondItem="aft-1K-rrF" secondAttribute="bottom" priority="999" constant="20" id="cWp-yS-TeW"/>
+                            <constraint firstItem="i1o-Oc-Vsz" firstAttribute="top" secondItem="BLa-zd-25s" secondAttribute="bottom" priority="999" constant="20" id="e9z-cZ-J5K"/>
+                            <constraint firstItem="OgU-Ai-qcC" firstAttribute="bottom" secondItem="9kO-rg-TMS" secondAttribute="bottom" priority="250" constant="20" id="hnY-a0-rJE"/>
+                            <constraint firstItem="h7n-W9-x7b" firstAttribute="top" secondItem="i1o-Oc-Vsz" secondAttribute="bottom" priority="999" constant="15" id="iGl-uj-eMg"/>
                             <constraint firstItem="MEH-0m-jtB" firstAttribute="leading" secondItem="OgU-Ai-qcC" secondAttribute="leading" constant="20" id="te0-a2-wXy"/>
                             <constraint firstItem="OgU-Ai-qcC" firstAttribute="trailing" secondItem="Gpg-Pd-oUW" secondAttribute="trailing" constant="100" id="uhP-MW-zx3"/>
                             <constraint firstItem="OgU-Ai-qcC" firstAttribute="trailing" secondItem="9kO-rg-TMS" secondAttribute="trailing" priority="999" constant="20" id="zJz-y9-yne"/>

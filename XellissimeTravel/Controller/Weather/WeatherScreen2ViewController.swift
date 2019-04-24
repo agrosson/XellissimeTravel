@@ -22,14 +22,20 @@ class WeatherScreen2ViewController: UIViewController {
     }
     @IBOutlet weak var nextDayButton: UIButton!
     @IBAction func nextDaysButtonPressed(_ sender: Any) {
-        self.popoverCityLabel.text = cityTextField.text?.uppercased()
-     //   hideViewWhenPopover(hide: true)
-        self.view.addSubview(popoverView)
-        popoverView.backgroundColor = Parameter.shared.colors[0]
-        let test = self.tabBarController?.tabBar.frame.height
-        print(test! as Any)
-        popoverView.center = CGPoint(x: view.frame.width/2,
-                                     y: (view.frame.height-popoverView.frame.height/2)-test!-1)
+        if chooseCityLabel.text == weatherLabelChooseCityText {
+            presentAlertDetails(title: "Careful", message: "Press Search first", titleButton: "OK")
+        } else {
+            
+            self.popoverCityLabel.text = cityTextField.text?.uppercased()
+            //   hideViewWhenPopover(hide: true)
+            self.view.addSubview(popoverView)
+            popoverView.backgroundColor = Parameter.shared.colors[0]
+            let test = self.tabBarController?.tabBar.frame.height
+            print(test! as Any)
+            popoverView.center = CGPoint(x: view.frame.width/2,
+                                         y: (view.frame.height-popoverView.frame.height/2)-test!-1)
+        }
+
     }
 
     // MARK: - Outlets - Labels
@@ -90,6 +96,9 @@ class WeatherScreen2ViewController: UIViewController {
      Action that launches request to get weather from a given city
      */
     @IBAction func getWeatherButtonPressed(_ sender: UIButton) {
+        countryTextField.resignFirstResponder()
+        cityTextField.resignFirstResponder()
+        chooseCityLabel.text = "\(cityTextField.text?.capitalized ?? "")"
         toggleActivityIndicator(shown: true)
         // get city from textField
         let city = cityTextField.text
@@ -181,9 +190,11 @@ class WeatherScreen2ViewController: UIViewController {
         popoverView.layer.cornerRadius = 50
         self.nyTitleLabel.textColor = .white
         self.chooseCityLabel.textColor = .white
+        self.chooseCityLabel.text = weatherLabelChooseCityText
         self.nextDayButton.tintColor = .white
         self.searchButtonLabel.setTitleColor(.white, for: .normal)
         gestureTapCreation()
+        gestureSwipeCreation()
         navigationBarColor()
         setNYWeather()
     }
@@ -221,6 +232,16 @@ class WeatherScreen2ViewController: UIViewController {
         mytapGestureRecognizer.numberOfTapsRequired = 1
         self.view.addGestureRecognizer(mytapGestureRecognizer)
     }
+    /**
+     Function that creates a SwipeGestureRecognizer
+     */
+    private func gestureSwipeCreation(){
+        let mySwipeGestureRecognizer =
+            UISwipeGestureRecognizer(target: self, action: #selector(myTap))
+    mySwipeGestureRecognizer.direction = .down
+    self.view.addGestureRecognizer(mySwipeGestureRecognizer)
+    }
+    
     /**
      Function that creates an action for a tapGestureRecognizer. Dissmiss Keyboard
      */
@@ -319,6 +340,7 @@ extension WeatherScreen2ViewController: UITextFieldDelegate {
         return true
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
+    chooseCityLabel.text = weatherLabelChooseCityText
         popoverView.removeFromSuperview()
     }
 }

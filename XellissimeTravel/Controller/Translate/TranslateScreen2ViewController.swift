@@ -82,6 +82,7 @@ class TranslateScreen2ViewController: UIViewController {
         navigationBarColor()
         NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
         gestureTapCreation()
+        gestureSwipeCreation()
         
         // listen to keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -122,6 +123,16 @@ class TranslateScreen2ViewController: UIViewController {
         mytapGestureRecognizer.numberOfTapsRequired = 1
         self.view.addGestureRecognizer(mytapGestureRecognizer)
     }
+    /**
+     Function that creates a SwipeGestureRecognizer
+     */
+    private func gestureSwipeCreation(){
+        let mySwipeGestureRecognizer =
+            UISwipeGestureRecognizer(target: self, action: #selector(myTap))
+        mySwipeGestureRecognizer.direction = .down
+        self.view.addGestureRecognizer(mySwipeGestureRecognizer)
+    }
+    
     @objc func myTap(){
          textTotranslateTextView.resignFirstResponder()
     }

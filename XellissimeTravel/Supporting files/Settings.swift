@@ -20,6 +20,8 @@ var currencyName = ""
 /// Empty text as initial value for textToTranslate
 var textToTranslate = ""
 
+let weatherLabelChooseCityText = "Choose your city and country"
+
 // Array of colors
 let blueColor = ["4B8AEF","CCCFE8","99BAED","869DE1","FAFBF8"]
 let modernColor = ["142242","93A3B4","2278AB","B5613C","FAFBF8"]

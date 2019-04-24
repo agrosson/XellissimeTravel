@@ -119,6 +119,7 @@ class ChangeScreen2ViewController: UIViewController {
         textFieldFX.delegate = self
         // Creation of tapGestureRecognizer
         gestureTapCreation()
+        gestureSwipeCreation()
         // Setup flags
         flagLeft.image = flagImageOne
         flagRight.image = flagImageTwo
@@ -230,22 +231,38 @@ class ChangeScreen2ViewController: UIViewController {
         self.view.addGestureRecognizer(mytapGestureRecognizer)
     }
     /**
+     Function that creates a SwipeGestureRecognizer
+     */
+    private func gestureSwipeCreation(){
+        let mySwipeGestureRecognizer =
+            UISwipeGestureRecognizer(target: self, action: #selector(myTap))
+        mySwipeGestureRecognizer.direction = .down
+        self.view.addGestureRecognizer(mySwipeGestureRecognizer)
+    }
+    
+    private func updateAmountConversion(){
+        checkAmountToConvert()
+        if rate != nil {
+    self.rateLabel.text = String(format: "%.4f", rate!)
+    myRateResult = rate!
+    self.amountToConvertLabel.text = String(format: "%.2f", self.amountToConvert)
+    self.amountConvertedLabel.text = String(format: "%.2f", (self.amountToConvert*myRateResult))
+    }
+        textFieldFX.resignFirstResponder()
+    }
+    
+    /**
      Function that creates an action for a tapGestureRecognizer. Dissmiss Keyboard
      */
     @objc func myTap(){
-        textFieldFX.resignFirstResponder()
+        updateAmountConversion()
     }
 }
 // MARK: - Extension - TextfieldDelegate
 extension ChangeScreen2ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        checkAmountToConvert()
-        if rate != nil {
-            self.rateLabel.text = String(format: "%.4f", rate!)
-            myRateResult = rate!
-            self.amountToConvertLabel.text = String(format: "%.2f", self.amountToConvert)
-            self.amountConvertedLabel.text = String(format: "%.2f", (self.amountToConvert*myRateResult))}
-        textFieldFX.resignFirstResponder()
+        updateAmountConversion()
+        
         return true
     
     }

@@ -11,6 +11,7 @@
 		C10DF7502265D6CE008B2E96 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10DF74F2265D6CE008B2E96 /* StringExtension.swift */; };
 		C12D0D87224BB484001B8525 /* ChangeScreen1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D0D86224BB484001B8525 /* ChangeScreen1ViewController.swift */; };
 		C12D0D89224BEF20001B8525 /* TranslateScreen1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */; };
+		C16A193322705A440093DA25 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16A193222705A440093DA25 /* NotificationName.swift */; };
 		C17634E2225F28CF0017A73F /* NetworkManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17634E1225F28CF0017A73F /* NetworkManagerTestCase.swift */; };
 		C17634E4225F2A190017A73F /* Weather.json in Resources */ = {isa = PBXBuildFile; fileRef = C17634E3225F2A190017A73F /* Weather.json */; };
 		C17634E8225F3BC80017A73F /* FakeNetworkResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17634E7225F3BC80017A73F /* FakeNetworkResponseData.swift */; };
@@ -21,7 +22,6 @@
 		C184803E225C74F0001C5A0D /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C184803D225C74F0001C5A0D /* APIKeys.swift */; };
 		C18CFD2D22524059002BA15A /* TranslateScreen2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18CFD2C22524059002BA15A /* TranslateScreen2ViewController.swift */; };
 		C1901B4D225B22F6009356FB /* ParametersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1901B4C225B22F6009356FB /* ParametersViewController.swift */; };
-		C1901B51225B2509009356FB /* ExtensionNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1901B50225B2509009356FB /* ExtensionNotificationName.swift */; };
 		C1901B53225B2597009356FB /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1901B52225B2597009356FB /* ExtensionUIColor.swift */; };
 		C1901B55225B563A009356FB /* WeatherScreen1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1901B54225B563A009356FB /* WeatherScreen1ViewController.swift */; };
 		C19592C52254DFCD0055909C /* WeatherScreen2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19592C42254DFCC0055909C /* WeatherScreen2ViewController.swift */; };
@@ -71,6 +71,7 @@
 		C10DF74F2265D6CE008B2E96 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		C12D0D86224BB484001B8525 /* ChangeScreen1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeScreen1ViewController.swift; sourceTree = "<group>"; };
 		C12D0D88224BEF20001B8525 /* TranslateScreen1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreen1ViewController.swift; sourceTree = "<group>"; };
+		C16A193222705A440093DA25 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		C17634E1225F28CF0017A73F /* NetworkManagerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTestCase.swift; sourceTree = "<group>"; };
 		C17634E3225F2A190017A73F /* Weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Weather.json; sourceTree = "<group>"; };
 		C17634E7225F3BC80017A73F /* FakeNetworkResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeNetworkResponseData.swift; sourceTree = "<group>"; };
@@ -81,7 +82,6 @@
 		C184803D225C74F0001C5A0D /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		C18CFD2C22524059002BA15A /* TranslateScreen2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreen2ViewController.swift; sourceTree = "<group>"; };
 		C1901B4C225B22F6009356FB /* ParametersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersViewController.swift; sourceTree = "<group>"; };
-		C1901B50225B2509009356FB /* ExtensionNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExtensionNotificationName.swift; path = "/Users/alexandregrosson/OPENCLASSROOMS/PARCOURS DEVELOPPEUR APPLICATION IOS/PROJET9/XellissimeTravel/XellissimeTravel/Model/ExtensionNotificationName.swift"; sourceTree = "<absolute>"; };
 		C1901B52225B2597009356FB /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
 		C1901B54225B563A009356FB /* WeatherScreen1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherScreen1ViewController.swift; sourceTree = "<group>"; };
 		C19592C42254DFCC0055909C /* WeatherScreen2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherScreen2ViewController.swift; sourceTree = "<group>"; };
@@ -245,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				C10DF74F2265D6CE008B2E96 /* StringExtension.swift */,
-				C1901B50225B2509009356FB /* ExtensionNotificationName.swift */,
 				C1901B52225B2597009356FB /* ExtensionUIColor.swift */,
 				C1BCA8A7224B67B100EB9BEA /* APIManager.swift */,
 				C1BCA8AD224B74A800EB9BEA /* OpenweathermapAPI.swift */,
@@ -286,6 +285,7 @@
 				C1E82212224A6A7D00CE07F4 /* AppDelegate.swift */,
 				C1E82219224A6A8000CE07F4 /* Assets.xcassets */,
 				C1F17651225DC93E0030208A /* alert.swift */,
+				C16A193222705A440093DA25 /* NotificationName.swift */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -530,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C19592C52254DFCD0055909C /* WeatherScreen2ViewController.swift in Sources */,
+				C16A193322705A440093DA25 /* NotificationName.swift in Sources */,
 				C1BCA8A8224B67B100EB9BEA /* APIManager.swift in Sources */,
 				C1AFB914224D5290009593C2 /* UIImage.swift in Sources */,
 				C1AFB915224D5290009593C2 /* FlagKit.swift in Sources */,
@@ -550,7 +551,6 @@
 				C1F17654225DFAD90030208A /* Settings.swift in Sources */,
 				C1F17652225DC93E0030208A /* alert.swift in Sources */,
 				C10DF7502265D6CE008B2E96 /* StringExtension.swift in Sources */,
-				C1901B51225B2509009356FB /* ExtensionNotificationName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
