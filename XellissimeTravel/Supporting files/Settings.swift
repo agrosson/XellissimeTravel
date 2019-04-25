@@ -19,10 +19,11 @@ var currencySymbol = "US"
 var currencyName = ""
 /// Empty text as initial value for textToTranslate
 var textToTranslate = ""
-
+/// Text for labels Weather
 let weatherLabelChooseCityText = "Choose your city and country"
-
+/// Number of decimal for amount to convert : default is 2
 var decimalMaxToConvert = 2
+/// Number of decimal for amount converted : default is 2
 var decimalMaxConverted = 2
 // Array of colors
 let blueColor = ["4B8AEF","CCCFE8","99BAED","869DE1","FAFBF8"]
