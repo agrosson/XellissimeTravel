@@ -16,8 +16,10 @@ class ParamtersViewController: UIViewController {
     @IBOutlet weak var parametersView2: UIView!
     @IBOutlet weak var parametersView3: UIView!
     @IBOutlet weak var parametersView4: UIView!
-    
     @IBOutlet weak var parametersView5: UIView!
+    
+    @IBOutlet weak var segmentedControlObject: UISegmentedControl!
+    
     // MARK: - Enum
     /// Enumeration that lists color styles of the application
     enum Style {
@@ -30,6 +32,11 @@ class ParamtersViewController: UIViewController {
             setStyle(style)
         }
     }
+    var styleString: String = "pink" {
+        didSet {
+            setStyleString(styleString)
+        }
+    }
     // MARK: - Actions
     /**
      Action that sets style depending on segment chosen
@@ -38,20 +45,31 @@ class ParamtersViewController: UIViewController {
         // style is set from segment selected
         switch sender.selectedSegmentIndex {
         case 0: style = .pinkStyle
+                styleString = "pink"
         case 1: style = .blueStyle
+                styleString = "blue"
         case 2: style = .modernStyle
+                styleString = "modern"
         case 3: style = .greenStyle
+                styleString = "green"
         default : style = .pinkStyle
         }
         // Notification is posted after segment is selected
         NotificationCenter.default.post(name: .setNewColor, object: self)
+        // Save user preference
+        UserDefaults.standard.set(styleString, forKey: "style")
     }
     // MARK: - Methods - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBarColor()
         view.backgroundColor = .black
-        style = .pinkStyle
+        if UserDefaults.standard.object(forKey: "style") == nil {
+            styleString = "pink"
+        } else {
+            styleString = UserDefaults.standard.object(forKey: "style") as! String
+            
+        }
         // Notification posted here because first screen displayed (default color mood)
         NotificationCenter.default.post(name: .setNewColor, object: self)
     }
@@ -70,6 +88,25 @@ class ParamtersViewController: UIViewController {
             createMood(with: modernColor)
         case .greenStyle:
             createMood(with: greenColor)
+        }
+    }
+    private func setStyleString(_ styleString: String) {
+        switch styleString {
+        case "pink":
+            createMood(with: pinkColor)
+            self.segmentedControlObject.selectedSegmentIndex = 0
+        case "blue":
+            createMood(with: blueColor)
+            self.segmentedControlObject.selectedSegmentIndex = 1
+        case "modern":
+            createMood(with: modernColor)
+            self.segmentedControlObject.selectedSegmentIndex = 2
+        case "green":
+            createMood(with: greenColor)
+            self.segmentedControlObject.selectedSegmentIndex = 3
+        default:
+            createMood(with: pinkColor)
+            self.segmentedControlObject.selectedSegmentIndex = 0
         }
     }
     /**

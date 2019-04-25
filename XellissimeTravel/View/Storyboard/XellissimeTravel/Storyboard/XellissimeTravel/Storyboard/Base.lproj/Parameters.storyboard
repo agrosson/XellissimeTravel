@@ -132,6 +132,7 @@
                         <outlet property="parametersView3" destination="Qxm-LZ-4BQ" id="QDk-aR-XvZ"/>
                         <outlet property="parametersView4" destination="5wT-EM-j4R" id="gt5-cc-rPg"/>
                         <outlet property="parametersView5" destination="AU0-70-d9b" id="36q-iT-rK9"/>
+                        <outlet property="segmentedControlObject" destination="U5D-gI-E0r" id="seA-tn-oRM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiG-ZV-pOD" userLabel="First Responder" sceneMemberID="firstResponder"/>
