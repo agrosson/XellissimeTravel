@@ -80,7 +80,7 @@ class TranslateScreen2ViewController: UIViewController {
         self.view.backgroundColor = Parameter.shared.colors[0]
         self.translateOutlet.setTitleColor(.white, for: .normal)
         navigationBarColor()
-        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor, object: nil)
         gestureTapCreation()
         gestureSwipeCreation()
         
@@ -91,7 +91,7 @@ class TranslateScreen2ViewController: UIViewController {
     // MARK: - Methods - ViewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor, object: nil)
     }
     // MARK: - Methods
     /**

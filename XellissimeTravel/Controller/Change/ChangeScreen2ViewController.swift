@@ -125,12 +125,12 @@ class ChangeScreen2ViewController: UIViewController {
         flagLeft.image = flagImageOne
         flagRight.image = flagImageTwo
         // Add Notification Observer
-        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor, object: nil)
     }
     // MARK: - Methods - ViewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor, object: nil)
         getUsdWhenLoad()
         updateFlagImages()
     }

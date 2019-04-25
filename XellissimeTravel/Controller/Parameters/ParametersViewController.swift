@@ -7,64 +7,75 @@
 //
 
 import UIKit
-
+/**
+ This class enables the user to choose the mood of the application
+ */
 class ParamtersViewController: UIViewController {
-    
+    // MARK: - Outlets - UIViews
     @IBOutlet weak var parametersView1: UIView!
     @IBOutlet weak var parametersView2: UIView!
     @IBOutlet weak var parametersView3: UIView!
     @IBOutlet weak var parametersView4: UIView!
     @IBOutlet weak var parametersView5: UIView!
-    
-
-    
+    // MARK: - Enum
+    /// Enumeration that lists color styles of the application
     enum Style {
-            case style1, style2, style3, style4
+        case pinkStyle, blueStyle, modernStyle, greenStyle
     }
-    
-    var style : Style = .style1 {
+    // MARK: - Properties
+    /// Variable that tracks style
+    var style : Style = .pinkStyle {
         didSet{
             setStyle(style)
         }
     }
-    private func setStyle(_ style: Style) {
-        switch style {
-        case .style1:
-            createMood(with: pinkColor)
-        case .style2:
-            createMood(with: blueColor)
-        case .style3:
-            createMood(with: modernColor)
-        case .style4:
-           createMood(with: greenColor)
-        }
-        
-    }
-    
+    // MARK: - Actions
+    /**
+     Action that sets style depending on segment chosen
+     */
     @IBAction func parametersSegmentedControlSelected(_ sender: UISegmentedControl) {
+        // style is set from segment selected
         switch sender.selectedSegmentIndex {
-            case 0: style = .style1
-            case 1: style = .style2
-            case 2: style = .style3
-            case 3: style = .style4
-        default : style = .style1
+        case 0: style = .pinkStyle
+        case 1: style = .blueStyle
+        case 2: style = .modernStyle
+        case 3: style = .greenStyle
+        default : style = .pinkStyle
         }
-        NotificationCenter.default.post(name: .setNewColor1, object: self)
+        // Notification is posted after segment is selected
+        NotificationCenter.default.post(name: .setNewColor, object: self)
     }
-    
+    // MARK: - Methods - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBarColor()
         view.backgroundColor = .black
-        style = .style1
-        NotificationCenter.default.post(name: .setNewColor1, object: self)
-        // Do any additional setup after loading the view.
+        style = .pinkStyle
+        // Notification posted here because first screen displayed (default color mood)
+        NotificationCenter.default.post(name: .setNewColor, object: self)
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-         NotificationCenter.default.post(name: .setNewColor1, object: self)
+    // MARK: - Methods
+    /**
+     Function that sets colors depending on style chosen
+     - Parameter style: variable used to set Style
+     */
+    private func setStyle(_ style: Style) {
+        switch style {
+        case .pinkStyle:
+            createMood(with: pinkColor)
+        case .blueStyle:
+            createMood(with: blueColor)
+        case .modernStyle:
+            createMood(with: modernColor)
+        case .greenStyle:
+            createMood(with: greenColor)
+        }
     }
-    
+    /**
+     Function that creates an array of colors from an array of Strings
+     Sets views with colors
+     - Parameter colorArray: Array of string to define UIColor
+     */
     private func createMood(with colorArray: [String]) {
         var arrayColor : [UIColor] = []
         for tagnumber in 1...5 {

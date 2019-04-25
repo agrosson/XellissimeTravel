@@ -23,12 +23,12 @@ class TranslateScreen1ViewController: UIViewController {
         self.translateScreen1Label.textColor = .white
         self.goLabel.setTitleColor(.white, for: .normal)
         navigationBarColor()
-        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor, object: nil)
     }
     // MARK: - Methods - ViewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor, object: nil)
     }
     // MARK: - Methods
     /**

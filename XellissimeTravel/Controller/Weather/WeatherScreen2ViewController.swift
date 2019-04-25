@@ -200,7 +200,7 @@ class WeatherScreen2ViewController: UIViewController {
     // MARK: - Methods - ViewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor1, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateColor), name: .setNewColor, object: nil)
         
     }
     // MARK: - Methods

@@ -30,15 +30,12 @@ let modernColor = ["142242","93A3B4","2278AB","B5613C","FAFBF8"]
 let pinkColor = ["E63A5B","E69CA9","AB4687","D89A58", "FAFBF8"]
 let greenColor = ["263023","7D8861","ABCF3B","45821F","FAFBF8"]
 
-
-//var color1: UIColor?
-//var color2: UIColor?
-//var color3: UIColor?
-//var color4: UIColor?
-//var color5: UIColor? = UIColor(hexString: "FAFBF8")
 var color6 = UIColor(hexString: "5A616D")
 
-func  navigationBarColor() {
+/**
+ Function that sets appearance UINavigationBar
+ */
+ func  navigationBarColor() {
     UINavigationBar.appearance().barTintColor = Parameter.shared.colors[4]
     UINavigationBar.appearance().tintColor = color6
 }

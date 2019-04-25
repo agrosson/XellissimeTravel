@@ -9,5 +9,5 @@
 import Foundation
 
 extension Notification.Name {
-    static let setNewColor1 = Notification.Name(rawValue: "setNewColor1")
+    static let setNewColor = Notification.Name(rawValue: "setNewColor1")
 }
