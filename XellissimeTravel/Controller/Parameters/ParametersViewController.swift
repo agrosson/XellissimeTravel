@@ -16,6 +16,8 @@ class ParamtersViewController: UIViewController {
     @IBOutlet weak var parametersView2: UIView!
     @IBOutlet weak var parametersView3: UIView!
     @IBOutlet weak var parametersView4: UIView!
+    
+    
     @IBOutlet weak var parametersView5: UIView!
     // MARK: - Enum
     /// Enumeration that lists color styles of the application
