@@ -20,18 +20,8 @@ class ParamtersViewController: UIViewController {
     
     @IBOutlet weak var segmentedControlObject: UISegmentedControl!
     
-    // MARK: - Enum
-    /// Enumeration that lists color styles of the application
-    enum Style {
-        case pinkStyle, blueStyle, modernStyle, greenStyle
-    }
     // MARK: - Properties
     /// Variable that tracks style
-    var style : Style = .pinkStyle {
-        didSet{
-            setStyle(style)
-        }
-    }
     var styleString: String = "pink" {
         didSet {
             setStyleString(styleString)
@@ -44,15 +34,11 @@ class ParamtersViewController: UIViewController {
     @IBAction func parametersSegmentedControlSelected(_ sender: UISegmentedControl) {
         // style is set from segment selected
         switch sender.selectedSegmentIndex {
-        case 0: style = .pinkStyle
-                styleString = "pink"
-        case 1: style = .blueStyle
-                styleString = "blue"
-        case 2: style = .modernStyle
-                styleString = "modern"
-        case 3: style = .greenStyle
-                styleString = "green"
-        default : style = .pinkStyle
+        case 0: styleString = "pink"
+        case 1: styleString = "blue"
+        case 2: styleString = "modern"
+        case 3: styleString = "green"
+        default : styleString = "pink"
         }
         // Notification is posted after segment is selected
         NotificationCenter.default.post(name: .setNewColor, object: self)
@@ -76,20 +62,10 @@ class ParamtersViewController: UIViewController {
     // MARK: - Methods
     /**
      Function that sets colors depending on style chosen
-     - Parameter style: variable used to set Style
+     - Parameter styleString: variable used to set style
+     # Important Notes #
+     - The selectedSegmentIndex is updated with UserDefault
      */
-    private func setStyle(_ style: Style) {
-        switch style {
-        case .pinkStyle:
-            createMood(with: pinkColor)
-        case .blueStyle:
-            createMood(with: blueColor)
-        case .modernStyle:
-            createMood(with: modernColor)
-        case .greenStyle:
-            createMood(with: greenColor)
-        }
-    }
     private func setStyleString(_ styleString: String) {
         switch styleString {
         case "pink":
