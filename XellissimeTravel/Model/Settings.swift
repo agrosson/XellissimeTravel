@@ -42,7 +42,7 @@ var color6 = UIColor(hexString: "5A616D")
 }
 
 class  Parameter {
-  static var shared = Parameter()
+    static var shared = Parameter()
     init(){
         colors = []
         fillColorsArray()
@@ -50,7 +50,21 @@ class  Parameter {
     var colors: [UIColor] = []
     func fillColorsArray(){
         for index in 0...blueColor.count-1 {
-        colors.append(UIColor(hexString: pinkColor[index]))
+            colors.append(UIColor(hexString: pinkColor[index]))
+        }
     }
 }
+
+class SettingsService {
+    private struct Keys {
+        static let style = "style"
+    }
+    static var style: String {
+        get {
+            return  UserDefaults.standard.string(forKey: Keys.style) ?? "pink"
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Keys.style)
+        }
+    }
 }

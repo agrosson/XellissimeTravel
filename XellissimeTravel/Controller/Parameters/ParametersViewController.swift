@@ -22,7 +22,7 @@ class ParamtersViewController: UIViewController {
     
     // MARK: - Properties
     /// Variable that tracks style
-    var styleString: String = "pink" {
+    var styleString: String = SettingsService.style {
         didSet {
             setStyleString(styleString)
         }
@@ -50,12 +50,7 @@ class ParamtersViewController: UIViewController {
         super.viewDidLoad()
         navigationBarColor()
         view.backgroundColor = .black
-        if UserDefaults.standard.object(forKey: "style") == nil {
-            styleString = "pink"
-        } else {
-            styleString = UserDefaults.standard.object(forKey: "style") as! String
-            
-        }
+        styleString = SettingsService.style
         // Notification posted here because first screen displayed (default color mood)
         NotificationCenter.default.post(name: .setNewColor, object: self)
     }

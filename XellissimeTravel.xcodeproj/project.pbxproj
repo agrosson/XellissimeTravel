@@ -244,6 +244,9 @@
 		C1E82239224A7A2B00CE07F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C1F17651225DC93E0030208A /* alert.swift */,
+				C16A193222705A440093DA25 /* NotificationName.swift */,
+				C1F17653225DFAD90030208A /* Settings.swift */,
 				C10DF74F2265D6CE008B2E96 /* StringExtension.swift */,
 				C1901B52225B2597009356FB /* ExtensionUIColor.swift */,
 				C1BCA8A7224B67B100EB9BEA /* APIManager.swift */,
@@ -279,13 +282,10 @@
 		C1E8223C224A7A8600CE07F4 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				C1F17653225DFAD90030208A /* Settings.swift */,
 				C184803D225C74F0001C5A0D /* APIKeys.swift */,
 				C184803B225C7407001C5A0D /* APIKeys.plist */,
 				C1E82212224A6A7D00CE07F4 /* AppDelegate.swift */,
 				C1E82219224A6A8000CE07F4 /* Assets.xcassets */,
-				C1F17651225DC93E0030208A /* alert.swift */,
-				C16A193222705A440093DA25 /* NotificationName.swift */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
