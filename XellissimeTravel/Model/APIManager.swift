@@ -21,16 +21,6 @@ class NetworkManager {
     private var translateSession = URLSession(configuration: .default)
     private var weatherSession = URLSession(configuration: .default)
     
-//    private var allDays: [Int] {
-//        var array = [Int]()
-//        for item in 0...39{
-//            array.append(item)
-//        }
-//        return array
-//    }
-//    /// Array that sets the targeted days : each day has 8 weatherObject items
-//    private var targetDays = [0, 8, 16, 24, 32]
-    
     init(changeSession: URLSession, translateSession: URLSession, weatherSession: URLSession){
         self.changeSession = changeSession
         self.translateSession = translateSession
@@ -140,23 +130,3 @@ extension NetworkManager {
         task.resume()
     }
 }
-//extension NetworkManager {
-//    func getImage(pictureURL: URL, completionHandler: @escaping (Data?) -> Void) {
-//        let session = URLSession(configuration: .default)
-//        task?.cancel()
-//        task = session.dataTask(with: pictureURL) { (data, response, error) in
-//            DispatchQueue.main.async {
-//                guard let data = data, error == nil else {
-//                    completionHandler(nil)
-//                    return
-//                }
-//                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-//                    completionHandler(nil)
-//                    return
-//                }
-//                completionHandler(data)
-//            }
-//        }
-//        task?.resume()
-//    }
-//}

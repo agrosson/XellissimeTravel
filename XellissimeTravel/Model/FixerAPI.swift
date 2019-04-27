@@ -14,12 +14,14 @@ class FixerAPI {
     let httpMethod = "GET"
     private let keyAPI = valueForAPIKey(named: "APIFixerKey")
     var symbol: String
-    lazy var fixerFullUrl:URL? = createFullUrl()
+    var fixerFullUrl:URL? {
+        return createFullUrl()
+    }
     init(symbol: String){
         self.symbol = symbol
     }
     
-    func createFullUrl() -> URL? {
+    private func createFullUrl() -> URL? {
         let endPointUrl = endPoint
         let body = "access_key=\(keyAPI)&base=EUR&symbols=\(symbol)"
         let fullUrl = "\(endPointUrl)?\(body)"

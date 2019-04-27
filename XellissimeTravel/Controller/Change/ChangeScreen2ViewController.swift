@@ -77,7 +77,7 @@ class ChangeScreen2ViewController: UIViewController {
         flagImageTwo = UIImage.init(named: currencyTwo, in: bundle, compatibleWith: nil)!
         // Prepare and send request
         let api = FixerAPI(symbol: currencySymbol)
-        let fullUrl = api.createFullUrl()
+        let fullUrl = api.fixerFullUrl
         let method = api.httpMethod
         let myFXCall = NetworkManager.shared
         // Block of code to check amount to convert
@@ -198,7 +198,7 @@ class ChangeScreen2ViewController: UIViewController {
         decimalMaxToConvert = 2
         currencyName = CurrencyDataBase.currencyCountryCode[currencySymbol]![1]
         let api = FixerAPI(symbol: currencySymbol)
-        let fullUrl = api.createFullUrl()
+        let fullUrl = api.fixerFullUrl
         let method = api.httpMethod
         let myFXCall = NetworkManager.shared
         myFXCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in

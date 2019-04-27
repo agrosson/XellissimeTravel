@@ -108,7 +108,7 @@ class WeatherScreen2ViewController: UIViewController {
         let method = api.httpMethod
         let body  = api.body
         let myWeatherCall = NetworkManager.shared
-        let url = api.createFullUrl()
+        let url = api.fullURLWeather
         /// Create an array to retrieve items in json dictionary
         var allDays: [Int] {
             var array = [Int]()
@@ -278,7 +278,7 @@ class WeatherScreen2ViewController: UIViewController {
         let method = api.httpMethod
         let body  = api.body
         let myWeatherCall = NetworkManager.shared
-        let url = api.createFullUrl()
+        let url = api.fullURLWeather
         var allDays: [Int] {
             var array = [Int]()
             for item in 0...7 {

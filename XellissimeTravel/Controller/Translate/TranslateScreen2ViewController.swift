@@ -53,7 +53,7 @@ class TranslateScreen2ViewController: UIViewController {
         let method = api.httpMethod
         let body = api.httpBody
         let myTranslateCall = NetworkManager.shared
-        let url = api.createFullUrl()
+        let url = api.fullURLTranslate
         myTranslateCall.translate(fullUrl: url!, method: method, body: body) { (success, translation) in
             self.toggleActivityIndicator(shown: false)
             if translation != nil{

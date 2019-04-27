@@ -19,6 +19,9 @@ class GoogleTranslateAPI {
     var sourceLanguage: String
     var format = "text"
     lazy var httpBody = createBody()
+    var fullURLTranslate: URL? {
+        return createFullUrl()
+    }
     init(textInput: String, targetLanguage: String, sourceLanguage: String){
         self.textInput = textInput
         self.targetLanguage = targetLanguage
@@ -30,7 +33,7 @@ class GoogleTranslateAPI {
         let body = "q=\(text!)&target=\(targetLanguage)&format=\(format)&source=\(sourceLanguage)&key=\(keyAPI)"
         return body
     }
-    func createFullUrl() -> URL? {
+    private func createFullUrl() -> URL? {
         let endPointUrl = endPoint
         let body = createBody()
         let fullUrl = "\(endPointUrl)?\(body)"

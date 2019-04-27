@@ -48,7 +48,7 @@ class  Parameter {
         fillColorsArray()
     }
     var colors: [UIColor] = []
-    func fillColorsArray(){
+    private func fillColorsArray(){
         for index in 0...blueColor.count-1 {
             colors.append(UIColor(hexString: pinkColor[index]))
         }

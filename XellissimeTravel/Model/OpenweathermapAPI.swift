@@ -18,16 +18,19 @@ class OpenweathermapAPI {
     var city: String
     var country: String
     lazy var body:String = createBody()
+    var fullURLWeather: URL? {
+        return createFullUrl()
+    }
     init(city: String, country: String){
         self.city = city
         self.country = country
     }
-    func createBody() -> String {
+    private func createBody() -> String {
         let cityModified = city.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         let body = "q=\(cityModified!),\(country)&units=metric&appid=\(keyAPI)"
         return body
     }
-    func createFullUrl() -> URL? {
+    private func createFullUrl() -> URL? {
         let endPointUrl = endPoint
         let body = createBody()
         let fullUrl = "\(endPointUrl)?\(body)"
