@@ -29,10 +29,11 @@ class WeatherScreen2ViewController: UIViewController {
             //   hideViewWhenPopover(hide: true)
             self.view.addSubview(popoverView)
             popoverView.backgroundColor = Parameter.shared.colors[0]
-            let test = self.tabBarController?.tabBar.frame.height
-            print(test! as Any)
+            guard let tabBarHeight = self.tabBarController?.tabBar.frame.height else {
+                return
+            }
             popoverView.center = CGPoint(x: view.frame.width/2,
-                                         y: (view.frame.height-popoverView.frame.height/2)-test!-1)
+                                         y: (view.frame.height-popoverView.frame.height/2)-tabBarHeight-1)
         }
 
     }
@@ -100,15 +101,19 @@ class WeatherScreen2ViewController: UIViewController {
         chooseCityLabel.text = "\(cityTextField.text?.capitalized ?? "")"
         toggleActivityIndicator(shown: true)
         // get city from textField
-        let city = cityTextField.text
+        let city = cityTextField.text ?? ""
         // get country from textField
-        let countryCode = countryTextField.text
+        let countryCode = countryTextField.text ?? ""
         // Prepare request
-        let api = OpenweathermapAPI(city: city!, country: countryCode!)
+        let api = OpenweathermapAPI(city: city, country: countryCode)
         let method = api.httpMethod
         let body  = api.body
         let myWeatherCall = NetworkManager.shared
-        let url = api.fullURLWeather
+        guard let url = api.fullURLWeather else {
+            Alert.shared.controller = self
+            Alert.shared.alertDisplay = .weatherRequestFailed
+            return
+        }
         /// Create an array to retrieve items in json dictionary
         var allDays: [Int] {
             var array = [Int]()
@@ -120,7 +125,7 @@ class WeatherScreen2ViewController: UIViewController {
         /// Array that sets the targeted days : each day has 8 weatherObject items
         let targetDays = [0, 8, 16, 24, 32]
         // Send request
-        myWeatherCall.getWeather(fullUrl: url!, method: method, body: body, dayArray: allDays) { (success, weatherObject) in
+        myWeatherCall.getWeather(fullUrl: url, method: method, body: body, dayArray: allDays) { (success, weatherObject) in
             self.toggleActivityIndicator(shown: false)
             if weatherObject != nil {
                 // for each day...
@@ -278,7 +283,11 @@ class WeatherScreen2ViewController: UIViewController {
         let method = api.httpMethod
         let body  = api.body
         let myWeatherCall = NetworkManager.shared
-        let url = api.fullURLWeather
+        guard let url = api.fullURLWeather else {
+            Alert.shared.controller = self
+            Alert.shared.alertDisplay = .weatherRequestFailed
+            return
+        }
         var allDays: [Int] {
             var array = [Int]()
             for item in 0...7 {
@@ -287,7 +296,7 @@ class WeatherScreen2ViewController: UIViewController {
             return array
         }
         let targetDays = [0]
-        myWeatherCall.getWeather(fullUrl: url!, method: method, body: body, dayArray: allDays) { (success, weatherObject) in
+        myWeatherCall.getWeather(fullUrl: url, method: method, body: body, dayArray: allDays) { (success, weatherObject) in
             self.toggleActivityIndicator(shown: false)
             if weatherObject != nil {
                 for item in 0..<targetDays.count {
