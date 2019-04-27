@@ -35,7 +35,7 @@ class TranslateScreen2ViewController: UIViewController {
         toggleActivityIndicator(shown: true)
         var tempText = textTotranslateTextView.text
         tempText?.removeFirstAndLastAndDoubleWhitespace()
-        if tempText != "" {
+        if tempText != nil && tempText != "" {
             textTotranslateTextView.text = tempText!
             textToTranslate = tempText!
         } else {
@@ -53,8 +53,12 @@ class TranslateScreen2ViewController: UIViewController {
         let method = api.httpMethod
         let body = api.httpBody
         let myTranslateCall = NetworkManager.shared
-        let url = api.fullURLTranslate
-        myTranslateCall.translate(fullUrl: url!, method: method, body: body) { (success, translation) in
+        guard let url = api.fullURLTranslate else {
+            Alert.shared.controller = self
+            Alert.shared.alertDisplay = .translationRequestFailed
+            return
+        }
+        myTranslateCall.translate(fullUrl: url, method: method, body: body) { (success, translation) in
             self.toggleActivityIndicator(shown: false)
             if translation != nil{
                 self.translatedTextLabel.text = translation!.uppercased()

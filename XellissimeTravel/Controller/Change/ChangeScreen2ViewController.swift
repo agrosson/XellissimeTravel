@@ -10,17 +10,16 @@ import UIKit
 
 class ChangeScreen2ViewController: UIViewController {
     
-    lazy var rate:Float? = Float(self.rateLabel.text!)
+    lazy var rate:Float? = Float(self.rateLabel.text ?? "1")
     
     @IBOutlet var popViewFX: UIView!
     
     @IBAction func chooseCurrencyButtonPressed(_ sender: Any) {
         self.view.addSubview(popViewFX)
         popViewFX.backgroundColor = Parameter.shared.colors[0]
-        let test = self.tabBarController?.tabBar.frame.height
-        print(test! as Any)
+        guard let test = self.tabBarController?.tabBar.frame.height else {return}
         popViewFX.center = CGPoint(x: view.frame.width/2,
-                                   y: (view.frame.height-popViewFX.frame.height/2)-test!-1)
+                                   y: (view.frame.height-popViewFX.frame.height/2)-test-1)
     }
     
     // MARK: - Properties
@@ -77,13 +76,17 @@ class ChangeScreen2ViewController: UIViewController {
         flagImageTwo = UIImage.init(named: currencyTwo, in: bundle, compatibleWith: nil)!
         // Prepare and send request
         let api = FixerAPI(symbol: currencySymbol)
-        let fullUrl = api.fixerFullUrl
+        guard let fullUrl = api.fixerFullUrl else {
+            Alert.shared.controller = self
+            Alert.shared.alertDisplay = .changeRequestFailed
+            return
+        }
         let method = api.httpMethod
         let myFXCall = NetworkManager.shared
         // Block of code to check amount to convert
         checkAmountToConvert()
         //
-        myFXCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in
+        myFXCall.getChange(fullUrl: fullUrl, method: method, ToCurrency: api.symbol) { (success, textresult) in
             self.toggleActivityIndicator(shown: false)
             self.rate = textresult
             if textresult != nil {
@@ -147,7 +150,7 @@ class ChangeScreen2ViewController: UIViewController {
      Function to check amount to convert
      */
     private func checkAmountToConvert(){
-        if textFieldFX.text == "" || textFieldFX.text == "0" {
+        if textFieldFX.text == "" || textFieldFX.text == "0" || textFieldFX.text == nil {
             amountToConvert = 1
             textFieldFX.text = "1"
         } else {
@@ -198,10 +201,14 @@ class ChangeScreen2ViewController: UIViewController {
         decimalMaxToConvert = 2
         currencyName = CurrencyDataBase.currencyCountryCode[currencySymbol]![1]
         let api = FixerAPI(symbol: currencySymbol)
-        let fullUrl = api.fixerFullUrl
+        guard let fullUrl = api.fixerFullUrl else {
+            Alert.shared.controller = self
+            Alert.shared.alertDisplay = .changeRequestFailed
+            return
+        }
         let method = api.httpMethod
         let myFXCall = NetworkManager.shared
-        myFXCall.getChange(fullUrl: fullUrl!, method: method, ToCurrency: api.symbol) { (success, textresult) in
+        myFXCall.getChange(fullUrl: fullUrl, method: method, ToCurrency: api.symbol) { (success, textresult) in
             self.toggleActivityIndicator(shown: false)
             if textresult != nil {
                 self.adaptDecimalDisplay()

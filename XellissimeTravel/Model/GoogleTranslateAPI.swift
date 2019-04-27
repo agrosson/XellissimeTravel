@@ -30,7 +30,10 @@ class GoogleTranslateAPI {
     private func createBody() -> String {
         // Transform text (string) to be used in URL(String)
         let text = textInput.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        let body = "q=\(text!)&target=\(targetLanguage)&format=\(format)&source=\(sourceLanguage)&key=\(keyAPI)"
+        guard let textForSure = text else {
+            return ""
+        }
+        let body = "q=\(textForSure)&target=\(targetLanguage)&format=\(format)&source=\(sourceLanguage)&key=\(keyAPI)"
         return body
     }
     private func createFullUrl() -> URL? {

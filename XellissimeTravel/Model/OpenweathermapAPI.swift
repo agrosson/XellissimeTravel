@@ -27,7 +27,10 @@ class OpenweathermapAPI {
     }
     private func createBody() -> String {
         let cityModified = city.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        let body = "q=\(cityModified!),\(country)&units=metric&appid=\(keyAPI)"
+        guard let cityModifiedForSure = cityModified else {
+            return ""
+        }
+        let body = "q=\(cityModifiedForSure),\(country)&units=metric&appid=\(keyAPI)"
         return body
     }
     private func createFullUrl() -> URL? {

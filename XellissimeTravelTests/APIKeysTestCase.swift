@@ -14,9 +14,8 @@ class APIKeysTestCase: XCTestCase {
 
     // If no return value , then Error
     func testGivenAKeyWhenAccesToKeyThenReturnAString() {
-        
         let key = "222"
-        let result: String? = valueForAPIKey(named: key)
-        XCTAssert(result == nil)
+        let result: String = valueForAPIKey(named: key)
+        XCTAssert(result == "")
     }
 }

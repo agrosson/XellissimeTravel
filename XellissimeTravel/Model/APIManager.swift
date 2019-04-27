@@ -81,8 +81,18 @@ extension NetworkManager {
                         callBack(false, nil)
                         return
                 }
-                let translation = translationResultData.translations![0].translatedText
-                callBack(true, translation)
+                
+                guard let translation = translationResultData.translations else {
+                    callBack(false, nil)
+                    return
+                }
+                
+                if translation.count > 0 {
+                    callBack(true, translation[0].translatedText)
+                } else {
+                    callBack(false, nil)
+                    return
+                }
             }
         }
         task.resume()
