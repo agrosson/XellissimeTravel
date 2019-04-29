@@ -11,23 +11,23 @@ import UIKit
 
 // MARK: Networking class
 class NetworkManager {
-    // MARK: Networking properties
+    // MARK: Singleton
     static var shared = NetworkManager()
     private init() {}
     // Task creation
+    // MARK: - Networking properties
     private var task: URLSessionDataTask?
-    
     private var changeSession = URLSession(configuration: .default)
     private var translateSession = URLSession(configuration: .default)
     private var weatherSession = URLSession(configuration: .default)
-    
+   // MARK: -
     init(changeSession: URLSession, translateSession: URLSession, weatherSession: URLSession){
         self.changeSession = changeSession
         self.translateSession = translateSession
         self.weatherSession = weatherSession
     }
 }
-
+// MARK: - Request for FX
 extension NetworkManager {
     func getChange(fullUrl: URL, method: String, ToCurrency: String, callBack: @escaping (Bool, Float?) -> ()) {
         var request = URLRequest(url: fullUrl)
@@ -56,7 +56,7 @@ extension NetworkManager {
         task.resume()
     }
 }
-
+// MARK: - Request for Translation
 extension NetworkManager {
     func translate(fullUrl: URL, method: String, body: String, callBack: @escaping (Bool, String?) -> ()) {
         var request = URLRequest(url: fullUrl)
@@ -98,8 +98,8 @@ extension NetworkManager {
         task.resume()
     }
 }
+// MARK: - Request for weather
 extension NetworkManager {
-
     func getWeather(fullUrl : URL,method : String,body: String, dayArray: [Int], callBack : @escaping (Bool,[WeatherResponse]?) -> ()) {
         var request = URLRequest(url: fullUrl)
         request.httpMethod = method
@@ -127,7 +127,6 @@ extension NetworkManager {
                                                           tempMax: (responseJson.list![iDay].main?.tempMax)!,
                                                           pressure: (responseJson.list![iDay].main?.pressure)!,
                                                           humidity: (responseJson.list![iDay].main?.humidity)!,
-                                                          description: (responseJson.list![iDay].weather![0].description)!,
                                                           iconString: (responseJson.list![iDay].weather![0].icon)!,
                                                           windSpeed: (responseJson.list![iDay].wind?.speed)!,
                                                           date: (responseJson.list![iDay].dtTxt)!

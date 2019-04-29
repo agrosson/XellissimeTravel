@@ -9,18 +9,34 @@
 import Foundation
 import UIKit
 
+
+// MARK: - Class FixerAPI
+/**
+ This class enables to set parameters of the API fixer.io
+ */
 class FixerAPI {
+    // MARK: - Properties
+    /// API endPoint string
     private let endPoint = "http://data.fixer.io/api/latest"
+    /// API method
     let httpMethod = "GET"
+    /// API Key
     private let keyAPI = valueForAPIKey(named: "APIFixerKey")
+    /// API parameters : symbol currency
     var symbol: String
+    /// API parameters : FullURL
     var fixerFullUrl:URL? {
         return createFullUrl()
     }
+    // MARK: -
     init(symbol: String){
         self.symbol = symbol
     }
-    
+    // MARK: - Methods
+    /**
+     Function that creates the full URL
+     - Returns: Full URL
+     */
     private func createFullUrl() -> URL? {
         let endPointUrl = endPoint
         let body = "access_key=\(keyAPI)&base=EUR&symbols=\(symbol)"
@@ -29,14 +45,15 @@ class FixerAPI {
         return url
     }
 }
-
+// MARK: - Struct for FX Answer
+/// Structs from JSON response file : https://app.quicktype.io
 struct ExchangeAnswer: Codable {
     let success: Bool?
     let timestamp: Int?
     let base, date: String?
     let rates: [String:Float]?
 }
-
+// MARK: - Struct Data base for currency, country code and currency name
 struct CurrencyDataBase {
     static let dB = ["USD",
                      "GBP",
