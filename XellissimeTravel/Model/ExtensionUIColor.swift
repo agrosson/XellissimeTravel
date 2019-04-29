@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/**
+ This extension enables to create UIColor from hexString and hexString from UIColor
+ */
 extension UIColor {
     convenience init(hexString: String, alpha: CGFloat = 1.0) {
         let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)

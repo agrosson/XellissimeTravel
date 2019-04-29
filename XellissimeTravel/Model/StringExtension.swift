@@ -7,7 +7,9 @@
 //
 
 import Foundation
-
+/**
+ This extension enables to remove inaccurate whitespace
+ */
 extension String {
     mutating func removeFirstAndLastAndDoubleWhitespace() {
         var newString = self

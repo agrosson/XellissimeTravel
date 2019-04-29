@@ -8,6 +8,9 @@
 
 import Foundation
 
+
 extension Notification.Name {
+    
+     /// This variable defines the name of a notification
     static let setNewColor = Notification.Name(rawValue: "setNewColor1")
 }

@@ -12,11 +12,11 @@ import UIKit
  */
 class ParamtersViewController: UIViewController {
     // MARK: - Outlets - UIViews
-    @IBOutlet weak var parametersView1: UIView!
-    @IBOutlet weak var parametersView2: UIView!
-    @IBOutlet weak var parametersView3: UIView!
-    @IBOutlet weak var parametersView4: UIView!
-    @IBOutlet weak var parametersView5: UIView!
+    @IBOutlet weak var parametersView1: UIView! // tagnumber 1
+    @IBOutlet weak var parametersView2: UIView! // tagnumber 2
+    @IBOutlet weak var parametersView3: UIView! // tagnumber 3
+    @IBOutlet weak var parametersView4: UIView! // tagnumber 4
+    @IBOutlet weak var parametersView5: UIView! // tagnumber 5
     
     @IBOutlet weak var segmentedControlObject: UISegmentedControl!
     
@@ -91,6 +91,7 @@ class ParamtersViewController: UIViewController {
             self.view.viewWithTag(tagnumber)?.backgroundColor = UIColor(hexString: colorArray[tagnumber-1])
             arrayColor.append(UIColor(hexString: colorArray[tagnumber-1]))
         }
+        // update parameters colors
         Parameter.shared.colors = arrayColor
     }
 }

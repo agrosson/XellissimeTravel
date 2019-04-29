@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+/**
+ Global variables definitions
+ */
+ // MARK: - Global Properties
 /// Initial exchange rate set at 1
 var myRateResult: Float = 1
 /// Currency for flag: default EUR
@@ -40,7 +44,9 @@ var color6 = UIColor(hexString: "5A616D")
     UINavigationBar.appearance().barTintColor = Parameter.shared.colors[4]
     UINavigationBar.appearance().tintColor = color6
 }
-
+/**
+ This class enables to set colors
+ */
 class  Parameter {
     static var shared = Parameter()
     init(){
@@ -49,12 +55,14 @@ class  Parameter {
     }
     var colors: [UIColor] = []
     private func fillColorsArray(){
-        for index in 0...blueColor.count-1 {
+        for index in 0...pinkColor.count-1 {
             colors.append(UIColor(hexString: pinkColor[index]))
         }
     }
 }
-
+/**
+ This class enables to set UserDefault for colors mood
+ */
 class SettingsService {
     private struct Keys {
         static let style = "style"
