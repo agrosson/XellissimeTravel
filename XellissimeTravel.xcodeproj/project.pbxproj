@@ -35,7 +35,6 @@
 		C1B4A8BB224D205D002CD0A6 /* ChangeScreen2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B4A8BA224D205D002CD0A6 /* ChangeScreen2ViewController.swift */; };
 		C1BCA8A0224B5C0300EB9BEA /* Translate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BCA89F224B5C0300EB9BEA /* Translate.storyboard */; };
 		C1BCA8A3224B624E00EB9BEA /* Parameters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BCA8A1224B624E00EB9BEA /* Parameters.storyboard */; };
-		C1BCA8A6224B63C500EB9BEA /* Photos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BCA8A4224B63C500EB9BEA /* Photos.storyboard */; };
 		C1BCA8A8224B67B100EB9BEA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BCA8A7224B67B100EB9BEA /* APIManager.swift */; };
 		C1BCA8AA224B733A00EB9BEA /* FixerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BCA8A9224B733A00EB9BEA /* FixerAPI.swift */; };
 		C1BCA8AC224B73AA00EB9BEA /* GoogleTranslateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BCA8AB224B73AA00EB9BEA /* GoogleTranslateAPI.swift */; };
@@ -97,7 +96,6 @@
 		C1B4A8BA224D205D002CD0A6 /* ChangeScreen2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeScreen2ViewController.swift; sourceTree = "<group>"; };
 		C1BCA89F224B5C0300EB9BEA /* Translate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Translate.storyboard; sourceTree = "<group>"; };
 		C1BCA8A2224B624E00EB9BEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = XellissimeTravel/Storyboard/XellissimeTravel/Storyboard/Base.lproj/Parameters.storyboard; sourceTree = "<group>"; };
-		C1BCA8A5224B63C500EB9BEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = XellissimeTravel/Storyboard/XellissimeTravel/Storyboard/XellissimeTravel/Storyboard/Base.lproj/Photos.storyboard; sourceTree = "<group>"; };
 		C1BCA8A7224B67B100EB9BEA /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		C1BCA8A9224B733A00EB9BEA /* FixerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerAPI.swift; sourceTree = "<group>"; };
 		C1BCA8AB224B73AA00EB9BEA /* GoogleTranslateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTranslateAPI.swift; sourceTree = "<group>"; };
@@ -275,7 +273,6 @@
 			isa = PBXGroup;
 			children = (
 				C1E8221B224A6A8000CE07F4 /* LaunchScreen.storyboard */,
-				C1BCA8A4224B63C500EB9BEA /* Photos.storyboard */,
 				C1BCA8A1224B624E00EB9BEA /* Parameters.storyboard */,
 				C1BCA89F224B5C0300EB9BEA /* Translate.storyboard */,
 				C1E82240224A8C8100CE07F4 /* Weather.storyboard */,
@@ -420,7 +417,6 @@
 				C1BCA8A0224B5C0300EB9BEA /* Translate.storyboard in Resources */,
 				C1AFB917224D5290009593C2 /* FlagKit.xcassets in Resources */,
 				C1E8221D224A6A8000CE07F4 /* LaunchScreen.storyboard in Resources */,
-				C1BCA8A6224B63C500EB9BEA /* Photos.storyboard in Resources */,
 				C1AFB913224D5290009593C2 /* LICENSE in Resources */,
 				C1E82242224A8C8100CE07F4 /* Weather.storyboard in Resources */,
 				C1E8223F224A84CA00CE07F4 /* Change.storyboard in Resources */,
@@ -590,14 +586,6 @@
 				C1BCA8A2224B624E00EB9BEA /* Base */,
 			);
 			name = Parameters.storyboard;
-			sourceTree = "<group>";
-		};
-		C1BCA8A4224B63C500EB9BEA /* Photos.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C1BCA8A5224B63C500EB9BEA /* Base */,
-			);
-			name = Photos.storyboard;
 			sourceTree = "<group>";
 		};
 		C1E82216224A6A7D00CE07F4 /* Main.storyboard */ = {
