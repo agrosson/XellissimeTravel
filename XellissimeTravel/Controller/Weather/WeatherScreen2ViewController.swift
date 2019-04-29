@@ -35,7 +35,6 @@ class WeatherScreen2ViewController: UIViewController {
             popoverView.center = CGPoint(x: view.frame.width/2,
                                          y: (view.frame.height-popoverView.frame.height/2)-tabBarHeight-1)
         }
-
     }
 
     // MARK: - Outlets - Labels
@@ -114,16 +113,7 @@ class WeatherScreen2ViewController: UIViewController {
             Alert.shared.alertDisplay = .weatherRequestFailed
             return
         }
-        /// Create an array to retrieve items in json dictionary
-        var allDays: [Int] {
-            var array = [Int]()
-            for item in 0...39{
-                array.append(item)
-            }
-            return array
-        }
-        /// Array that sets the targeted days : each day has 8 weatherObject items
-        let targetDays = [0, 8, 16, 24, 32]
+        
         // Send request
         myWeatherCall.getWeather(fullUrl: url, method: method, body: body, dayArray: allDays) { (success, weatherObject) in
             self.toggleActivityIndicator(shown: false)
