@@ -9,20 +9,37 @@
 import Foundation
 import UIKit
 
+ // MARK: - Class Alert
+/**
+ This class enables presentation of an alert what ever the viewController
+ */
 class Alert{
-    static var shared = Alert() 
-    init() {}
-    enum ListCase {
-        case weatherRequestFailed, changeRequestFailed, translationRequestFailed, bigAmount, emptyText, pressSearchFirst
-    }
+    // MARK: - Properties
+    /// ViewController on which the alert will be displayed (self)
     var controller: UIViewController?
-    var alertDisplay :  ListCase = .changeRequestFailed {
+    /// Variable that tracks the case of alert
+    var alertDisplay :  AlertCase = .changeRequestFailed {
         didSet {
-           presentAlert(myCase: alertDisplay)
+            presentAlert(alertCase: alertDisplay)
         }
     }
-    private func presentAlert(myCase: ListCase){
-        switch myCase {
+    /// Singleton Object
+    static var shared = Alert()
+     // MARK: - Enum
+    /// Enum that lists all cases of alert presentations
+    enum AlertCase {
+        case weatherRequestFailed, changeRequestFailed, translationRequestFailed, bigAmount, emptyText, pressSearchFirst
+    }
+    // MARK: -
+    init() {}
+     // MARK: - Methods
+    /**
+     Function that presents an alert with defined text depending on AlertCase
+     - Parameter myCase: variable used to set text of the alert
+     */
+    
+    private func presentAlert(alertCase: AlertCase){
+        switch alertCase {
         case .weatherRequestFailed:
             controller?.presentAlertDetails(title: "Sorry",
                                             message: "The request to get weather forecast failed.",
@@ -51,7 +68,11 @@ class Alert{
         }
     }
 }
+// MARK: - Extension
 extension UIViewController {
+    /**
+     Function that presents an alert 
+     */
     func presentAlertDetails(title: String, message: String, titleButton: String) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: titleButton, style: .cancel, handler: nil))
