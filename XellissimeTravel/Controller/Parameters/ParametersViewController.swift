@@ -30,6 +30,15 @@ class ParamtersViewController: UIViewController {
     // MARK: - Actions
     /**
      Action that sets style depending on segment chosen
+     
+     # Important Notes #
+     - How it works:
+        1. when changing selected Segment, variable styleString is set with a new value
+        2. A notification is sent to declare newColor to other VC
+        3. UserDefault is upDated
+        4. didSet :  launches function setStyleString that launch createMood
+        5. CreateMood : creates a array of color that will be used by other VC
+     
      */
     @IBAction func parametersSegmentedControlSelected(_ sender: UISegmentedControl) {
         // style is set from segment selected

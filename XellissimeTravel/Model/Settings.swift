@@ -17,7 +17,7 @@ import UIKit
 var myRateResult: Float = 1
 /// Currency for flag: default EUR
 var currencyOne = "EU"
-/// Currency Symbol
+/// Currency Symbol : default USD
 var currencySymbol = "US"
 /// Currency name
 var currencyName = ""
@@ -34,8 +34,7 @@ let blueColor = ["4B8AEF","CCCFE8","99BAED","869DE1","FAFBF8"]
 let modernColor = ["142242","93A3B4","2278AB","B5613C","FAFBF8"]
 let pinkColor = ["E63A5B","E69CA9","AB4687","D89A58", "FAFBF8"]
 let greenColor = ["263023","7D8861","ABCF3B","45821F","FAFBF8"]
-
-var color6 = UIColor(hexString: "5A616D")
+let color6 = UIColor(hexString: "5A616D")
 
 /// Create an array to retrieve items in json dictionary
 var allDays: [Int] {

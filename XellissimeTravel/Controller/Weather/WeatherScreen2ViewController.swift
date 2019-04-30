@@ -10,34 +10,11 @@ import UIKit
 
 class WeatherScreen2ViewController: UIViewController {
     
-    
-    @IBOutlet weak var popoverCityLabel: UILabel!
+    // MARK: - Outlets - View
     @IBOutlet var popoverView: UIView!
-    
-    @IBAction func popoverButtonBackPressed(_ sender: Any) {
-        self.popoverView.removeFromSuperview()
-        hideViewWhenPopover(hide: false)
-    }
-    @IBOutlet weak var nextDayButton: UIButton!
-    @IBAction func nextDaysButtonPressed(_ sender: Any) {
-        if chooseCityLabel.text == weatherLabelChooseCityText {
-            Alert.shared.controller = self
-            Alert.shared.alertDisplay = .pressSearchFirst
-        } else {
-            
-            self.popoverCityLabel.text = cityTextField.text?.uppercased()
-            //   hideViewWhenPopover(hide: true)
-            self.view.addSubview(popoverView)
-            popoverView.backgroundColor = Parameter.shared.colors[0]
-            guard let tabBarHeight = self.tabBarController?.tabBar.frame.height else {
-                return
-            }
-            popoverView.center = CGPoint(x: view.frame.width/2,
-                                         y: (view.frame.height-popoverView.frame.height/2)-tabBarHeight-1)
-        }
-    }
-
     // MARK: - Outlets - Labels
+    // Label for indicating city in popoverView
+    @IBOutlet weak var popoverCityLabel: UILabel!
     // Labels for NY block
     @IBOutlet weak var nyTitleLabel: UILabel!
     @IBOutlet weak var currentTempLabelNY: UILabel!
@@ -87,10 +64,38 @@ class WeatherScreen2ViewController: UIViewController {
     @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var cityTextField: UITextField!
     // MARK: - Outlets - Button
+    @IBOutlet weak var nextDayButton: UIButton!
     @IBOutlet weak var searchButtonLabel: UIButton!
     // MARK: - Outlets - Activity indicator
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     // MARK: - Actions
+    /**
+     Action that adds popoverView and displays weather for next days
+     */
+    @IBAction func nextDaysButtonPressed(_ sender: Any) {
+        if chooseCityLabel.text == weatherLabelChooseCityText {
+            Alert.shared.controller = self
+            Alert.shared.alertDisplay = .pressSearchFirst
+        } else {
+            
+            self.popoverCityLabel.text = cityTextField.text?.uppercased()
+            //   hideViewWhenPopover(hide: true)
+            self.view.addSubview(popoverView)
+            popoverView.backgroundColor = Parameter.shared.colors[0]
+            guard let tabBarHeight = self.tabBarController?.tabBar.frame.height else {
+                return
+            }
+            popoverView.center = CGPoint(x: view.frame.width/2,
+                                         y: (view.frame.height-popoverView.frame.height/2)-tabBarHeight-1)
+        }
+    }
+    /**
+     Action that removes popoverView
+     */
+    @IBAction func popoverButtonBackPressed(_ sender: Any) {
+        self.popoverView.removeFromSuperview()
+        hideViewWhenPopover(hide: false)
+    }
     /**
      Action that launches request to get weather from a given city
      */

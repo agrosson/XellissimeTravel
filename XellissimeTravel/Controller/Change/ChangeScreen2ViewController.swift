@@ -10,19 +10,9 @@ import UIKit
 
 class ChangeScreen2ViewController: UIViewController {
     
-    lazy var rate:Float? = Float(self.rateLabel.text ?? "1")
-    
-    @IBOutlet var popViewFX: UIView!
-    
-    @IBAction func chooseCurrencyButtonPressed(_ sender: Any) {
-        self.view.addSubview(popViewFX)
-        popViewFX.backgroundColor = Parameter.shared.colors[0]
-        guard let test = self.tabBarController?.tabBar.frame.height else {return}
-        popViewFX.center = CGPoint(x: view.frame.width/2,
-                                   y: (view.frame.height-popViewFX.frame.height/2)-test-1)
-    }
-    
     // MARK: - Properties
+    /// FX rate
+    lazy var rate:Float? = Float(self.rateLabel.text ?? "1")
     /// Currency target for flag: default US
     lazy var currencyTwo = CurrencyDataBase.currencyCountryCode[currencySymbol]![0]
     /// Bundle where Flags images are stored
@@ -37,7 +27,8 @@ class ChangeScreen2ViewController: UIViewController {
     lazy var flagTwoInitial = flagImageTwo
     /// Amount to convert
     lazy var amountToConvert = (textFieldFX.text! as NSString).floatValue
-    
+    // MARK: - Outlets - View
+     @IBOutlet var popViewFX: UIView!
     // MARK: - Outlets - Labels
     @IBOutlet weak var amountToConvertLabel: UILabel!
     @IBOutlet weak var amountConvertedLabel: UILabel!
@@ -106,6 +97,14 @@ class ChangeScreen2ViewController: UIViewController {
     @IBAction func switchCurrencyButton(_ sender: Any) {
         switchFlag()
         switchAmount()
+    }
+    // Display PopOverView to choose currency in PickerView
+    @IBAction func chooseCurrencyButtonPressed(_ sender: Any) {
+        self.view.addSubview(popViewFX)
+        popViewFX.backgroundColor = Parameter.shared.colors[0]
+        guard let test = self.tabBarController?.tabBar.frame.height else {return}
+        popViewFX.center = CGPoint(x: view.frame.width/2,
+                                   y: (view.frame.height-popViewFX.frame.height/2)-test-1)
     }
     // MARK: - Methods - ViewDidLoad
     override func viewDidLoad() {
@@ -267,7 +266,9 @@ class ChangeScreen2ViewController: UIViewController {
         mySwipeGestureRecognizer.direction = .down
         self.view.addGestureRecognizer(mySwipeGestureRecognizer)
     }
-    
+    /**
+     Function that updateAmountConversion
+     */
     private func updateAmountConversion(){
         checkAmountToConvert()
         if rate != nil {

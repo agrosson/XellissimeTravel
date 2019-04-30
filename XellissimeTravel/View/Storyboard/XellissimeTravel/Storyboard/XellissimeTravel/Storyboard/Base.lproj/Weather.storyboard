@@ -77,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pw1-SW-en8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-474" y="1444"/>
+            <point key="canvasLocation" x="-1838" y="1440"/>
         </scene>
         <!--Weather-->
         <scene sceneID="Slb-UY-a8M">
@@ -518,7 +518,7 @@
                     <viewLayoutGuide key="safeArea" id="fLF-6a-QHJ"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="187" y="1452"/>
+            <point key="canvasLocation" x="-159" y="1435"/>
         </scene>
     </scenes>
     <resources>
