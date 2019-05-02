@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2xs-ZM-Cvw">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,11 +29,11 @@
             <objects>
                 <viewController id="yvM-zc-jPd" customClass="ParamtersViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xrk-P0-RjO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeK-7u-zJh">
-                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
                                 <subviews>
                                     <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlh-Y6-CcD">
                                         <rect key="frame" x="25" y="25" width="150" height="150"/>
@@ -92,7 +88,7 @@
                                 </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="U5D-gI-E0r">
-                                <rect key="frame" x="20" y="735" width="374" height="29"/>
+                                <rect key="frame" x="20" y="473" width="560" height="29"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
                                     <segment title="Pink"/>
@@ -106,7 +102,7 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOOSE YOUR MOOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eoD-T0-3z2">
-                                <rect key="frame" x="20" y="108" width="374" height="36"/>
+                                <rect key="frame" x="20" y="84" width="560" height="36"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -127,11 +123,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="gug-Fa-FF2"/>
                     <connections>
-                        <outlet property="parametersView1" destination="zeK-7u-zJh" id="qMZ-UK-e2Y"/>
-                        <outlet property="parametersView2" destination="hlh-Y6-CcD" id="B4p-zm-4Xy"/>
-                        <outlet property="parametersView3" destination="Qxm-LZ-4BQ" id="QDk-aR-XvZ"/>
-                        <outlet property="parametersView4" destination="5wT-EM-j4R" id="gt5-cc-rPg"/>
-                        <outlet property="parametersView5" destination="AU0-70-d9b" id="36q-iT-rK9"/>
+                        <outlet property="parametersViewBig" destination="hlh-Y6-CcD" id="B4p-zm-4Xy"/>
+                        <outlet property="parametersViewInside" destination="AU0-70-d9b" id="36q-iT-rK9"/>
+                        <outlet property="parametersViewMedium" destination="Qxm-LZ-4BQ" id="QDk-aR-XvZ"/>
+                        <outlet property="parametersViewOut" destination="zeK-7u-zJh" id="qMZ-UK-e2Y"/>
+                        <outlet property="parametersViewSmall" destination="5wT-EM-j4R" id="gt5-cc-rPg"/>
                         <outlet property="segmentedControlObject" destination="U5D-gI-E0r" id="seA-tn-oRM"/>
                     </connections>
                 </viewController>

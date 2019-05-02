@@ -81,7 +81,9 @@ class WeatherScreen2ViewController: UIViewController {
             self.popoverCityLabel.text = cityTextField.text?.uppercased()
             //   hideViewWhenPopover(hide: true)
             self.view.addSubview(popoverView)
-            popoverView.backgroundColor = Parameter.shared.colors[0]
+            if Parameter.shared.colors.count > 0 {
+                  popoverView.backgroundColor = Parameter.shared.colors[0]
+            }
             guard let tabBarHeight = self.tabBarController?.tabBar.frame.height else {
                 return
             }
@@ -185,7 +187,10 @@ class WeatherScreen2ViewController: UIViewController {
     // MARK: - Methods - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = Parameter.shared.colors[2]
+        if Parameter.shared.colors.count > 2 {
+            self.view.backgroundColor = Parameter.shared.colors[2]
+        }
+        
         popoverView.layer.cornerRadius = 50
         self.nyTitleLabel.textColor = .white
         self.chooseCityLabel.textColor = .white
@@ -215,9 +220,12 @@ class WeatherScreen2ViewController: UIViewController {
      Function to get USD/EUR rate
      */
     @objc func updateColor(notification : Notification){
-        view.backgroundColor = Parameter.shared.colors[2]
-        self.view.backgroundColor = Parameter.shared.colors[2]
-        self.popoverView.backgroundColor = Parameter.shared.colors[0]
+           if Parameter.shared.colors.count > 2 {
+            view.backgroundColor = Parameter.shared.colors[2]
+            self.view.backgroundColor = Parameter.shared.colors[2]
+            self.popoverView.backgroundColor = Parameter.shared.colors[0]
+        }
+        
         self.nyTitleLabel.textColor = .white
         self.chooseCityLabel.textColor = .white
         self.searchButtonLabel.setTitleColor(.white, for: .normal)

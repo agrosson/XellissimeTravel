@@ -61,8 +61,12 @@ class ChangeScreen2ViewController: UIViewController {
         // Get currency info from Picker
         let pickerIndex = currencyPicker.selectedRow(inComponent: 0)
         currencySymbol = CurrencyDataBase.dB[pickerIndex]
-        currencyTwo = CurrencyDataBase.currencyCountryCode[currencySymbol]![0]
-        currencyName = CurrencyDataBase.currencyCountryCode[currencySymbol]![1]
+        if CurrencyDataBase.currencyCountryCode[currencySymbol]!.count > 0 {
+           currencyTwo = CurrencyDataBase.currencyCountryCode[currencySymbol]![0]
+        }
+        if CurrencyDataBase.currencyCountryCode[currencySymbol]!.count > 1 {
+             currencyName = CurrencyDataBase.currencyCountryCode[currencySymbol]![1]
+        }
         // Set flag from currency choosen
         flagImageTwo = UIImage.init(named: currencyTwo, in: bundle, compatibleWith: nil)!
         // Prepare and send request
@@ -101,7 +105,9 @@ class ChangeScreen2ViewController: UIViewController {
     // Display PopOverView to choose currency in PickerView
     @IBAction func chooseCurrencyButtonPressed(_ sender: Any) {
         self.view.addSubview(popViewFX)
-        popViewFX.backgroundColor = Parameter.shared.colors[0]
+        if Parameter.shared.colors.count > 0 {
+             popViewFX.backgroundColor = Parameter.shared.colors[0]
+        }
         guard let test = self.tabBarController?.tabBar.frame.height else {return}
         popViewFX.center = CGPoint(x: view.frame.width/2,
                                    y: (view.frame.height-popViewFX.frame.height/2)-test-1)
@@ -111,7 +117,9 @@ class ChangeScreen2ViewController: UIViewController {
         super.viewDidLoad()
         // Setup colors for the screen
         activityIndicator.isHidden = true
-        view.backgroundColor = Parameter.shared.colors[1]
+        if Parameter.shared.colors.count > 1 {
+           view.backgroundColor = Parameter.shared.colors[1]
+        }
         goOutlet.setTitleColor(.white, for: .normal)
         textFieldFX.backgroundColor = .clear
         navigationBarColor()
@@ -187,7 +195,9 @@ class ChangeScreen2ViewController: UIViewController {
      Function to update colors of screen, listening to Notification sent from parameters options
      */
     @objc func updateColor(notification : Notification){
-        view.backgroundColor = Parameter.shared.colors[1]
+        if Parameter.shared.colors.count > 1 {
+            view.backgroundColor = Parameter.shared.colors[1]
+        }
         self.goOutlet.setTitleColor(.white, for: .normal)
         self.textFieldFX.backgroundColor = .clear
     }
@@ -198,7 +208,9 @@ class ChangeScreen2ViewController: UIViewController {
         toggleActivityIndicator(shown: true)
         currencySymbol = "USD"
         decimalMaxToConvert = 2
-        currencyName = CurrencyDataBase.currencyCountryCode[currencySymbol]![1]
+        if CurrencyDataBase.currencyCountryCode[currencySymbol]!.count > 1 {
+            currencyName = CurrencyDataBase.currencyCountryCode[currencySymbol]![1]
+        }
         let api = FixerAPI(symbol: currencySymbol)
         guard let fullUrl = api.fixerFullUrl else {
             Alert.shared.controller = self

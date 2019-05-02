@@ -248,9 +248,9 @@
 		C1E82239224A7A2B00CE07F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C1F17653225DFAD90030208A /* Settings.swift */,
 				C1F17651225DC93E0030208A /* alert.swift */,
 				C16A193222705A440093DA25 /* NotificationName.swift */,
-				C1F17653225DFAD90030208A /* Settings.swift */,
 				C10DF74F2265D6CE008B2E96 /* StringExtension.swift */,
 				C1901B52225B2597009356FB /* ExtensionUIColor.swift */,
 				C1BCA8A7224B67B100EB9BEA /* APIManager.swift */,

@@ -12,15 +12,17 @@ import UIKit
  */
 class ParamtersViewController: UIViewController {
     // MARK: - Outlets - UIViews
-    @IBOutlet weak var parametersView1: UIView! // tagnumber 1
-    @IBOutlet weak var parametersView2: UIView! // tagnumber 2
-    @IBOutlet weak var parametersView3: UIView! // tagnumber 3
-    @IBOutlet weak var parametersView4: UIView! // tagnumber 4
-    @IBOutlet weak var parametersView5: UIView! // tagnumber 5
+    @IBOutlet weak var parametersViewOut: UIView! // tagnumber 1
+    @IBOutlet weak var parametersViewBig: UIView! // tagnumber 2
+    @IBOutlet weak var parametersViewMedium: UIView! // tagnumber 3
+    @IBOutlet weak var parametersViewSmall: UIView! // tagnumber 4
+    @IBOutlet weak var parametersViewInside: UIView! // tagnumber 5
     
     @IBOutlet weak var segmentedControlObject: UISegmentedControl!
     
     // MARK: - Properties
+    let numberOfViews = 5
+    
     /// Variable that tracks style
     var styleString: String = SettingsService.style {
         didSet {
@@ -96,7 +98,7 @@ class ParamtersViewController: UIViewController {
      */
     private func createMood(with colorArray: [String]) {
         var arrayColor : [UIColor] = []
-        for tagnumber in 1...5 {
+        for tagnumber in 1...numberOfViews {
             self.view.viewWithTag(tagnumber)?.backgroundColor = UIColor(hexString: colorArray[tagnumber-1])
             arrayColor.append(UIColor(hexString: colorArray[tagnumber-1]))
         }

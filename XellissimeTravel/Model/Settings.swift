@@ -51,7 +51,9 @@ let targetDays = [0, 8, 16, 24, 32]
  Function that sets appearance UINavigationBar
  */
  func  navigationBarColor() {
-    UINavigationBar.appearance().barTintColor = Parameter.shared.colors[4]
+    if Parameter.shared.colors.count >= 4 {
+        UINavigationBar.appearance().barTintColor = Parameter.shared.colors[4]
+    }
     UINavigationBar.appearance().tintColor = color6
 }
 /**
