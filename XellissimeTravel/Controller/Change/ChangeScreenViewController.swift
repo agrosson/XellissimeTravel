@@ -290,6 +290,10 @@ class ChangeScreenViewController: UIViewController {
             self.adaptDecimalDisplay()
             self.amountToConvertLabel.text = String(format: "%.\(decimalMaxToConvert)f", self.amountToConvert)
             self.amountConvertedLabel.text = String(format: "%.\(decimalMaxConverted)f", (self.amountToConvert*myRate))
+            flagImageOne = UIImage.init(named: "EU", in: bundle, compatibleWith: nil)!
+            flagImageTwo = UIImage.init(named: currencyTwo, in: bundle, compatibleWith: nil)!
+            flagLeft.image = flagImageOne
+            flagRight.image = flagImageTwo
         }
         // Here set the good flags
         
@@ -301,20 +305,12 @@ class ChangeScreenViewController: UIViewController {
      */
     @objc func myTap(){
         updateAmountConversion()
-        flagImageOne = UIImage.init(named: "EU", in: bundle, compatibleWith: nil)!
-        flagImageTwo = UIImage.init(named: currencyTwo, in: bundle, compatibleWith: nil)!
-        flagLeft.image = flagImageOne
-        flagRight.image = flagImageTwo
     }
 }
 // MARK: - Extension - TextfieldDelegate
 extension ChangeScreenViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         updateAmountConversion()
-        flagImageOne = UIImage.init(named: "EU", in: bundle, compatibleWith: nil)!
-        flagImageTwo = UIImage.init(named: currencyTwo, in: bundle, compatibleWith: nil)!
-        flagLeft.image = flagImageOne
-        flagRight.image = flagImageTwo
         return true
     }
     /// Function that checks numeric character in the textField
