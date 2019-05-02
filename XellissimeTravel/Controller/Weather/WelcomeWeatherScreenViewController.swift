@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeatherScreen1ViewController: UIViewController {
+class WelcomeWeatherScreenViewController: UIViewController {
     // MARK: - Outlets - Label
     @IBOutlet weak var introLabel: UILabel!
     // MARK: - Outlets - Button

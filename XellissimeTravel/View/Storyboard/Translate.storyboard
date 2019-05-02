@@ -32,10 +32,10 @@
             </objects>
             <point key="canvasLocation" x="-468" y="1457"/>
         </scene>
-        <!--Translate Screen1 View Controller-->
+        <!--Welcome Translate Screen View Controller-->
         <scene sceneID="y5b-lQ-bhA">
             <objects>
-                <viewController id="3w1-Tg-99G" customClass="TranslateScreen1ViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3w1-Tg-99G" customClass="WelcomeTranslateScreenViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FcV-Fc-GfZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
         <!--Translate-->
         <scene sceneID="pdY-xO-d8Q">
             <objects>
-                <viewController title="Translate" id="gsX-8q-OCL" customClass="TranslateScreen2ViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Translate" id="gsX-8q-OCL" customClass="TranslateScreenViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7My-bS-R4I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

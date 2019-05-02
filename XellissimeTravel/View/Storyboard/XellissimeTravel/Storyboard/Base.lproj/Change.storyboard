@@ -38,10 +38,10 @@
             </objects>
             <point key="canvasLocation" x="-919" y="705"/>
         </scene>
-        <!--ChangeScreen1-->
+        <!--WelcomeChangeScreen-->
         <scene sceneID="CPs-8J-icu">
             <objects>
-                <viewController title="ChangeScreen1" id="n2N-TW-yWI" customClass="ChangeScreen1ViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ChangeScreen1" id="n2N-TW-yWI" userLabel="WelcomeChangeScreen" customClass="WelcomeChangeScreenViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BZs-Lb-FJl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,7 +88,7 @@
         <!--Change-->
         <scene sceneID="Xvi-8e-a1h">
             <objects>
-                <viewController title="Change" modalTransitionStyle="flipHorizontal" id="YSi-Eq-Ean" customClass="ChangeScreen2ViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Change" modalTransitionStyle="flipHorizontal" id="YSi-Eq-Ean" customClass="ChangeScreenViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3PY-mQ-hx0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

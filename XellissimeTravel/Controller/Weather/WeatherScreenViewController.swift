@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeatherScreen2ViewController: UIViewController {
+class WeatherScreenViewController: UIViewController {
     
     // MARK: - Outlets - View
     @IBOutlet var popoverView: UIView!
@@ -344,7 +344,7 @@ extension String {
     }
 }
 
-extension WeatherScreen2ViewController: UITextFieldDelegate {
+extension WeatherScreenViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         cityTextField.resignFirstResponder()
         countryTextField.resignFirstResponder()

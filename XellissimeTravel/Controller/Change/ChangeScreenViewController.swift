@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChangeScreen2ViewController: UIViewController {
+class ChangeScreenViewController: UIViewController {
     
     // MARK: - Properties
     /// FX rate
@@ -285,11 +285,14 @@ class ChangeScreen2ViewController: UIViewController {
         checkAmountToConvert()
         if rate != nil {
             self.rateLabel.text = String(format: "%.4f", rate!)
+            let myRate = rate!
             myRateResult = rate!
             self.adaptDecimalDisplay()
             self.amountToConvertLabel.text = String(format: "%.\(decimalMaxToConvert)f", self.amountToConvert)
-            self.amountConvertedLabel.text = String(format: "%.\(decimalMaxConverted)f", (self.amountToConvert*myRateResult))
+            self.amountConvertedLabel.text = String(format: "%.\(decimalMaxConverted)f", (self.amountToConvert*myRate))
         }
+        // Here set the good flags
+        
         textFieldFX.resignFirstResponder()
     }
     
@@ -298,12 +301,20 @@ class ChangeScreen2ViewController: UIViewController {
      */
     @objc func myTap(){
         updateAmountConversion()
+        flagImageOne = UIImage.init(named: "EU", in: bundle, compatibleWith: nil)!
+        flagImageTwo = UIImage.init(named: currencyTwo, in: bundle, compatibleWith: nil)!
+        flagLeft.image = flagImageOne
+        flagRight.image = flagImageTwo
     }
 }
 // MARK: - Extension - TextfieldDelegate
-extension ChangeScreen2ViewController: UITextFieldDelegate {
+extension ChangeScreenViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         updateAmountConversion()
+        flagImageOne = UIImage.init(named: "EU", in: bundle, compatibleWith: nil)!
+        flagImageTwo = UIImage.init(named: currencyTwo, in: bundle, compatibleWith: nil)!
+        flagLeft.image = flagImageOne
+        flagRight.image = flagImageTwo
         return true
     }
     /// Function that checks numeric character in the textField
@@ -316,7 +327,7 @@ extension ChangeScreen2ViewController: UITextFieldDelegate {
     
 }
 // MARK: - Extension - PickerView Delegate and DataSource
-extension ChangeScreen2ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+extension ChangeScreenViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

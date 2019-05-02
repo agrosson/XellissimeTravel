@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TranslateScreen1ViewController: UIViewController {
+class WelcomeTranslateScreenViewController: UIViewController {
     // MARK: - Outlets - Label
     @IBOutlet weak var translateScreen1Label: UILabel!
     // MARK: - Outlets - Button

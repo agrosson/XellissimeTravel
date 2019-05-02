@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChangeScreen1ViewController: UIViewController {
+class WelcomeChangeScreenViewController: UIViewController {
     
     // MARK: - Outlets - Label
      @IBOutlet weak var introLabel: UILabel!

@@ -33,10 +33,10 @@
             </objects>
             <point key="canvasLocation" x="-3004" y="1450"/>
         </scene>
-        <!--WeatherScreen1-->
+        <!--WelcomeWeatherScreen-->
         <scene sceneID="HI4-eX-599">
             <objects>
-                <viewController title="WeatherScreen1" id="u39-ZK-tnR" customClass="WeatherScreen1ViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="WeatherScreen1" id="u39-ZK-tnR" userLabel="WelcomeWeatherScreen" customClass="WelcomeWeatherScreenViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b7E-EU-xO3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
         <!--Weather-->
         <scene sceneID="Slb-UY-a8M">
             <objects>
-                <viewController title="Weather" id="wB7-hD-YIF" customClass="WeatherScreen2ViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Weather" id="wB7-hD-YIF" customClass="WeatherScreenViewController" customModule="XellissimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hxm-Or-ZYy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

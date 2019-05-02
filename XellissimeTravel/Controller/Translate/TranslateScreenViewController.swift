@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TranslateScreen2ViewController: UIViewController {
+class TranslateScreenViewController: UIViewController {
 
     // MARK: - Outlets - Labels
     @IBOutlet weak var translatedTextLabel: UILabel!
@@ -155,7 +155,7 @@ class TranslateScreen2ViewController: UIViewController {
         }, completion: nil)
     }
 }
-extension TranslateScreen2ViewController: UITextViewDelegate {
+extension TranslateScreenViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         clearButton.isHidden = textTotranslateTextView.text.isEmpty
         if textTotranslateTextView.text.isEmpty {
@@ -181,7 +181,7 @@ extension TranslateScreen2ViewController: UITextViewDelegate {
     }
 }
 // Notification protocole for keyboard behavior
-extension  TranslateScreen2ViewController {
+extension  TranslateScreenViewController {
     @objc func keyboardWillChange(notification: Notification){
         // Get the size of the keyboard
         guard let keyBoardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
