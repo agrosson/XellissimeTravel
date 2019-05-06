@@ -107,9 +107,11 @@ class WeatherScreenViewController: UIViewController {
         chooseCityLabel.text = "\(cityTextField.text?.capitalized ?? "")"
         toggleActivityIndicator(shown: true)
         // get city from textField
-        let city = cityTextField.text ?? ""
+        var city = cityTextField.text ?? ""
+        city.removeFirstAndLastAndDoubleWhitespace()
         // get country from textField
-        let countryCode = countryTextField.text ?? ""
+        var countryCode = countryTextField.text ?? ""
+        countryCode.removeFirstAndLastAndDoubleWhitespace()
         // Prepare request
         let api = OpenweathermapAPI(city: city, country: countryCode)
         let method = api.httpMethod
