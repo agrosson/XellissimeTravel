@@ -87,8 +87,23 @@ struct WeatherResponse {
     let windSpeed: Double
     /// Current date
     let date: String
+    
+    init?(temp: Double?, tempMin: Double?, tempMax: Double?, pressure: Double?, humidity: Double?, iconString: String?, windSpeed : Double?, date : String?) {
+        if let temp = temp, let tempMax = tempMax, let tempMin = tempMin, let pressure = pressure, let humidity = humidity, let iconString = iconString, let windSpeed = windSpeed, let date = date {
+            self.temp = temp
+            self.tempMin = tempMin
+            self.tempMax = tempMax
+            self.pressure = pressure
+            self.humidity = humidity
+            self.iconString = iconString
+            self.windSpeed = windSpeed
+            self.date = date
+        } else {
+            return nil
+        }
+    }
 }
-// MARK: - Structs from JSON response file : https://app.quicktype.io
+// MARK: - Structs from JSON response file :
 // Structs of JSON response file : global struct
 struct WeatherConditions: Codable {
     let cod: String?

@@ -72,7 +72,7 @@ class GoogleTranslateAPI {
     }
 }
 
-// MARK: - Structs from JSON response file : https://app.quicktype.io
+// MARK: - Structs from JSON response file :
 // Structs of JSON response file : global struct
 struct DataClass: Codable {
     let translations: [Translation]?
