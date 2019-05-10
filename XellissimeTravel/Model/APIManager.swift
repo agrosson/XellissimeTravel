@@ -158,9 +158,9 @@ extension NetworkManager {
                         callBack(false, nil)
                         return
                     }
-                    testArrayResponse.append(finalWeatherResponse)
-                    callBack(true, testArrayResponse)
+                     testArrayResponse.append(finalWeatherResponse)
                 }
+                callBack(true, testArrayResponse)
             }
         }
         task.resume()
